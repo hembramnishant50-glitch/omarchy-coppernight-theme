@@ -44,7 +44,7 @@ The weather widget is set to **Purnia, India** by default. To change this to you
 2.  **Find the `CITY` variable** near the top of the file and replace it with your location:
     ```python
     # Configuration
-    CITY = "New York"  # Change "Purnia" to your city name
+    CITY = "New York"  # Change "Your_City" to your city name
     ```
 
 3.  **Save and Exit:**
@@ -72,27 +72,3 @@ killall waybar; waybar &
 
 
 
-## ⚙️ Configuration
-
-### 🌤️ Changing the Weather Location
-The weather widget is set to **Purnia, India** by default. To change this to your city:
-
-1.  **Open the configuration script:**
-    ```bash
-    nano ~/.config/waybar/scripts/weather.py
-    ```
-
-2.  **Find the `CITY` variable** near the top of the file and replace it with your location:
-    ```python
-    # Configuration
-    CITY = "New York"  # Change "Purnia" to your city name
-    ```
-
-3.  **Save and Exit:**
-    * Press `Ctrl + O` then `Enter` to save.
-    * Press `Ctrl + X` to exit.
-
-4.  **Restart Waybar** to apply changes:
-    ```bash
-    killall waybar; waybar &
-    ```
