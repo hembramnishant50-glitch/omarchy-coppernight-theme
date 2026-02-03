@@ -1,0 +1,50 @@
+/* Color variables synced with Omarchy / Catppuccin Mocha base */
+@define-color background      rgba(0, 0, 0, 0);
+@define-color waybarBg        rgba(17, 17, 27, 0.6); /* #11111b at 60% opacity */
+@define-color foreground      #e6e6e6;
+@define-color surface         #313244;
+@define-color inactive        #45475a;
+
+/* Omarchy Accent Colors */
+@define-color accent_orange   #fab387; /* Clock/Border Orange */
+@define-color accent_green    #a6e3a1; /* Wifi/Music Green */
+@define-color accent_blue     #89b4fa; /* Menu Blue */
+@define-color accent_pink     #f38ba8; /* Active/Critical Pink */
+@define-color accent_critical #f38ba8;
+
+#waybar {
+  background-color: @waybarBg;
+  border-bottom: 1px solid alpha(@inactive, 0.3);
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @accent_green;
+}
+
+#battery.warning:not(.charging) {
+  color: @accent_orange;
+}
+
+#battery.critical:not(.charging) {
+  color: @accent_critical;
+}
+
+#pulseaudio.muted {
+  color: @accent_critical;
+}
+
+#network.disconnected {
+  color: @accent_critical;
+}
+
+/* Tooltips updated to match #11111b base */
+tooltip {
+  background: #11111b;
+  border-radius: 10px;
+  border: 1px solid @accent_orange;
+}
+
+tooltip label {
+  color: @foreground;
+}

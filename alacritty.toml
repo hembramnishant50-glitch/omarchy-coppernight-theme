@@ -1,0 +1,46 @@
+[window]
+decorations = "none"
+padding = { x = 10, y = 10 }
+opacity = 0.75 
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+size = 11.0
+
+[colors.primary]
+background = "#11111b" # Updated: Deep Midnight Black
+foreground = "#e6e6e6"
+
+[colors.cursor]
+text = "#11111b"       # Updated for contrast against Pink cursor
+cursor = "#f38ba8"     # Pink like Waybar Active Workspace
+
+[colors.normal]
+black   = "#1e1e2e"  
+red     = "#f38ba8"    # Pink/Red
+green   = "#a6e3a1"    # Wifi/Music Green
+yellow  = "#f9e2af" 
+blue    = "#89b4fa"    # Menu Blue
+magenta = "#cba6f7" 
+cyan    = "#94e2d5" 
+white   = "#bac2de" 
+
+[colors.bright]
+black   = "#585b70"  
+red     = "#f38ba8" 
+green   = "#a6e3a1" 
+yellow  = "#fab387"    # Clock Orange Thinline
+blue    = "#89b4fa" 
+magenta = "#cba6f7" 
+cyan    = "#94e2d5" 
+white   = "#a6adc8" 
+
+[colors.selection]
+text = "#ffffff"
+background = "#313244" 
+
+[colors.vi_mode_cursor]
+text   = "#11111b"     # Updated for contrast against Green cursor
+cursor = "#a6e3a1"     # Green accent for VI mode

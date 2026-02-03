@@ -1,0 +1,112 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 4,
+
+    "modules-left": [
+        "custom/arch", 
+        "hyprland/workspaces", 
+        "custom/window_info"
+    ],
+
+    "modules-center": ["clock"],
+
+    "modules-right": [
+        "custom/system",
+        "custom/weather", 
+        "pulseaudio", 
+        "custom/wifi", 
+        "battery"
+    ],
+
+    "custom/arch": {
+        "format": "",
+        "on-click": "omarchy-menu",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{name}",
+        "persistent-workspaces": { "*": [1, 2, 3, 4] }
+    },
+
+    "custom/window_info": {
+        "exec": "python ~/.config/waybar/scripts/window_info.py",
+        "return-type": "json",
+        "interval": 1,
+        "format": "{}",
+        "max-length": 50
+    },
+
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "format-alt": "󰃭 {:%A, %d %B %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "left", // Moved to left for better alignment
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#11111b' background='#cba6f7'><b>  {}  </b></span>",
+                "days":       "<span color='#cdd6f4'>{}</span>",
+                "weeks":      "<span color='#94e2d5'><b>W{}</b></span>",
+                "weekdays":   "<span color='#fab387'><b>{}</b></span>",
+                // FIXED: Removed spaces inside the quotes to keep columns aligned
+                "today":      "<span color='#11111b' background='#f38ba8'><b>{}</b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "custom/system": {
+        "exec": "python ~/.config/waybar/scripts/system_info.py",
+        "return-type": "json",
+        "interval": 2,
+        "format": "{}", 
+        "on-click": "foot --title='System Monitor' sh -c 'btop' || alacritty -e htop", 
+        "tooltip": true
+    },
+
+    "custom/weather": {
+        "exec": "python ~/.config/waybar/scripts/weather.py",
+        "return-type": "json",
+        "interval": 1800,
+        "format": "{}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/wifi": {
+        "exec": "~/.config/waybar/scripts/wifi_info.sh",  // <--- CHANGED to .sh
+        "return-type": "json",
+        "interval": 5,
+        "format": "{}", 
+        "on-click": "omarchy-launch-wifi",
+        "tooltip": true
+    },
+
+    "battery": {
+        "interval": 2, // Check every 2 seconds instead of every 60
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󱐋 {icon} {capacity}%",
+        "format-plugged": " {icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+}

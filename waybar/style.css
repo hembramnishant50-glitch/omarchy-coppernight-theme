@@ -1,0 +1,108 @@
+/* -----------------------------------------------------
+   Global Reset
+   ----------------------------------------------------- */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+/* -----------------------------------------------------
+   Main Bar Window
+   ----------------------------------------------------- */
+window#waybar {
+    background-color: #11111b;
+    color: #cdd6f4;
+    border-bottom: 2px solid #fab387;
+}
+
+/* -----------------------------------------------------
+   Workspaces
+   ----------------------------------------------------- */
+#workspaces button {
+    padding: 0 10px;
+    color: #6c7086;
+    background: transparent;
+    border-bottom: 3px solid transparent; 
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: #fab387; /* Peach Active */
+    border-bottom: 3px solid #fab387;
+    background: rgba(250, 179, 135, 0.1);
+}
+
+/* -----------------------------------------------------
+   Module Styling
+   ----------------------------------------------------- */
+#custom-arch { color: #89b4fa; padding: 0 15px; font-size: 18px; }
+#custom-window_info { color: #b4befe; font-weight: bold; padding: 0 8px; }
+
+/* -----------------------------------------------------
+   Modules (Clock, Audio, Network, etc.)
+   ----------------------------------------------------- */
+#clock, 
+#pulseaudio, 
+#network, 
+#custom-weather, 
+#battery {
+    padding: 0 10px;
+    margin: 4px 2px; /* Adds space between modules */
+    border-radius: 10px; /* ROUNDNESS FIX for hover effects */
+    transition: background 0.3s ease;
+}
+
+/* Add a subtle hover effect to these text modules */
+#clock:hover, 
+#pulseaudio:hover, 
+#network:hover, 
+#custom-weather:hover, 
+#battery:hover {
+    background: rgba(88, 91, 112, 0.3);
+}
+
+/* Specific Colors */
+#clock { color: #cba6f7; font-weight: bold; }
+#custom-weather { color: #94e2d5; }
+#pulseaudio { color: #a6e3a1; }
+#network { color: #89dceb; }
+
+/* -----------------------------------------------------
+   System Module (The "Pill")
+   ----------------------------------------------------- */
+#custom-system { 
+    color: #cdd6f4; 
+    background: rgba(49, 50, 68, 0.5); 
+    border-radius: 12px; /* Increased Roundness */
+    margin: 4px 4px;
+    padding: 0 12px;
+}
+
+/* -----------------------------------------------------
+   Battery States
+   ----------------------------------------------------- */
+#battery { color: #f9e2af; }
+
+#battery.charging, #battery.plugged {
+    color: #a6e3a1; 
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+}
+
+/* -----------------------------------------------------
+   TOOLTIPS (The Main Fix)
+   ----------------------------------------------------- */
+tooltip {
+    background: #11111b; 
+    border: 2px solid #fab387; /* Peach Border */
+    border-radius: 08px; /* FIX: Smoother, rounder corners */
+}
+
+tooltip label {
+    font-family: "JetBrainsMono Nerd Font";
+    padding: 16px; /* More breathing room */
+}

@@ -1,0 +1,51 @@
+/* Color variables synced with your Waybar colors */
+@define-color selected-text #f38ba8;      /* Waybar Active Pink/Red */
+@define-color text #e6e6e6;               /* Matches text */
+@define-color base #11111b;               /* Deep Midnight Black */
+@define-color border #fab387;             /* Clock border colour */
+@define-color foreground #f2f2f2;         /* Foreground */
+@define-color background #11111b;         /* Deep Midnight Black */
+@define-color hover #89b4fa;              /* Waybar Menu Blue */
+@define-color selected-box #f38ba8;       /* Waybar Active Pink highlight */
+
+window .search-container,
+window .search {
+  background: alpha(@base, 0.6);         
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  color: @foreground;
+  border: 1px solid alpha(@border, 0.8); 
+  border-radius: 10px;
+  padding: 3px 16px;
+  margin-top: 1px;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.box-wrapper {
+  background: alpha(@base, 0.9);         
+  border: 1.5px solid @border;            
+  border-radius: 28px;
+}
+
+child:selected {
+  border-radius: 10px;
+  /* Pink highlight like active workspace */
+  background-color: alpha(@selected-box, 0.2); 
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+child:selected .item-box {
+  transition: transform 0.14s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(6px);
+}
+
+child:selected .item-box * {
+  color: @selected-text;                  /* Pink text like active workspace */
+}
+
+/* Added hover effect to match waybar menu blue */
+child:hover {
+  background-color: alpha(@hover, 0.1);
+  color: @hover;
+}

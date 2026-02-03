@@ -1,0 +1,51 @@
+# Omarchy BTOP Theme - Waybar & Walker Color Match
+
+# Main background (Empty for terminal transparency)
+theme[main_bg]=""
+theme[main_fg]="#e6e6e6"
+theme[inactive_fg]="#585b70"
+
+# Title and Highlights (Clock Orange & Menu Blue)
+theme[title]="#fab387"
+theme[hi_fg]="#89b4fa"
+theme[selected_bg]="#313244"
+theme[selected_fg]="#fab387"
+
+theme[graph_text]="#e6e6e6"
+theme[proc_misc]="#89b4fa"
+
+# Box Borders (Matched to your Hyprland/Waybar borders)
+theme[cpu_box]="#fab387"
+theme[mem_box]="#a6e3a1"
+theme[net_box]="#89b4fa"
+theme[proc_box]="#cba6f7"
+theme[div_line]="#313244"
+
+# Temperature Gradient (Blue -> Green -> Pink)
+theme[temp_start]="#89b4fa"
+theme[temp_mid]="#a6e3a1"
+theme[temp_end]="#f38ba8"
+
+# CPU Graph (Green -> Orange -> Pink)
+theme[cpu_start]="#a6e3a1"
+theme[cpu_mid]="#fab387"
+theme[cpu_end]="#f38ba8"
+
+# Memory Graph (Blue -> Mauve -> Pink)
+theme[mem_start]="#89b4fa"
+theme[mem_mid]="#cba6f7"
+theme[mem_end]="#f38ba8"
+
+# Network Graph (Blue -> Teal -> Green)
+theme[net_start]="#89b4fa"
+theme[net_mid]="#94e2d5"
+theme[net_end]="#a6e3a1"
+
+# Processes (Mauve -> Blue -> Green)
+theme[proc_start]="#cba6f7"
+theme[proc_mid]="#89b4fa"
+theme[proc_end]="#a6e3a1"
+
+# Bottom Bar
+theme[btm_bg]="#11111b"
+theme[btm_fg]="#e6e6e6"

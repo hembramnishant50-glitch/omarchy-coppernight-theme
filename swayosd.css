@@ -1,0 +1,74 @@
+/* Color variables synced with Waybar / Omarchy Theme */
+@define-color background-color #11111b;    /* Updated to Deep Midnight Black */
+@define-color border-color     #fab387;    /* Clock Orange Thinline */
+@define-color label            #e6e6e6;    /* Light Grey Text */
+@define-color image            #e6e6e6;    /* Icons */
+@define-color progress         #f38ba8;    /* Waybar Active Pink */
+
+window {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.osd,
+#osd,
+osd {
+  /* Using 0.85 alpha for a sleek, semi-transparent look over your windows */
+  background-color: alpha(@background-color, 0.85);
+  /* Thin border to match Hyprland and Waybar */
+  border: 1px solid @border-color;
+  border-radius: 15px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+image {
+  color: @image;
+  -gtk-icon-size: 32px;
+  margin: 0 16px 0 0;
+}
+
+label {
+  color: @label;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  font-weight: 700;
+}
+
+progressbar {
+  border-radius: 20px;
+  padding-bottom: 4px;
+  margin: 12px 0 0 0;
+  min-height: 10px;
+  min-width: 200px;
+}
+
+progressbar > trough {
+  /* Slightly adjusted trough for better contrast against #11111b */
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  border: none;
+  min-height: 10px;
+}
+
+progressbar > trough > progress {
+  /* Using the Pink accent from your Waybar workspaces */
+  background: @progress;
+  border-radius: 20px;
+  border: none;
+  min-height: 10px;
+}
+
+/* Fallback selectors for compatibility */
+progressbar trough {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+
+progressbar progress {
+  background: @progress;
+  border-radius: 20px;
+}

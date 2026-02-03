@@ -1,0 +1,91 @@
+/* =============================================================================
+   OMARCHY THEME - GTK Color Match
+   ============================================================================= */
+
+@define-color background     #000000;
+@define-color foreground     #e6e6e6;
+@define-color black          #11111b;
+@define-color red            #f38ba8;   /* Waybar Active Pink/Red */
+@define-color green          #a6e3a1;   /* Music/Wifi Green */
+@define-color yellow         #f9e2af;   /* Yellow */
+@define-color blue           #89b4fa;   /* Waybar Menu Blue */
+@define-color magenta        #cba6f7;   /* Mauve */
+@define-color cyan           #94e2d5;   /* Teal */
+@define-color white          #bac2de;
+@define-color bright_black   #313244;
+@define-color bright_red     #f38ba8;
+@define-color bright_green   #a6e3a1;
+@define-color bright_yellow  #fab387;   /* Waybar Clock Orange */
+@define-color bright_blue    #89b4fa;
+@define-color bright_magenta #cba6f7;
+@define-color bright_cyan    #94e2d5;
+@define-color bright_white   #a6adc8;
+
+/* Accent colors based on Waybar Blue and Pink */
+@define-color accent_bg_color @blue;
+@define-color accent_fg_color @background;
+@define-color accent_color @blue;
+
+@define-color window_bg_color @background;
+@define-color window_fg_color @foreground;
+
+@define-color view_bg_color @background;
+@define-color view_fg_color @foreground;
+@define-color sidebar_bg_color @background;
+@define-color sidebar_fg_color @foreground;
+
+/* Headerbar - Dark and Minimal */
+@define-color headerbar_bg_color alpha(@black, 0.8);
+@define-color headerbar_fg_color @foreground;
+@define-color headerbar_backdrop_color @background;
+@define-color headerbar_shade_color @background;
+@define-color card_bg_color alpha(@bright_black, 0.3);
+@define-color card_fg_color @foreground;
+
+/* Use the Orange border color for thin lines */
+@define-color borders @bright_yellow;
+
+@define-color theme_fg_color @foreground;
+@define-color theme_text_color @foreground;
+@define-color theme_bg_color @background;
+@define-color theme_base_color @black;
+@define-color theme_selected_bg_color @blue;
+@define-color theme_selected_fg_color @background;
+
+/* Message Dialogs */
+messagedialog {
+  background-color: @background;
+  border: 1px solid @bright_yellow; /* Thinline Orange Border */
+}
+
+messagedialog label {
+  color: @foreground;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+messagedialog button {
+  background-color: @black;
+  color: @foreground;
+  border: 1px solid @bright_black;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+messagedialog button:hover {
+  background-color: @blue;
+  color: @background;
+}
+
+/* Toast/Notifications */
+toast {
+  background-color: @black;
+  color: @foreground;
+  border: 1px solid @bright_yellow;
+  border-radius: 12px;
+}
+
+/* Fix SVG icons to match the new Blue accent */
+.svg-icon {
+  filter: sepia(100%) saturate(300%) hue-rotate(190deg) brightness(90%) contrast(100%);
+}
