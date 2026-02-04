@@ -62,7 +62,7 @@ The weather widget is set to **Purnia, India** by default. To change this to you
 Run the following command to install this theme:
 
 ```bash
-omarchy-theme-install [https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git)
+omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git]
 ```
 
 
