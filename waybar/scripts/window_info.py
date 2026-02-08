@@ -90,6 +90,7 @@ APP_MAP = {
     "ghostty":    ("", "#cba6f7", "Ghostty"),
     "kitty":      ("", "#cba6f7", "Kitty"),
     "alacritty":  ("", "#f9e2af", "Alacritty"),
+    "org.omarchy.terminal":  ("", "#f9e2af", "Terminal"),
     "code":       ("󰨞", "#007acc", "VS Code"),
     "nautilus":   ("", "#f2c94c", "Files"),
     "dolphin":    ("", "#3daee9", "Dolphin"),
