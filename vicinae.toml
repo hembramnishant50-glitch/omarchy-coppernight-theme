@@ -1,0 +1,32 @@
+[meta]
+version = 1
+name = "Omarchy"
+description = "Follow your Omarchy system theme."
+variant = "dark"
+inherits = "vicinae-dark"
+icon = "/home/atif/.local/share/omarchy/icon.png"
+
+[colors.core]
+background = "#1e1e2e"           # Aether @background
+foreground = "#cdd6f4"           # Aether @foreground
+secondary_background = "#313244" # Surface 0
+border = "#585b70"               # Surface 2
+accent = "#fab387"               # Peach (Copper) accent
+
+[colors.list.item.hover]
+background = "#45475a"           # Surface 1
+foreground = "#cdd6f4"
+
+[colors.list.item.selection]
+background = "#89b4fa"           # Blue selection (@color4)
+foreground = "#1e1e2e"           # Dark text on light selection
+
+[colors.accents]
+blue = "#89b4fa"                 # @color4
+green = "#a6e3a1"                # @color2
+magenta = "#cba6f7"              # Mauve (@color5)
+orange = "#fab387"               # Peach (Copper)
+purple = "#f5c2e7"               # Flamingo
+red = "#f38ba8"                  # @color1
+yellow = "#f9e2af"               # @color3
+cyan = "#94e2d5"                 # @color6

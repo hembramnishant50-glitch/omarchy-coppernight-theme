@@ -1,0 +1,26 @@
+name: "Omarchy: Copper Night"
+accent: "#fab387"         # Peach/Copper accent to match Omarchy theme
+cursor: "#fab387"         # Peach/Copper cursor for high visibility
+background: "#1e1e2e"     # Aether Base
+foreground: "#cdd6f4"     # Aether Text
+details: darker
+
+terminal_colors:
+  normal:
+    black:   "#45475a"    # Surface 1
+    red:     "#f38ba8"    # Red
+    green:   "#a6e3a1"    # Green
+    yellow:  "#f9e2af"    # Yellow
+    blue:    "#89b4fa"    # Blue
+    magenta: "#cba6f7"    # Mauve
+    cyan:    "#94e2d5"    # Teal
+    white:   "#bac2de"    # Subtext 1
+  bright:
+    black:   "#585b70"    # Surface 2
+    red:     "#f38ba8"    # Red
+    green:   "#a6e3a1"    # Green
+    yellow:  "#f9e2af"    # Yellow
+    blue:    "#89b4fa"    # Blue
+    magenta: "#cba6f7"    # Mauve
+    cyan:    "#94e2d5"    # Teal
+    white:   "#cdd6f4"    # Text

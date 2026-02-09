@@ -1,0 +1,55 @@
+/* Omarchy: Copper Night - Wofi Theme */
+@define-color bg #1e1e2e;           /* Aether Base */
+@define-color fg #cdd6f4;           /* Aether Text */
+@define-color copper #fab387;       /* Peach/Copper Accent */
+@define-color surface #313244;     /* Surface 0 */
+@define-color overlay #585b70;      /* Surface 2 */
+@define-color blue #89b4fa;         /* Blue Accent */
+@define-color selection alpha(@copper, 0.2);
+
+window {
+    background-color: @bg;
+    border: 2px solid @copper;      /* Copper border for the launcher */
+    border-radius: 12px;
+}
+
+input {
+    background-color: @surface;
+    color: @fg;
+    border: 1px solid @overlay;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 5px 10px;
+}
+
+input:focus {
+    border: 1px solid @blue;
+}
+
+#entry {
+    color: @fg;
+    background-color: transparent;
+    padding: 8px;
+    margin: 2px 10px;
+    border-radius: 8px;
+}
+
+#entry:selected {
+    background-color: @selection;
+    color: @copper;                 /* Text turns copper when selected */
+    border-left: 3px solid @copper; /* Adds a clean indicator line */
+}
+
+scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+scrollbar slider {
+    background-color: @overlay;
+    border-radius: 5px;
+}
+
+scrollbar slider:hover {
+    background-color: @copper;
+}

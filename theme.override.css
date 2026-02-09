@@ -1,0 +1,122 @@
+/* Aether Theme Override - Catppuccin Mocha Palette
+ * Automatically generated to sync system GTK with Omarchy: Copper Night
+ */
+
+/* Dynamic Color Palette */
+@define-color background #1e1e2e;
+@define-color foreground #cdd6f4;
+
+@define-color color0 #45475a;  /* Surface 1 */
+@define-color color1 #f38ba8;  /* Red/Pink (Accent) */
+@define-color color2 #a6e3a1;  /* Green */
+@define-color color3 #f9e2af;  /* Yellow */
+@define-color color4 #89b4fa;  /* Blue */
+@define-color color5 #cba6f7;  /* Mauve */
+@define-color color6 #94e2d5;  /* Teal */
+@define-color color7 #bac2de;  /* Subtext 1 */
+@define-color color8 #585b70;  /* Surface 2 */
+@define-color color9 #f38ba8;
+@define-color color10 #a6e3a1;
+@define-color color11 #f9e2af;
+@define-color color12 #89b4fa;
+@define-color color13 #cba6f7;
+@define-color color14 #94e2d5;
+@define-color color15 #a6adc8; /* Subtext 0 */
+
+/* Base GTK theme variables */
+@define-color theme_bg_color @background;
+@define-color theme_fg_color @foreground;
+@define-color theme_base_color @background;
+@define-color theme_text_color @foreground;
+@define-color theme_selected_bg_color @color4;
+@define-color theme_selected_fg_color @background;
+@define-color insensitive_bg_color alpha(@background, 0.5);
+@define-color insensitive_fg_color alpha(@foreground, 0.5);
+@define-color insensitive_base_color @background;
+
+/* Adwaita & Libadwaita Color Overrides */
+@define-color accent_bg_color @color4;
+@define-color accent_fg_color @background;
+@define-color accent_color @color6;
+
+@define-color window_bg_color @background;
+@define-color window_fg_color @foreground;
+
+/* Sidebar and View Content */
+@define-color view_bg_color @background;
+@define-color view_fg_color @foreground;
+@define-color sidebar_bg_color @background;
+@define-color sidebar_fg_color @foreground;
+@define-color sidebar_backdrop_color @background;
+
+@define-color headerbar_bg_color alpha(@foreground, 0.05);
+@define-color headerbar_fg_color @foreground;
+@define-color headerbar_border_color alpha(@foreground, 0.15);
+
+@define-color card_bg_color alpha(@foreground, 0.03);
+@define-color card_fg_color @foreground;
+
+@define-color popover_bg_color @background;
+@define-color popover_fg_color @foreground;
+
+@define-color dialog_bg_color @background;
+@define-color dialog_fg_color @foreground;
+
+/* System States */
+@define-color destructive_bg_color @color1;
+@define-color destructive_fg_color @foreground;
+@define-color success_bg_color @color2;
+@define-color success_fg_color @background;
+@define-color warning_bg_color @color3;
+@define-color warning_fg_color @background;
+@define-color error_bg_color @color1;
+
+@define-color borders alpha(@foreground, 0.15);
+
+/* Widgets & Inputs */
+@define-color menu_bg_color @background;
+@define-color menu_fg_color @foreground;
+
+@define-color entry_bg_color alpha(@foreground, 0.03);
+@define-color entry_fg_color @foreground;
+
+@define-color button_bg_color alpha(@foreground, 0.05);
+@define-color button_fg_color @foreground;
+
+@define-color tooltip_bg_color @background;
+@define-color tooltip_fg_color @foreground;
+
+/* Dropdown & List selection */
+@define-color dropdown_bg_color @background;
+@define-color dropdown_fg_color @foreground;
+@define-color dropdown_hover_bg_color alpha(@color4, 0.3);
+@define-color dropdown_selected_bg_color @color4;
+@define-color dropdown_selected_fg_color @background;
+
+/* Scrollbars */
+@define-color scrollbar_slider_color alpha(@foreground, 0.3);
+@define-color scrollbar_slider_hover_color alpha(@foreground, 0.5);
+@define-color scrollbar_slider_active_color @color4;
+
+/* Links and Selections */
+@define-color link_color @color4;
+@define-color link_visited_color @color5;
+@define-color selection_bg_color @color4;
+@define-color selection_fg_color @background;
+
+/* Placeholder/Labels */
+@define-color placeholder_text_color alpha(@foreground, 0.5);
+@define-color dim_label_color alpha(@foreground, 0.55);
+
+/* Hyprland-inspired Styling */
+* {
+    /* If you prefer slightly rounded corners, change 0 to 8px or 12px */
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.svg-icon {
+    /* Recolors icons to match Catppuccin Text color */
+    filter: invert(79%) sepia(18%) saturate(611%) hue-rotate(192deg)
+        brightness(103%) contrast(94%);
+}

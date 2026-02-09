@@ -1,0 +1,100 @@
+{
+    "$schema": "vscode://schemas/color-theme",
+    "name": "Omarchy: Copper Night",
+    "type": "dark",
+    "colors": {
+        // Core Palette Sync
+        "editor.background": "#1e1e2e",
+        "editor.foreground": "#cdd6f4",
+        "sideBar.background": "#181825",
+        "activityBar.background": "#11111b",
+        "statusBar.background": "#11111b",
+        "statusBar.foreground": "#cdd6f4",
+        "titleBar.activeBackground": "#11111b",
+        
+        // Accents & Selection
+        "accentColor": "#fab387", 
+        "selection.background": "#585b7060",
+        "editor.selectionBackground": "#585b7060",
+        "list.activeSelectionBackground": "#313244",
+        "list.hoverBackground": "#31324499",
+        "list.activeSelectionForeground": "#fab387",
+
+        // Inputs & Widgets
+        "input.background": "#313244",
+        "input.foreground": "#cdd6f4",
+        "dropdown.background": "#313244",
+        "editorWidget.background": "#1e1e2e",
+        "editorWidget.border": "#fab387",
+
+        // Gutter & Lines
+        "editorLineNumber.foreground": "#6c7086",
+        "editorLineNumber.activeForeground": "#cdd6f4",
+        "editorIndentGuide.background": "#313244",
+        "editorIndentGuide.activeBackground": "#585b70",
+
+        // Terminal (Synced with your CAVA/Vicinae)
+        "terminal.background": "#1e1e2e",
+        "terminal.ansiBlack": "#45475a",
+        "terminal.ansiRed": "#f38ba8",
+        "terminal.ansiGreen": "#a6e3a1",
+        "terminal.ansiYellow": "#f9e2af",
+        "terminal.ansiBlue": "#89b4fa",
+        "terminal.ansiMagenta": "#cba6f7",
+        "terminal.ansiCyan": "#94e2d5",
+        "terminal.ansiWhite": "#bac2de",
+        "terminalCursor.foreground": "#fab387"
+    },
+    "tokenColors": [
+        {
+            "name": "Comments",
+            "scope": ["comment", "punctuation.definition.comment"],
+            "settings": { "foreground": "#6c7086", "fontStyle": "italic" }
+        },
+        {
+            "name": "Keywords & Control",
+            "scope": ["keyword", "storage.type", "storage.modifier"],
+            "settings": { "foreground": "#cba6f7" }
+        },
+        {
+            "name": "Functions",
+            "scope": ["entity.name.function", "support.function"],
+            "settings": { "foreground": "#89b4fa" }
+        },
+        {
+            "name": "Strings",
+            "scope": ["string"],
+            "settings": { "foreground": "#a6e3a1" }
+        },
+        {
+            "name": "Variables",
+            "scope": ["variable", "entity.name.variable"],
+            "settings": { "foreground": "#cdd6f4" }
+        },
+        {
+            "name": "Parameters",
+            "scope": ["variable.parameter"],
+            "settings": { "foreground": "#eba0ac", "fontStyle": "italic" }
+        },
+        {
+            "name": "Constants & Numbers",
+            "scope": ["constant.numeric", "constant.language"],
+            "settings": { "foreground": "#fab387" }
+        },
+        {
+            "name": "Types",
+            "scope": ["entity.name.type", "support.type"],
+            "settings": { "foreground": "#f9e2af" }
+        },
+        {
+            "name": "Classes",
+            "scope": ["entity.name.class", "support.class"],
+            "settings": { "foreground": "#f9e2af" }
+        },
+        {
+            "name": "Markup Headings",
+            "scope": ["markup.heading"],
+            "settings": { "foreground": "#89b4fa", "fontStyle": "bold" }
+        }
+    ]
+}

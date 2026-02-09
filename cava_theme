@@ -1,0 +1,13 @@
+[color]
+gradient = 1
+gradient_count = 8
+
+# Aether/Catppuccin Mocha Gradient
+gradient_color_1 = '#94e2d5' # Teal (@color6)
+gradient_color_2 = '#89dceb' # Sky
+gradient_color_3 = '#89b4fa' # Blue (@color4)
+gradient_color_4 = '#b4befe' # Lavender
+gradient_color_5 = '#cba6f7' # Mauve (@color5)
+gradient_color_6 = '#f38ba8' # Pink/Red (@color1)
+gradient_color_7 = '#eba0ac' # Maroon
+gradient_color_8 = '#fab387' # Peach/Copper (@color3ish)

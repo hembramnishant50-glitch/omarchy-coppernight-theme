@@ -1,0 +1,83 @@
+/**
+ * @name Omarchy
+ * @author @bypass_
+ * @version 0.1.1
+ * @description Fully synced Omarchy theme using #11111b base and Walker.css accents.
+ * @source https://github.com/imbypass/base16-Discord
+ **/
+
+@import url("https://imbypass.github.io/base16-discord/omarchy-discord.theme.css");
+
+:root {
+    /* --- Main Background Colors --- */
+    --color00: #11111b; /* Base Background */
+    --color01: #181825; /* Mantle (Slightly lighter sidebar) */
+    --color02: #1e1e2e; /* Surface (Inputs/Cards) */
+    
+    /* --- Text Hierarchy --- */
+    --color03: #6c7086; /* Muted text */
+    --color04: #a6adc8; /* Subtext */
+    --color05: #f2f2f2; /* Main Foreground (@foreground) */
+    --color06: #e6e6e6; /* Regular Text (@text) */
+    --color07: #ffffff; /* Brightest white */
+
+    /* --- Accents (Synced with Walker.css) --- */
+    --color08: #f38ba8; /* Pink - Selected Box/Active (@selected-text) */
+    --color09: #fab387; /* Orange - Border/Clock accent (@border) */
+    --color10: #f9e2af; /* Yellow */
+    --color11: #a6e3a1; /* Green */
+    --color12: #94e2d5; /* Teal */
+    --color13: #89b4fa; /* Blue - Hover states (@hover) */
+    --color14: #cba6f7; /* Mauve/Purple */
+    --color15: #fab387; /* Secondary Orange highlight */
+
+    /* --- Vencord Specific Overrides --- */
+    --accent-color: var(--color08);
+    --mention-highlight: rgba(243, 139, 168, 0.15);
+    --modifier-selected: rgba(243, 139, 168, 0.25);
+    --home-background: var(--color00);
+}
+
+/* --- UI Polish to match Walker.css style --- */
+
+/* Sidebar & Channel Selection */
+.wrapper_d8bfb3.selected_d8bfb3 .childWrapper_d8bfb3 {
+    background-color: var(--color08) !important;
+    color: var(--color00);
+}
+
+/* Match the 10px rounding from your Walker search bar */
+.searchBar_f0963d, .inner_c59af0, .container_eedf04 {
+    border-radius: 10px !important;
+}
+
+/* Add the orange border to the search bar like in Walker */
+.searchBar_f0963d {
+    border: 1px solid rgba(254, 179, 135, 0.5);
+    transition: border 0.2s ease;
+}
+
+.searchBar_f0963d:focus-within {
+    border: 1px solid var(--color09);
+}
+
+/* Scrollbar syncing */
+::-webkit-scrollbar-thumb {
+    background-color: var(--color01) !important;
+    border: 2px solid var(--color00);
+    border-radius: 10px;
+}
+
+/* Mentions and Active states */
+.interactive_f5eb3a:hover {
+    background-color: rgba(137, 180, 250, 0.1) !important; /* @hover blue alpha */
+    color: var(--color13) !important;
+}
+
+.selected_f5eb3a {
+    background-color: rgba(243, 139, 168, 0.2) !important; /* @selected-box pink alpha */
+}
+
+.selected_f5eb3a .layout_f5eb3a * {
+    color: var(--color08) !important;
+}
