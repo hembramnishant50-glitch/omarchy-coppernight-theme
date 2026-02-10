@@ -68,9 +68,6 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 ## 🔒 Hyprlock Setup
 
 Note : Use this after 🚀 Easy Installation (One-Line) 
-To enable the custom lock screen and media controls, follow these steps:
-
-### 🔒 Hyprlock & Media Setup
 
 To enable the custom lock screen and fix media controls, run the following commands:
 
