@@ -65,6 +65,17 @@ Run the following command to install this theme:
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
 ```
 
+## 🔒 Hyprlock Setup
+
+To enable the custom lock screen and media controls, follow these steps:
+
+### 1. Install Dependencies & Fix Spotify
+First, install `playerctl` and apply the necessary Flatpak permissions for Spotify integration.
+
+```bash
+sudo pacman -S --needed playerctl && \
+flatpak override --user --talk-name=org.mpris.MediaPlayer2.spotify com.spotify.Client
+```
 
 ## 🚀 Easy Installation (One-Line)
 
