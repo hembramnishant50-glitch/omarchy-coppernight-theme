@@ -33,6 +33,14 @@ A high-performance **Hyprland** rice for Omarchy featuring a custom **Tokyo Nigh
 ---
 ## ⚙️ Configuration
 
+## Installation Only Theme
+
+Run the following command to install this theme:
+
+```bash
+omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
+```
+
 ### 🌤️ Changing the Weather Location
 The weather widget is set to **New York** by default. To change this to your city:
 
@@ -56,14 +64,6 @@ The weather widget is set to **New York** by default. To change this to your cit
     killall waybar; waybar &
     ```
 
-
-## Installation Only Theme
-
-Run the following command to install this theme:
-
-```bash
-omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
-```
 
 ## 🔒 Hyprlock Setup
 
