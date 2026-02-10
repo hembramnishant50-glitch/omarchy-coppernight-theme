@@ -121,14 +121,14 @@ To change your **Profile Picture** or **Background Wallpaper**, you need to edit
     ```ini
     background {
         monitor =
-        path = /home/nishant/Pictures/my-wallpaper.jpg   # <--- Change this path
+        path = /home/user/Pictures/my-wallpaper.jpg   # <--- Change this path
         color = rgba(25, 20, 20, 1.0)
         blur_passes = 0
     }
 
     image {
         monitor =
-        path = /home/nishant/Pictures/me.png             # <--- Change this path
+        path = /home/user/Pictures/me.png             # <--- Change this path
         size = 150
         ...
     }
