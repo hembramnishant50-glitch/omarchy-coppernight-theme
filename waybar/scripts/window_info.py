@@ -132,6 +132,8 @@ APP_MAP = {
     "gmail":          ("", "#ea4335", "Gmail"),
     "outlook":        ("", "#0078d4", "Outlook"),
     "hey":            ("󰮏", "#ffcc00", "HEY Mail"),
+    "basecamp":            ("", "#ffcc00", "basecamp"),
+    
 
     
 
@@ -160,6 +162,28 @@ APP_MAP = {
     "calculator":     ("", "#4193f4", "Calculator"),
     "keypunch":       ("", "#ff4081", "Keypunch"),
     "bazaar":                             ("", "#e74c3c", "Bazaar"),
+    "Com-abdownloadmanager-desktop-appkt": ("󰇚", "#00aaff", "AB Download Manager"),
+    "aether":         ("󰑭", "#a29bfe", "Aether"),
+    "typora": ("󰂺", "#b4637a", "Typora"),
+
+    # --- DOWNLOAD MANAGERS ---
+    "com.abdownloadmanager.abdownloadmanager": ("󰇚", "#00aaff", "AB Download Manager"),
+    "abdownloadmanager":                       ("󰇚", "#00aaff", "AB Download Manager"),
+    "qbittorrent":                             ("󱑢", "#3b4ba4", "qBittorrent"),
+    "transmission":             ("󰇚", "#e63946", "Transmission"),
+    "deluge":                   ("󱑢", "#49a010", "Deluge"),
+    "aria2":                    ("󰈚", "#f1c40f", "Aria2"),
+    "motrix":         ("󰇚", "#ff4a00", "Motrix"),
+    "xdm":            ("󱑢", "#2c3e50", "XDM"),
+    "uget":           ("󰈚", "#fa8e3c", "uGet"),
+    "jdownloader":    ("󱑣", "#ff9000", "JDownloader"),
+    "persepolis":     ("󰈚", "#34495e", "Persepolis"),
+    "fdm":            ("󰇚", "#00aaff", "FDM"),
+    "kget":           ("󱑢", "#3daee9", "KGet"),
+
+    
+
+
 
     # --- 7. WEB SERVICES & SHOPPING ---
     "github":         ("", "#ffffff", "GitHub"),
