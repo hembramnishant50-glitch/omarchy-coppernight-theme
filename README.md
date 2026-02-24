@@ -162,7 +162,7 @@ killall waybar && waybar &
 
 | Widget | Description |
 |:---|:---|
-| `1 2 3 4 5 6` | Workspace switcher with neon pill borders |
+| `1 2 3 4` | Workspace switcher with neon pill borders |
 | `Omarchy OS` | Active window title |
 | `🕐 06:59 PM` | Clock — center-aligned |
 | `⊞ 2% 🔄 30%` | CPU & RAM usage |
