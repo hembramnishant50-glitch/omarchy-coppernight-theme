@@ -347,7 +347,6 @@ image {
 
 </div>
 
-> 💡 **How to set a wallpaper:** Wallpapers are set automatically by the theme. To manually change, edit your `hyprpaper.conf` or use `omarchy-wallpaper-set`.
 
 <br>
 
