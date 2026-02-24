@@ -336,7 +336,7 @@ image {
 
 | | |
 |:---:|:---:|
-| ![Image](https://github.com/user-attachments/assets/522c7509-d478-4d8c-a3db-e6b7ed36b987) | <img src="wallpapers/Character_with_Glowing_Eyes_and_Katana.jpg" width="100%" alt="Character with Glowing Eyes and Katana"> |
+| ![Image](https://github.com/user-attachments/assets/522c7509-d478-4d8c-a3db-e6b7ed36b987)" width="100%" alt="Japanese Castle Pixel Art">  | <img src="wallpapers/Character_with_Glowing_Eyes_and_Katana.jpg" width="100%" alt="Character with Glowing Eyes and Katana"> |
 | 🏯 **Mountain Castle** · *Pixel Art* | ⚔️ **The Last Swordsman** · *Dark Fantasy* |
 | <img src="wallpapers/Girl_with_Hannya_Mask.jpeg" width="100%" alt="Girl with Hannya Mask"> | <img src="wallpapers/Itachi_Uchiha.jpg" width="100%" alt="Itachi Uchiha with Crows"> |
 | 👺 **Girl & Hannya** · *Monochrome Yokai* | 🪶 **Itachi & The Crows** · *Akatsuki* |
