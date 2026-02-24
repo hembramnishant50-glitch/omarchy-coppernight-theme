@@ -367,7 +367,7 @@ Got ideas? Found a bug? Contributions are warmly welcome!
 
 <div align="center">
 
-Made with 🧡 and deep indigo ink
+Made with 🧡 Omarchy
 
 *If this theme made your desktop beautiful, consider leaving a ⭐ — it means a lot!*
 
