@@ -1,4 +1,4 @@
-/* Color variables synced with your Waybar colors */
+/* Color variables with your Waybar colors */
 @define-color selected-text #f38ba8;      /* Waybar Active Pink/Red */
 @define-color text #e6e6e6;               /* Matches text */
 @define-color base #11111b;               /* Deep Midnight Black */
