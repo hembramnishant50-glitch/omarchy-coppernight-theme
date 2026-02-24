@@ -1,0 +1,85 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", Bold;
+    font-size: 14px;
+    border: none;
+    min-height: 0;
+}
+
+window#waybar { 
+    background-color: transparent; 
+}
+
+/* Common Pill Structure */
+#custom-menu, #workspaces, #clock, #custom-system, #custom-weather, 
+#custom-wifi, #pulseaudio, #custom-battery, #custom-power, #drawer#websites, #custom-window {
+    background-color: rgba(17, 17, 27, 0.9);
+    padding: 4px 16px;
+    margin: 6px 4px;
+    border-radius: 24px;
+    border: 1.5px solid;
+    min-height: 26px;
+    transition: all 0.3s ease; /* Adds smooth hover effect */
+}
+
+/* --- WIFI & NETWORK PILL --- */
+#custom-wifi { 
+    color: #a6e3a1; 
+    border-color: #a6e3a1; 
+}
+
+/* Red border/text when disconnected (based on script class) */
+#custom-wifi.disconnected {
+    color: #f38ba8;
+    border-color: #f38ba8;
+}
+
+/* --- OTHER MODULES --- */
+#custom-menu { 
+    color: #89dceb; 
+    border-color: #89dceb; 
+    font-size: 18px;
+}
+
+#custom-power { 
+    color: #f38ba8; 
+    border-color: #f38ba8; 
+    font-size: 18px;
+}
+
+#custom-window { color: #cba6f7; border-color: #cba6f7; font-weight: bold; }
+
+#workspaces { color: #f38ba8; border-color: #f38ba8; }
+#workspaces button { color: #f9e2af; padding: 0 6px; }
+#workspaces button.active { color: #f38ba8; }
+
+#clock { color: #f9e2af; border-color: #fab387; }
+#custom-system  { color: #94e2d5; border-color: #94e2d5; }
+#custom-weather { color: #f38ba8; border-color: #f38ba8; }
+#pulseaudio     { color: #b4befe; border-color: #89b4fa; }
+#custom-battery { color: #a6e3a1; border-color: #a6e3a1; }
+
+#custom-battery.charging {
+    color: #f9e2af; border-color: #f9e2af;
+    animation: charging-glow 1.5s infinite alternate linear;
+}
+
+@keyframes charging-glow { 
+    to { background-color: rgba(249, 226, 175, 0.3); } 
+}
+
+#drawer#websites { color: #cba6f7; border-color: #cba6f7; }
+.web-icons label { margin: 0 10px; font-size: 18px; }
+
+/* Tooltips */
+tooltip { 
+    background: rgba(17, 17, 27, 0.95); 
+    border: 1.5px solid #fab387; 
+    border-radius: 15px; 
+}
+
+tooltip label { 
+    font-family: "JetBrainsMono Nerd Font"; 
+    font-size: 15px; 
+    color: #cdd6f4; 
+    padding: 12px; 
+}

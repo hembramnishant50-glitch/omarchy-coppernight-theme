@@ -1,0 +1,117 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin": "2 0 0 2",
+    "spacing": 0,
+
+    "modules-left": ["custom/menu", "hyprland/workspaces", "custom/window"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "drawer#websites", 
+        "custom/system", 
+        "custom/weather", 
+        "custom/wifi", // This now uses your script
+        "pulseaudio", 
+        "custom/battery", 
+        "custom/power"
+    ],
+
+    "custom/menu": {
+        "format": "<span font='omarchy'>\ue900</span>",
+        "on-click": "omarchy-menu",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "persistent-workspaces": { "*": [1, 2, 3, 4] }
+    },
+
+    "custom/window": {
+        "exec": "~/.config/waybar/scripts/window_info.py",
+        "return-type": "json",
+        "interval": 1,
+        "format": "{}"
+    },
+
+    "clock": {
+        "format": "󱑂 {:%I:%M %p}",
+        "format-alt": "󰃭 {:%A, %d %B %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months":   "<span color='#f9e2af'><b>{}</b></span>",
+                "days":     "<span color='#cdd6f4'>{}</span>",
+                "weeks":    "<span color='#94e2d5'>W{}</span>",
+                "weekdays": "<span color='#fab387'><b>{}</b></span>",
+                "today":    "<span color='#f38ba8'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "drawer#websites": {
+        "transition-duration": 500,
+        "children-class": "web-icons",
+        "format": "󰖟",
+        "modules": [
+            "custom/careerwill", "custom/google", "custom/youtube", "custom/github", 
+            "custom/chatgpt", "custom/reddit", "custom/discord", "custom/whatsapp",
+            "custom/spotify"
+        ]
+    },
+
+    "custom/wifi": {
+        "exec": "~/.config/waybar/scripts/wifi_info.sh",
+        "return-type": "json",
+        "format": "{}",
+        "interval": 1,
+        "on-click": "omarchy-launch-wifi",
+        "max-length": 50,
+        "tooltip": true
+    },
+
+    "custom/system": {
+    "exec": "~/.config/waybar/scripts/system_info.py",
+    "return-type": "json",
+    "interval": 2,
+    "on-click": "omarchy-launch-or-focus-tui 'btop'"
+    },
+    
+    "custom/weather": { "exec": "~/.config/waybar/scripts/weather.py", "return-type": "json", "interval": 3600 },
+    "custom/battery": {
+    "exec": "~/.config/waybar/scripts/battery.py",
+    "return-type": "json",
+    "interval": 5,
+    "format": "{}",
+    "on-click": "omarchy-menu power"
+    },
+    
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": ["", "", ""],
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": { "format": "󰐥", "on-click": "omarchy-menu system", "tooltip": false },
+
+    /* WEBSITE MODULES */
+    "custom/careerwill": { "format": "󰑴", "on-click": "xdg-open https://careerwill.com", "tooltip": false },
+    "custom/google":     { "format": "", "on-click": "xdg-open https://google.com",     "tooltip": false },
+    "custom/youtube":    { "format": "󰗃", "on-click": "xdg-open https://youtube.com",    "tooltip": false },
+    "custom/github":     { "format": "", "on-click": "xdg-open https://github.com",     "tooltip": false },
+    "custom/chatgpt":    { "format": "󰭻", "on-click": "xdg-open https://chat.openai.com","tooltip": false },
+    "custom/reddit":     { "format": "", "on-click": "xdg-open https://reddit.com",     "tooltip": false },
+    "custom/discord":    { "format": "󰙯", "on-click": "xdg-open https://discord.com",    "tooltip": false },
+    "custom/whatsapp":   { "format": "󰖣", "on-click": "xdg-open https://web.whatsapp.com","tooltip": false },
+    "custom/spotify":    { "format": "󰓇", "on-click": "xdg-open https://spotify.com",    "tooltip": false }
+}
