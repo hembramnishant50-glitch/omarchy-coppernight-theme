@@ -3,12 +3,6 @@ decorations = "none"
 padding = { x = 10, y = 10 }
 opacity = 0.75 
 
-[font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-size = 11.0
-
 [colors.primary]
 background = "#11111b" # Updated: Deep Midnight Black
 foreground = "#e6e6e6"
