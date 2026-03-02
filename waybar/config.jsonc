@@ -21,7 +21,7 @@
     ],
 
     "custom/arch": {
-        "format": "",
+        "format": "",
         "on-click": "omarchy-menu",
         "tooltip": false
     },
@@ -33,7 +33,7 @@
     },
 
     "custom/window_info": {
-        "exec": "python ~/.config/waybar/scripts/window_info.py",
+        "exec": "python3 ~/.config/waybar/scripts/window_info.py",
         "return-type": "json",
         "interval": 1,
         "format": "{}",
@@ -41,20 +41,19 @@
     },
 
     "clock": {
-        "format": " {:%I:%M %p}",
+        "format": " {:%I:%M %p}",
         "format-alt": "󰃭 {:%A, %d %B %Y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode"          : "month",
             "mode-mon-col"  : 3,
-            "weeks-pos"     : "left", // Moved to left for better alignment
+            "weeks-pos"     : "left",
             "on-scroll"     : 1,
             "format": {
                 "months":     "<span color='#11111b' background='#cba6f7'><b>  {}  </b></span>",
                 "days":       "<span color='#cdd6f4'>{}</span>",
                 "weeks":      "<span color='#94e2d5'><b>W{}</b></span>",
                 "weekdays":   "<span color='#fab387'><b>{}</b></span>",
-                // FIXED: Removed spaces inside the quotes to keep columns aligned
                 "today":      "<span color='#11111b' background='#f38ba8'><b>{}</b></span>"
             }
         },
@@ -66,7 +65,7 @@
     },
 
     "custom/system": {
-        "exec": "python ~/.config/waybar/scripts/system_info.py",
+        "exec": "python3 ~/.config/waybar/scripts/system_info.py",
         "return-type": "json",
         "interval": 2,
         "format": "{}", 
@@ -75,11 +74,11 @@
     },
 
     "custom/weather": {
-    "exec": "~/.config/waybar/scripts/weather.py", // Use full path
-    "return-type": "json",
-    "interval": 600,
-    "format": "{}",
-    "tooltip": true
+        "exec": "~/.config/waybar/scripts/weather.py",
+        "return-type": "json",
+        "interval": 600,
+        "format": "{}",
+        "tooltip": true
     },
 
     "pulseaudio": {
@@ -90,7 +89,7 @@
     },
 
     "custom/wifi": {
-        "exec": "~/.config/waybar/scripts/wifi_info.sh",  // <--- CHANGED to .sh
+        "exec": "~/.config/waybar/scripts/wifi_info.sh",
         "return-type": "json",
         "interval": 5,
         "format": "{}", 
@@ -99,15 +98,15 @@
     },
 
     "battery": {
-        "interval": 2, // Check every 2 seconds instead of every 60
+        "interval": 2,
         "states": {
             "warning": 30,
             "critical": 15
         },
         "format": "{icon} {capacity}%",
         "format-charging": "󱐋 {icon} {capacity}%",
-        "format-plugged": " {icon} {capacity}%",
-        "format-icons": ["", "", "", "", ""],
+        "format-plugged": " {icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
         "max-length": 25
-    },
+    }
 }

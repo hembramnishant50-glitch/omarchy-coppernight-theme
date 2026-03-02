@@ -2,7 +2,7 @@ import subprocess
 import json
 import hashlib
 import random
-import re  # <--- ADDED THIS FOR REMOVING (33)
+import re
 
 # --- CONFIGURATION ---
 MAX_TITLE_LEN = 35 
@@ -28,11 +28,11 @@ APP_MAP = {
 
     # --- 2. WEB BROWSERS (Flathub Versions) ---
     "io.github.zen_browser.zen":      ("󰈹", "#4f4f4f", "Zen Browser"),
-    "org.mozilla.firefox":            ("", "#ff7139", "Firefox"),
-    "com.brave.Browser":              ("", "#ff1a1a", "Brave"),
+    "org.mozilla.firefox":            ("", "#ff7139", "Firefox"),
+    "com.brave.Browser":              ("", "#ff1a1a", "Brave"),
     "org.qutebrowser.qutebrowser":    ("󰈹", "#8dc21f", "qutebrowser"),
     "io.gitlab.librewolf-community":  ("󰈹", "#3269d6", "LibreWolf"),
-    "com.vivaldi.Vivaldi":            ("", "#ef3939", "Vivaldi"),
+    "com.vivaldi.Vivaldi":            ("", "#ef3939", "Vivaldi"),
     "net.mullvad.MullvadBrowser":     ("󰇚", "#3c9519", "Mullvad Browser"),
 
     # --- 3. DEVELOPMENT & SYSTEM (Flathub Versions) ---
@@ -40,15 +40,15 @@ APP_MAP = {
     "com.vscodium.codium":            ("󰨞", "#23a7d2", "VSCodium"),
     "com.github.tchx84.Flatseal":     ("󱓷", "#3eb34f", "Flatseal"),
     "io.missioncenter.MissionCenter": ("󱓟", "#3584e4", "Mission Center"),
-    "io.github.flattool.Warehouse":   ("", "#ff9500", "Warehouse"),
+    "io.github.flattool.Warehouse":   ("", "#ff9500", "Warehouse"),
 
     # --- 4. MEDIA & DESIGN (Flathub Versions) ---
     "org.videolan.VLC":               ("󰕼", "#ff9900", "VLC"),
     "io.github.celluloid_player.Celluloid": ("󰕼", "#5e5ce6", "MPV/Celluloid"),
     "io.bassi.Amberol":               ("󰎆", "#f8d210", "Amberol"),
-    "org.gimp.GIMP":                  ("", "#5c5543", "GIMP"),
-    "org.inkscape.Inkscape":          ("", "#ffffff", "Inkscape"),
-    "org.kde.kdenlive":               ("", "#3daee9", "Kdenlive"),
+    "org.gimp.GIMP":                  ("", "#5c5543", "GIMP"),
+    "org.inkscape.Inkscape":          ("", "#ffffff", "Inkscape"),
+    "org.kde.kdenlive":               ("", "#3daee9", "Kdenlive"),
     "org.upscayl.Upscayl":            ("󰭹", "#ff4500", "Upscayl"),
 
     # --- 5. UTILITIES (Flathub Versions) ---
@@ -57,14 +57,14 @@ APP_MAP = {
     "com.github.unhndrd.pdfarranger": ("󰈦", "#f1c40f", "PDF Arranger"),
     "com.bitwarden.desktop":          ("󰞀", "#175DDC", "Bitwarden"),
     "io.github.hlubek.Eyedropper":    ("󰈊", "#3584e4", "Eyedropper"),
-    "io.github.kolunmi.Bazaar": ("", "#5da7e4", "Bazaar Weather"),
-    "io.github.michelegiacalone.bazaar": ("", "#e74c3c", "Bazaar"),
-    
-    
+    "io.github.kolunmi.Bazaar":       ("", "#5da7e4", "Bazaar Weather"),
+    "io.github.michelegiacalone.bazaar": ("", "#e74c3c", "Bazaar"),
+
     # --- 6. SOCIAL (Flathub Versions) ---
-    "com.discordapp.Discord":         ("", "#5865f2", "Discord"),
-    "org.telegram.desktop":           ("", "#24a1de", "Telegram"),
-    "com.ayugram.desktop":            ("", "#3399ff", "AyuGram"),
+    # FIX: Removed duplicate "com.ayugram.desktop" key that was here before.
+    #      It is correctly defined below in the Omarchy/Social section.
+    "com.discordapp.Discord":         ("", "#5865f2", "Discord"),
+    "org.telegram.desktop":           ("", "#24a1de", "Telegram"),
 
 
     # --- Omarchy Versions
@@ -72,44 +72,44 @@ APP_MAP = {
     # --- 1. AI & EDUCATION ---
     "careerwill":     ("🎓", "#ff9900", "Careerwill"),
     "chatgpt":        ("󰚩", "#74aa9c", "ChatGPT"),
-    "gemini":         ("", "#8ab4f8", "Gemini AI"),
-    "claude":         ("", "#d97757", "Claude AI"),
-    "bing":           ("", "#2583c6", "Bing Chat"),
+    "gemini":         ("", "#8ab4f8", "Gemini AI"),
+    "claude":         ("", "#d97757", "Claude AI"),
+    "bing":           ("", "#2583c6", "Bing Chat"),
     "perplexity":     ("󰚩", "#2ebfab", "Perplexity"),
 
     # --- 2. BROWSERS (Specific IDs first) ---
     "mullvad-browser":  ("󰇚", "#3c9519", "Mullvad Browser"),
-    "omarchy-chromium": ("", "#00bcd4", "Omarchy Chromium"),
+    "omarchy-chromium": ("", "#00bcd4", "Omarchy Chromium"),
     "librewolf":        ("󰈹", "#3269d6", "LibreWolf"),
-    "tor-browser":      ("", "#7d4698", "Tor Browser"),
-    "ungoogled-chromium": ("", "#ffffff", "Ungoogled Chromium"),
-    "brave-browser":    ("", "#ff1a1a", "Brave"),
-    "google-chrome":    ("", "#4285f4", "Google Chrome"),
-    "microsoft-edge":   ("", "#0078d7", "Microsoft Edge"),
-    "firefox":          ("", "#ff7139", "Firefox"),
-    "chromium":         ("", "#4285f4", "Chromium"),
-    "cromium":          ("", "#4285f4", "Chromium"),
-    "opera":            ("", "#ff1b2d", "Opera"),
-    "vivaldi":          ("", "#ef3939", "Vivaldi"),
+    "tor-browser":      ("", "#7d4698", "Tor Browser"),
+    "ungoogled-chromium": ("", "#ffffff", "Ungoogled Chromium"),
+    "brave-browser":    ("", "#ff1a1a", "Brave"),
+    "google-chrome":    ("", "#4285f4", "Google Chrome"),
+    "microsoft-edge":   ("", "#0078d7", "Microsoft Edge"),
+    "firefox":          ("", "#ff7139", "Firefox"),
+    "chromium":         ("", "#4285f4", "Chromium"),
+    "cromium":          ("", "#4285f4", "Chromium"),
+    "opera":            ("", "#ff1b2d", "Opera"),
+    "vivaldi":          ("", "#ef3939", "Vivaldi"),
     "epiphany":         ("󰈹", "#3584e4", "GNOME Web"),
     "helium":           ("󰈹", "#ffeb3b", "Helium"),
 
     # --- 3. SOCIAL MEDIA & COMMUNICATION ---
-    "com.ayugram.desktop": ("", "#3399ff", "AyuGram"),
-    "ayugram-desktop":     ("", "#3399ff", "AyuGram"),
-    "telegram-desktop":    ("", "#24A1DE", "Telegram"),
-    "telegram":            ("", "#24a1de", "Telegram"),
-    "discord":             ("", "#5865f2", "Discord"),
-    "whatsapp":            ("", "#25d366", "WhatsApp"),
-    "reddit":              ("", "#ff4500", "Reddit"),
-    "twitter":             ("", "#1da1f2", "Twitter"),
-    "x.com":               ("", "#000000", "X"), 
-    "facebook":            ("", "#1877f2", "Facebook"),
-    "instagram":           ("", "#c13584", "Instagram"),
-    "linkedin":            ("", "#0077b5", "LinkedIn"),
-    "pinterest":           ("", "#bd081c", "Pinterest"),
-    "tumblr":              ("", "#35465c", "Tumblr"),
-    "tiktok":              ("", "#ff0050", "TikTok"),
+    "com.ayugram.desktop": ("", "#3399ff", "AyuGram"),
+    "ayugram-desktop":     ("", "#3399ff", "AyuGram"),
+    "telegram-desktop":    ("", "#24A1DE", "Telegram"),
+    "telegram":            ("", "#24a1de", "Telegram"),
+    "discord":             ("", "#5865f2", "Discord"),
+    "whatsapp":            ("", "#25d366", "WhatsApp"),
+    "reddit":              ("", "#ff4500", "Reddit"),
+    "twitter":             ("", "#1da1f2", "Twitter"),
+    "x.com":               ("", "#000000", "X"), 
+    "facebook":            ("", "#1877f2", "Facebook"),
+    "instagram":           ("", "#c13584", "Instagram"),
+    "linkedin":            ("", "#0077b5", "LinkedIn"),
+    "pinterest":           ("", "#bd081c", "Pinterest"),
+    "tumblr":              ("", "#35465c", "Tumblr"),
+    "tiktok":              ("", "#ff0050", "TikTok"),
 
     # --- 4. PRODUCTIVITY & OFFICE ---
     "onlyoffice":     ("󰏆", "#ff6f21", "ONLYOFFICE"),
@@ -127,44 +127,41 @@ APP_MAP = {
     "zotero":         ("󱓷", "#cc2914", "Zotero"),
     "xournalpp":      ("󱞈", "#2980b9", "Xournal++"),
     "pdfarranger":    ("󰈦", "#f1c40f", "PDF Arranger"),
-    "notion":         ("", "#000000", "Notion"),
-    "trello":         ("", "#0079bf", "Trello"),
-    "gmail":          ("", "#ea4335", "Gmail"),
-    "outlook":        ("", "#0078d4", "Outlook"),
+    "notion":         ("", "#000000", "Notion"),
+    "trello":         ("", "#0079bf", "Trello"),
+    "gmail":          ("", "#ea4335", "Gmail"),
+    "outlook":        ("", "#0078d4", "Outlook"),
     "hey":            ("󰮏", "#ffcc00", "HEY Mail"),
-    "basecamp":            ("", "#ffcc00", "basecamp"),
-    
-
-    
+    "basecamp":       ("", "#ffcc00", "basecamp"),
 
     # --- 5. GRAPHICS & MEDIA ---
     "flameshot":      ("󰄀", "#ff4081", "Flameshot"),
-    "gimp":           ("", "#5c5543", "GIMP"),
-    "inkscape":       ("", "#ffffff", "Inkscape"),
-    "figma":          ("", "#f24e1e", "Figma"),
-    "canva":          ("", "#00c4cc", "Canva"),
+    "gimp":           ("", "#5c5543", "GIMP"),
+    "inkscape":       ("", "#ffffff", "Inkscape"),
+    "figma":          ("", "#f24e1e", "Figma"),
+    "canva":          ("", "#00c4cc", "Canva"),
     "vlc":            ("󰕼", "#ff9900", "VLC"),
-    "obs":            ("", "#262626", "OBS Studio"),
-    "spotify":        ("", "#1db954", "Spotify"),
-    "youtube":        ("", "#ff0000", "YouTube"),
+    "obs":            ("", "#262626", "OBS Studio"),
+    "spotify":        ("", "#1db954", "Spotify"),
+    "youtube":        ("", "#ff0000", "YouTube"),
 
     # --- 6. SYSTEM & UTILITIES ---
-    "io.github.flattool.Warehouse": ("", "#ff9500", "Warehouse"),
-    "warehouse":                     ("", "#ff9500", "Warehouse"),
+    "io.github.flattool.Warehouse": ("", "#ff9500", "Warehouse"),
+    "warehouse":                     ("", "#ff9500", "Warehouse"),
     "bitwarden":      ("󰞀", "#175DDC", "Bitwarden"),
     "Bitwarden":      ("󰞀", "#175DDC", "Bitwarden"),
     "pavucontrol":    ("󰓃", "#67808d", "Volume Control"),
     "bleachbit":      ("󰃢", "#e6e6e6", "BleachBit"),
     "timeshift":      ("󰁯", "#ed333b", "Timeshift"),
-    "nautilus":       ("", "#f2c94c", "Files"),
-    "dolphin":        ("", "#3daee9", "Dolphin"),
-    "thunar":         ("", "#a9b665", "Thunar"),
-    "calculator":     ("", "#4193f4", "Calculator"),
-    "keypunch":       ("", "#ff4081", "Keypunch"),
-    "bazaar":                             ("", "#e74c3c", "Bazaar"),
+    "nautilus":       ("", "#f2c94c", "Files"),
+    "dolphin":        ("", "#3daee9", "Dolphin"),
+    "thunar":         ("", "#a9b665", "Thunar"),
+    "calculator":     ("", "#4193f4", "Calculator"),
+    "keypunch":       ("", "#ff4081", "Keypunch"),
+    "bazaar":                              ("", "#e74c3c", "Bazaar"),
     "Com-abdownloadmanager-desktop-appkt": ("󰇚", "#00aaff", "AB Download Manager"),
     "aether":         ("󰑭", "#a29bfe", "Aether"),
-    "typora": ("󰂺", "#b4637a", "Typora"),
+    "typora":         ("󰂺", "#b4637a", "Typora"),
 
     # --- DOWNLOAD MANAGERS ---
     "com.abdownloadmanager.abdownloadmanager": ("󰇚", "#00aaff", "AB Download Manager"),
@@ -181,15 +178,11 @@ APP_MAP = {
     "fdm":            ("󰇚", "#00aaff", "FDM"),
     "kget":           ("󱑢", "#3daee9", "KGet"),
 
-    
-
-
-
     # --- 7. WEB SERVICES & SHOPPING ---
-    "github":         ("", "#ffffff", "GitHub"),
-    "gitlab":         ("", "#fc6d26", "GitLab"),
-    "stackoverflow":  ("", "#f48024", "StackOverflow"),
-    "amazon":         ("", "#ff9900", "Amazon"),
+    "github":         ("", "#ffffff", "GitHub"),
+    "gitlab":         ("", "#fc6d26", "GitLab"),
+    "stackoverflow":  ("", "#f48024", "StackOverflow"),
+    "amazon":         ("", "#ff9900", "Amazon"),
     "cafebazaar":     ("󰄶", "#42b029", "Bazaar"),
     "ir.cafebazaar":  ("󰄶", "#42b029", "Bazaar"),
 
@@ -201,17 +194,17 @@ APP_MAP = {
     "gnome-software":       ("🛍️", "#3584e4", "Software"),
 
     # --- 9. DEVELOPMENT & TERMINALS ---
-    "nvim":           ("", "#57a143", "Neovim"),
-    "vim":            ("", "#019833", "Vim"),
+    "nvim":           ("", "#57a143", "Neovim"),
+    "vim":            ("", "#019833", "Vim"),
     "code":           ("󰨞", "#007acc", "VS Code"),
-    "ghostty":        ("", "#cba6f7", "Ghostty"),
-    "kitty":          ("", "#cba6f7", "Kitty"),
-    "alacritty":      ("", "#f9e2af", "Alacritty"),
-    "terminator":     ("", "#e53935", "Terminator"),
+    "ghostty":        ("", "#cba6f7", "Ghostty"),
+    "kitty":          ("", "#cba6f7", "Kitty"),
+    "alacritty":      ("", "#f9e2af", "Alacritty"),
+    "terminator":     ("", "#e53935", "Terminator"),
     "foot":           ("󰽒", "#88c0d0", "Foot"),
-    "org.omarchy.terminal": ("", "#f9e2af", "Terminal"),
-    "docker":         ("", "#2496ed", "Docker"),
-    "localhost":      ("", "#00ff00", "Localhost"),
+    "org.omarchy.terminal": ("", "#f9e2af", "Terminal"),
+    "docker":         ("", "#2496ed", "Docker"),
+    "localhost":      ("", "#00ff00", "Localhost"),
 
 }
 
@@ -257,7 +250,7 @@ def get_active_window():
                 clean_title = win_title.replace(f" - {app_name}", "").replace(f"- {app_name}", "").strip()
                 clean_title = clean_title.replace(" - YouTube", "").strip()
                 
-                # --- NEW: REMOVE NOTIFICATION COUNTS like (33) or (1) ---
+                # Remove notification counts like (33) or (1)
                 clean_title = re.sub(r'\(\d+\)', '', clean_title).strip()
 
                 if not clean_title: clean_title = win_title 
@@ -286,9 +279,9 @@ def get_active_window():
         clean_name = clean_name.capitalize()
         hex_color = "#" + hashlib.md5(clean_name.encode()).hexdigest()[:6]
         
-        if "gnome" in raw_class: icon = ""
-        elif "kde" in raw_class: icon = ""
-        else: icon = ""
+        if "gnome" in raw_class: icon = ""
+        elif "kde" in raw_class: icon = ""
+        else: icon = ""
 
         return format_output(icon, hex_color, clean_name, raw_title)
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import json
 import requests
 import sys
@@ -100,18 +100,15 @@ def get_weather():
         
         tt += "<b><span color='#89dceb'>╚═════════════════════════════════════╝</span></b>"
 
-        # IMPORTANT: Escape ampersands for Pango Markup to prevent Waybar hide
         data['text'] = f"{WEATHER_CODES.get(code, '✨')} {temp}{unit_label}".replace("&", "&amp;")
         data['tooltip'] = tt.replace("&", "&amp;")
         
     except Exception as e:
-        # 󰚄 is the "Satellite Dish" icon from Nerd Fonts
         data['text'] = "󰚄 --°" 
         data['tooltip'] = f"<b><span color='#f38ba8'>Searching for Signal...</span></b>\n{str(e)}"
 
     return data
 
 if __name__ == "__main__":
-    # Use flush=True to ensure Waybar receives the output immediately
     sys.stdout.write(json.dumps(get_weather()) + '\n')
     sys.stdout.flush()
