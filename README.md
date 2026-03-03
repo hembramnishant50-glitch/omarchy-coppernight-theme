@@ -8,12 +8,12 @@
 ░█▄▄█ ░█▄▄▄█ ░█─── ░█─── ░█▄▄▄ ░█─░█   ░█──▀█ ▄█▄ ░█▄▄█ ░█─░█ ─░█──
 ```
 
-# 🌌 Omarchy: Copper Night
+<h1>🌌 Omarchy: Copper Night</h1>
 
-> *"Where the deep indigo of Tokyo meets the warm glow of an ember sunset."*
+<p><em>"Where the deep indigo of Tokyo meets the warm glow of an ember sunset."</em></p>
 
-A high-performance **Hyprland** rice for **Omarchy** — featuring a carefully crafted **Tokyo Night** palette  
-kissed by a striking **Copper-Orange** border that glows like a setting sun.
+<p>A high-performance <strong>Hyprland</strong> rice for <strong>Omarchy</strong> — featuring a carefully crafted <strong>Tokyo Night</strong> palette<br>
+kissed by a striking <strong>Copper-Orange</strong> border that glows like a setting sun.</p>
 
 <br>
 
@@ -49,14 +49,14 @@ kissed by a striking **Copper-Orange** border that glows like a setting sun.
 
 <div align="center">
 
-| Feature | Description |
-|:---:|:---|
-| 🖼️ **Wallpaper** | Traditional Japanese Pixel Art Pagoda — handpicked for the aesthetic |
-| 🪟 **Widgets** | Floating diagnostic panels with custom animated resource bars |
-| 🎨 **Color Palette** | Deep Indigos · Electric Magentas · Warm Copper-Orange accents |
-| 🌤️ **Weather Widget** | Live weather display with configurable location |
-| 🔒 **Lock Screen** | Glassmorphism Hyprlock with blur, quotes, and media controls |
-| 🎵 **Media Controls** | Playerctl integration with full Spotify Flatpak support |
+| | Feature | Description |
+|:---:|:---|:---|
+| 🖼️ | **Wallpaper** | Traditional Japanese Pixel Art Pagoda — handpicked for the aesthetic |
+| 🪟 | **Widgets** | Floating diagnostic panels with custom animated resource bars |
+| 🎨 | **Color Palette** | Deep Indigos · Electric Magentas · Warm Copper-Orange accents |
+| 🌤️ | **Weather Widget** | Live weather display with configurable location |
+| 🔒 | **Lock Screen** | Glassmorphism Hyprlock with blur, quotes, and media controls |
+| 🎵 | **Media Controls** | Playerctl integration with full Spotify Flatpak support |
 
 </div>
 
@@ -82,7 +82,7 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 
 ### 🌟 Option B — Full Install *(Recommended)*
 
-This installs **all system dependencies**, **backs up** your existing Waybar config safely, and applies the complete **Copper Night** theme with a fully configured Waybar.
+Installs **all system dependencies**, safely **backs up** your existing Waybar config, and applies the complete **Copper Night** theme with a fully configured Waybar.
 
 ```bash
 # 1. Install dependencies
@@ -108,7 +108,7 @@ chmod +x ~/.config/waybar/scripts/*
 # 5. Apply Papirus Dark icons
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
-# 6. Restart Waybar (Silent Background Process)
+# 6. Restart Waybar
 killall waybar; (waybar > /dev/null 2>&1 &)
 ```
 
@@ -120,31 +120,52 @@ killall waybar; (waybar > /dev/null 2>&1 &)
 
 ## 🎨 Waybar Variants
 
-Copper Night ships with **two Waybar layouts**. Pick the one that fits your style.
+Copper Night ships with **three Waybar layouts**. Pick the one that fits your style.
+
+> ⚠️ **Waybar-1 and Waybar-2** require **Option A or Option B** to be completed first.
 
 <br>
 
-### 🅰️ Waybar Default *(installed by Option B above)*
-
-The default bar — included in the main install.
-<img width="1920" height="64" alt="Image" src="https://github.com/user-attachments/assets/5c325dde-bac2-4533-85f7-edefc5da1941" />
-
-<br>
-
-### 🅱️ Waybar-1 — Pill Style *(Alternate)*
+### 🅰️ Default Waybar *(included with Option B)*
 
 <div align="center">
-
-<img width="1920" height="78" src="https://github.com/user-attachments/assets/05fd9edb-4d6b-4f5b-8fd4-56a004b1c428" alt="Waybar-1 — Pill-style status bar with neon rounded borders showing workspaces, clock, CPU, temperature, wifi, volume and battery">
-
+<img width="1920" height="64" alt="Default Waybar" src="https://github.com/user-attachments/assets/5c325dde-bac2-4533-85f7-edefc5da1941" />
+<p><em>Clean, minimal — ships with the full install out of the box.</em></p>
 </div>
 
+<br>
+
+---
+
+### 🅱️ Waybar-1 — Pill Style
+
+<div align="center">
+<img width="1920" height="78" src="https://github.com/user-attachments/assets/05fd9edb-4d6b-4f5b-8fd4-56a004b1c428" alt="Waybar-1 Pill Style">
+<p><em>Neon pill borders · Rounded segments · Compact & clean</em></p>
+</div>
+
+**Install:**
 ```bash
 cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-1 && chmod +x Setup-Waybar.sh && ./Setup-Waybar.sh && chmod +x ~/.config/waybar/scripts/*
 ```
 
+> 💡 Your old config is backed up as `~/.config/waybar-XXXX`. Rename it back anytime to restore.
 
-> 💡 **Tip:** Your backup is saved as `~/.config/waybar-XXXX` (4-char random suffix). To restore it, just rename it back to `~/.config/waybar`.
+<br>
+
+---
+
+### ⚡ Waybar-2 — Ember Arc
+
+<div align="center">
+<img width="1918" height="79" alt="Waybar-2 Ember Arc" src="https://github.com/user-attachments/assets/31ceeafa-f7c0-4a81-b570-8ff29971ebd2">
+<p><em>Copper warmth · Floating arcs · Glows like a setting sun</em></p>
+</div>
+
+**Install:**
+```bash
+cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-2 && chmod +x waybar-setup.sh && ./waybar-setup.sh
+```
 
 <br>
 
@@ -154,27 +175,21 @@ cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-1 && chmod +x Setup-Wayb
 
 ### 🌤️ Weather Widget — Set Your City
 
-The weather widget displays **New York** by default. Here's how to change it:
+The weather widget displays **New York** by default. Change it in three steps:
 
-**Step 1** — Open the weather script:
 ```bash
+# Step 1 — Open the weather script
 nano ~/.config/waybar/scripts/weather.py
 ```
 
-**Step 2** — Find the `CITY` variable and update it:
 ```python
+# Step 2 — Find and update CITY
 # ── Configuration ─────────────────────────────
 CITY = "Tokyo"   # ← Replace with your city name
 ```
 
-**Step 3** — Save and exit:
-```
-Ctrl + O  →  Enter    (Save)
-Ctrl + X              (Exit)
-```
-
-**Step 4** — Restart Waybar to apply:
 ```bash
+# Step 3 — Save (Ctrl+O → Enter), Exit (Ctrl+X), then restart Waybar
 killall waybar; waybar &
 ```
 
@@ -196,22 +211,18 @@ killall waybar; waybar &
 
 > ⚠️ **Run this after completing Option A or Option B above.**
 
-<br>
-
-### 📦 Setup Commands
-
 ```bash
 # 1. Install Playerctl (required for media key support)
 sudo pacman -S --needed playerctl
 
-# 2. Fix Spotify media controls (only needed for Flatpak version)
+# 2. Fix Spotify media controls (Flatpak only)
 if command -v flatpak &> /dev/null; then
     flatpak override --user \
       --talk-name=org.mpris.MediaPlayer2.spotify \
       com.spotify.Client
 fi
 
-# 3. Copy lock screen config files to Hyprland directory
+# 3. Copy lock screen config files
 cp -r \
   ~/.config/omarchy/current/theme/scripts \
   ~/.config/omarchy/current/theme/quotes.txt \
@@ -226,23 +237,19 @@ chmod +x ~/.config/hypr/scripts/*
 
 ### 🖼️ Customizing the Lock Screen
 
-You can swap the **background wallpaper** and **profile picture** directly in the config:
+Edit the config to swap your wallpaper and profile picture:
 
 ```bash
 nano ~/.config/hypr/hyprlock.conf
 ```
-
-Look for these two sections and update the `path =` lines:
 
 ```ini
 # ── Background Wallpaper ──────────────────────────────────────
 background {
     monitor =
     path = /home/YOUR_USER/Pictures/your-wallpaper.jpg   # ← .jpg or .png
-
-    # Blur settings (0 = sharp, higher = more blur)
-    blur_passes = 0    # try 3 for a soft glass effect
-    blur_size   = 7    # strength of the blur kernel
+    blur_passes = 0    # 0 = sharp  |  3 = soft glass  |  5+ = dreamy glow
+    blur_size   = 7
 }
 
 # ── Profile Picture ───────────────────────────────────────────
@@ -253,13 +260,18 @@ image {
 }
 ```
 
-> **Blur Presets:**
-> | `blur_passes` | Effect |
-> |:---:|:---|
-> | `0` | Sharp — no blur at all |
-> | `2` | Subtle — light frost |
-> | `3` | Standard — soft glass |
-> | `5+` | Heavy — dreamy glow |
+<details>
+<summary><b>💡 Blur Presets</b></summary>
+<br>
+
+| `blur_passes` | Effect |
+|:---:|:---|
+| `0` | Sharp — no blur at all |
+| `2` | Subtle — light frost |
+| `3` | Standard — soft glass |
+| `5+` | Heavy — dreamy glow |
+
+</details>
 
 <br>
 
@@ -269,14 +281,14 @@ image {
 
 <div align="center">
 
-| Name | Hex | Preview |
-|:---|:---|:---:|
-| Background | `#1a1b2e` | ![](https://placehold.co/60x20/1a1b2e/1a1b2e) |
-| Deep Indigo | `#565f89` | ![](https://placehold.co/60x20/565f89/565f89) |
-| Electric Blue | `#7aa2f7` | ![](https://placehold.co/60x20/7aa2f7/7aa2f7) |
-| Magenta | `#bb9af7` | ![](https://placehold.co/60x20/bb9af7/bb9af7) |
-| Copper-Orange | `#c87941` | ![](https://placehold.co/60x20/c87941/c87941) |
-| Foreground | `#c0caf5` | ![](https://placehold.co/60x20/c0caf5/c0caf5) |
+| Swatch | Name | Hex |
+|:---:|:---|:---|
+| ![](https://placehold.co/40x20/1a1b2e/1a1b2e) | Background | `#1a1b2e` |
+| ![](https://placehold.co/40x20/565f89/565f89) | Deep Indigo | `#565f89` |
+| ![](https://placehold.co/40x20/7aa2f7/7aa2f7) | Electric Blue | `#7aa2f7` |
+| ![](https://placehold.co/40x20/bb9af7/bb9af7) | Magenta | `#bb9af7` |
+| ![](https://placehold.co/40x20/c87941/c87941) | Copper-Orange | `#c87941` |
+| ![](https://placehold.co/40x20/c0caf5/c0caf5) | Foreground | `#c0caf5` |
 
 </div>
 
@@ -288,7 +300,7 @@ image {
 
 <div align="center">
 
-> All wallpapers are included with the theme and optimized for dark desktop aesthetics.
+> All wallpapers ship with the theme and are optimized for dark desktop aesthetics.
 
 <br>
 
@@ -300,7 +312,7 @@ image {
 
 <br>
 
-## 🖼️ Full Collection
+### 🖼️ Full Collection
 
 | | |
 |:---:|:---:|
@@ -309,21 +321,19 @@ image {
 | <img src="https://github.com/user-attachments/assets/34e74655-7dd6-4344-b53b-31707e25a4f9" width="100%"> | <img src="https://github.com/user-attachments/assets/ab07a513-d0d3-4daa-9501-ec87862752c1" width="100%"> |
 | 🪶 **Itachi & The Crows** · *Akatsuki* | 🏯 **Mountain Castle** · *Pixel Art* |
 
----
+<br>
 
-## 📊 Catalog & Specs
+### 📊 Catalog & Specs
 
 | Wallpaper | Style | Resolution |
-| :--- | :--- | :---: |
+|:---|:---|:---:|
 | 🐱 **Cats at Moonrise** | Lofi · Ghibli | 3840 × 2160 |
 | 🏯 **Mountain Castle** | Pixel Art | 5120 × 2880 |
 | ⚔️ **The Last Swordsman** | Dark Fantasy | 3840 × 2160 |
 | 👺 **Girl & Hannya** | Monochrome · Yokai | 3840 × 2160 |
 | 🪶 **Itachi & The Crows** | Naruto · Akatsuki | 3840 × 2160 |
 
-
 </div>
-
 
 <br>
 
@@ -344,9 +354,11 @@ Got ideas? Found a bug? Contributions are warmly welcome!
 
 <div align="center">
 
-Made with 🧡 Omarchy
+Made with 🧡 by **Omarchy**
 
 *If this theme made your desktop beautiful, consider leaving a ⭐ — it means a lot!*
+
+<br>
 
 [![GitHub](https://img.shields.io/badge/GitHub-hembramnishant50--glitch-181717?style=for-the-badge&logo=github)](https://github.com/hembramnishant50-glitch)
 
