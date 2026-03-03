@@ -91,7 +91,7 @@ def get_weather():
         data['tooltip'] = tt
         
     except Exception as e:
-        data['text'] = "󰖪 Offline"
+        data['text'] = " "
         data['tooltip'] = f"<span color='#f38ba8'><b>Error:</b></span> {str(e)}"
 
     return data
