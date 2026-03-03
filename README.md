@@ -91,7 +91,8 @@ sudo pacman -S --needed \
   python-psutil \
   networkmanager \
   papirus-icon-theme \
-  pavucontrol
+  pavucontrol \
+  bc
 
 # 2. Install the theme
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
