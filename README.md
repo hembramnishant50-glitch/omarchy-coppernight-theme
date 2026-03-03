@@ -108,8 +108,8 @@ chmod +x ~/.config/waybar/scripts/*
 # 5. Apply Papirus Dark icons
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
-# 6. Restart Waybar
-killall waybar; waybar &
+# 6. Restart Waybar (Silent Background Process)
+killall waybar; (waybar > /dev/null 2>&1 &)
 ```
 
 > 💡 **Tip:** Your old Waybar config is backed up as `~/.config/waybar-backup-XXXXX`. Nothing is deleted.
