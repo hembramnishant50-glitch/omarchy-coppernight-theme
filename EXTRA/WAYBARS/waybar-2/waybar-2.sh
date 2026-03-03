@@ -1,32 +1,40 @@
 #!/bin/bash
 
-# Define variables
-REPO_URL="https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git"
-TMP_DIR="/tmp/omarchy-theme"
-TARGET_CONFIG="$HOME/.config/waybar"
-SUFFIX=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
+# Define paths
+SOURCE_DIR="$HOME/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-2"
+TARGET_DIR="$HOME/.config/waybar"
+TIMESTAMP=$(date +"%Y-%m-%d-%H-%M-%S")
+BACKUP_DIR="$HOME/.config/waybar-backup-$TIMESTAMP"
 
-echo "Starting installation of Waybar-2 theme..."
-
-# 1. Clone the repository
-if [ -d "$TMP_DIR" ]; then rm -rf "$TMP_DIR"; fi
-git clone "$REPO_URL" "$TMP_DIR"
-
-# 2. Backup existing waybar folder
-if [ -d "$TARGET_CONFIG" ]; then
-    BACKUP_NAME="${TARGET_CONFIG}-$SUFFIX"
-    mv "$TARGET_CONFIG" "$BACKUP_NAME"
-    echo "----------------------------------------------------------"
-    echo "Your backup is saved as $BACKUP_NAME"
-    echo "----------------------------------------------------------"
+# 1. Check if source directory exists
+if [ ! -d "$SOURCE_DIR" ]; then
+    echo "Error: Source directory $SOURCE_DIR does not exist."
+    exit 1
 fi
 
-# 3. Install waybar-2 theme
-mkdir -p "$TARGET_CONFIG"
-cp -r "$TMP_DIR/EXTRA/waybar-2/." "$TARGET_CONFIG/"
+# 2. Backup existing waybar folder
+if [ -d "$TARGET_DIR" ]; then
+    echo "Backing up current waybar config to $BACKUP_DIR..."
+    mv "$TARGET_DIR" "$BACKUP_DIR"
+fi
 
-# 4. Cleanup
-rm -rf "$TMP_DIR"
+# 3. Apply waybar-2 theme
+echo "Applying new waybar-2 theme..."
+mkdir -p "$TARGET_DIR"
+cp -r "$SOURCE_DIR/." "$TARGET_DIR/"
 
-echo "Success! waybar-2 theme has been installed to $TARGET_CONFIG"
-echo "You may need to restart Waybar (killall waybar && waybar &) to apply changes."
+# 4. FIX PERMISSIONS (Crucial for scripts to work)
+if [ -d "$TARGET_DIR/scripts" ]; then
+    echo "Setting executable permissions on scripts..."
+    chmod +x "$TARGET_DIR/scripts/"*
+    
+    # 5. HOTFIX: Patch the nmcli 'ALL-SETTINGS' error automatically
+    echo "Patching nmcli syntax in scripts..."
+    sed -i 's/ALL-SETTINGS/GENERAL/g' "$TARGET_DIR/scripts/"* 2>/dev/null
+fi
+
+# 6. Restart Waybar
+echo "Restarting Waybar..."
+killall waybar && waybar & disown
+
+echo "Done! waybar-2 theme applied and bugs patched."
