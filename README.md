@@ -86,13 +86,7 @@ Installs **all system dependencies**, safely **backs up** your existing Waybar c
 
 ```bash
 # 1. Install dependencies
-sudo pacman -S --needed \
-  python-requests \
-  python-psutil \
-  networkmanager \
-  papirus-icon-theme \
-  pavucontrol \
-  bc
+sudo pacman -S --needed python-requests python-psutil networkmanager papirus-icon-theme pavucontrol bc && sudo systemctl enable --now NetworkManager
 
 # 2. Install the theme
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
