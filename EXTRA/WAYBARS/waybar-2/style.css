@@ -1,63 +1,213 @@
-/* Color Palette */
-@define-color base #16121c;           
-@define-color border-line #fab387;    
-@define-color text #dcd6d6;           
-@define-color accent #85abbc;         
-@define-color bat-charging #a6e3a1;    
-@define-color bat-discharging #f38ba8; 
+/* ──────────────────────────────────────────────
+   Color Palette
+────────────────────────────────────────────── */
+@define-color base            #16121c;
+@define-color border-line     #fab387;
+@define-color text            #dcd6d6;
+@define-color accent          #85abbc;
+@define-color bat-charging    #a6e3a1;
+@define-color bat-discharging #f38ba8;
+@define-color peach           #fab387;
+@define-color mauve           #cba6f7;
+@define-color surface         #1e1a26;
 
+/* ──────────────────────────────────────────────
+   Global Reset
+────────────────────────────────────────────── */
 * {
     font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
     font-size: 14px;
     font-weight: bold;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
 }
 
 window#waybar {
     background: transparent;
 }
 
-/* The Main Pill */
+/* ──────────────────────────────────────────────
+   Center Pill
+────────────────────────────────────────────── */
 .modules-center {
     background-color: @base;
-    border: 2px solid @border-line;   
+    border: 2px solid @border-line;
     border-radius: 20px;
     padding: 2px 12px;
 }
 
-/* Module Coloring */
-#clock { color: #cba6f7; margin-right: 8px; }
-#pulseaudio { color: #f9e2af; }
-#network { color: #94e2d5; }
+/* ──────────────────────────────────────────────
+   Shared Spacing
+────────────────────────────────────────────── */
+#clock,
+#workspaces,
+#custom-windows,
+#custom-spotify,
+#pulseaudio,
+#network,
+#battery,
+#tray {
+    padding: 0 10px;
+    margin: 4px 0;
+}
 
-/* Workspace Animation (1-3) */
+/* ──────────────────────────────────────────────
+   Clock
+────────────────────────────────────────────── */
+#clock {
+    color: #cba6f7;
+}
+
+/* ──────────────────────────────────────────────
+   Active Window — app name only
+────────────────────────────────────────────── */
+#custom-windows {
+    color: #cdd6f4;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0 12px;
+    border-left: 1px solid @surface;
+    border-right: 1px solid @surface;
+}
+
+#custom-windows.empty {
+    padding: 0;
+    min-width: 0;
+    border: none;
+}
+
+/* ──────────────────────────────────────────────
+   Workspaces
+────────────────────────────────────────────── */
 #workspaces button {
-    color: #89b4fa;
+    color: @text;
     padding: 0 8px;
-    margin: 0 2px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: transparent;
+    box-shadow: none;
+    transition: all 0.3s ease;
 }
 
 #workspaces button.active {
-    background-color: @accent;
     color: @base;
-    min-width: 32px;
+    background: linear-gradient(45deg, @peach, @mauve);
+    padding: 0 15px;
+    border-radius: 40px;
+    min-width: 30px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-/* Battery Logic */
+#workspaces button:hover {
+    background: @surface;
+    border-radius: 40px;
+    color: @text;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button.active:hover {
+    background: linear-gradient(45deg, @peach, @mauve);
+    color: @base;
+}
+
+#workspaces button.urgent {
+    color: @base;
+    background: @bat-discharging;
+    border-radius: 40px;
+}
+
+/* ──────────────────────────────────────────────
+   Spotify
+────────────────────────────────────────────── */
+#custom-spotify {
+    color: #1db954;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0 12px;
+}
+
+#custom-spotify.paused {
+    color: @text;
+    opacity: 0.6;
+}
+
+#custom-spotify.stopped {
+    padding: 0;
+    min-width: 0;
+}
+
+/* ──────────────────────────────────────────────
+   Audio
+────────────────────────────────────────────── */
+#pulseaudio {
+    color: #f9e2af;
+}
+
+#pulseaudio.muted {
+    color: @text;
+    opacity: 0.45;
+}
+
+/* ──────────────────────────────────────────────
+   Network
+────────────────────────────────────────────── */
+#network {
+    color: #94e2d5;
+}
+
+#network.disconnected {
+    color: @bat-discharging;
+}
+
+/* ──────────────────────────────────────────────
+   Battery
+────────────────────────────────────────────── */
 #battery {
-    color: @bat-discharging; /* #f38ba8 when discharging */
+    color: @bat-discharging;
 }
 
-#battery.charging, #battery.plugged {
-    color: @bat-charging;    /* #a6e3a1 when charging */
+#battery.charging,
+#battery.plugged {
+    color: @bat-charging;
 }
 
-#battery.charging {
-    animation-name: none; /* No glow icon on waybar */
+#battery.warning:not(.charging) {
+    color: #f9e2af;
 }
 
-/* Tooltip/Calendar Window Styling */
+#battery.critical:not(.charging) {
+    color: @bat-discharging;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to { opacity: 0.25; }
+}
+
+/* ──────────────────────────────────────────────
+   Tray
+────────────────────────────────────────────── */
+#tray {
+    margin-left: 4px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @bat-discharging;
+    border-radius: 8px;
+}
+
+/* ──────────────────────────────────────────────
+   Tooltip / Calendar
+────────────────────────────────────────────── */
 tooltip {
     background: @base;
     border: 2px solid @border-line;
@@ -68,15 +218,4 @@ tooltip label {
     font-family: "JetBrainsMono Nerd Font", sans-serif;
     color: @text;
     padding: 8px;
-}
-
-/* General Layout Spacing */
-#clock, #workspaces, #pulseaudio, #network, #battery, #tray {
-    padding: 0 10px;
-    margin: 4px 0;
-}
-
-#tray {
-    margin-left: 8px;
-    color: @text;
 }

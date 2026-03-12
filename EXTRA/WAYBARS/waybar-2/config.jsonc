@@ -2,42 +2,83 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 34,
-    "margin-top": 10,
+    "height": 40,
+    "margin-top": 4,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "modules-center": ["clock", "hyprland/workspaces", "pulseaudio", "network", "battery", "tray"],
 
+    // ─── Layout ───────────────────────────────────────────────
+    "modules-left":   [],
+    "modules-center": [
+        "clock",
+        "custom/windows",
+        "hyprland/workspaces",
+        "custom/spotify",
+        "pulseaudio",
+        "network",
+        "battery",
+        "tray"
+    ],
+    "modules-right": [],
+
+    // ─── Clock ────────────────────────────────────────────────
+    "clock": {
+        "format": "󰅐 {:%I:%M %p}",
+        "format-alt": "󰃭 {:%A, %d %B %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months":   "<span color='#11111b' background='#cba6f7'><b>  {}  </b></span>",
+                "days":     "<span color='#cdd6f4'>{}</span>",
+                "weeks":    "<span color='#94e2d5'><b>W{}</b></span>",
+                "weekdays": "<span color='#fab387'><b>{}</b></span>",
+                "today":    "<span color='#11111b' background='#f38ba8'><b>{}</b></span>"
+            }
+        }
+    },
+    
+    // ─── Workspaces ───────────────────────────────────────────
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
         "all-outputs": true,
         "sort-by-number": true,
         "persistent-workspaces": {
-            "*": 3 
+            "*": 3
         }
     },
 
-    "clock": {
-        "format": " {:%I:%M %p}",
-        "format-alt": "󰃭 {:%A, %d %B %Y}",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode"          : "month",
-            "mode-mon-col"  : 3,
-            "weeks-pos"     : "left",
-            "on-scroll"     : 1,
-            "format": {
-                "months":     "<span color='#11111b' background='#cba6f7'><b>  {}  </b></span>",
-                "days":       "<span color='#cdd6f4'>{}</span>",
-                "weeks":      "<span color='#94e2d5'><b>W{}</b></span>",
-                "weekdays":   "<span color='#fab387'><b>{}</b></span>",
-                "today":      "<span color='#11111b' background='#f38ba8'><b>{}</b></span>"
-            }
-        }
+    // ─── Audio ────────────────────────────────────────────────
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "tooltip-format": "{volume}%  {desc}",
+        "on-click": "omarchy-launch-audio",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
     },
 
+    // ─── Network ──────────────────────────────────────────────
+    "network": {
+        "format-wifi": "󱛁",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󱛅",
+        "format-linked": "󰈀",
+        "tooltip-format-wifi": "󱛁  {essid}\n󰓅  {signalStrength}%\n󰆧  {frequency}MHz\n  {ipaddr}",
+        "tooltip-format-ethernet": "󰈀  {ifname}\n󰕒  {bandwidthUpBits}\n󰇚  {bandwidthDownBits}\n  {ipaddr}",
+        "tooltip-format-disconnected": "󱛅  Disconnected",
+        "on-click": "omarchy-launch-wifi"
+    },
+
+    // ─── Battery ──────────────────────────────────────────────
     "battery": {
         "states": { "warning": 30, "critical": 15 },
         "format": "{icon}",
@@ -46,23 +87,4 @@
         "tooltip-format": "{capacity}%",
         "on-click": "omarchy-menu power"
     },
-
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-muted": "󰝟",
-        "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
-        "on-click": "omarchy-launch-audio"
-    },
-
-    "network": {
-        "format-wifi": "󰖩",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰖪",
-        "on-click": "omarchy-launch-wifi"
-    },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 10
-    }
 }
