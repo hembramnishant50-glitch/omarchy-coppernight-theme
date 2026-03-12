@@ -6,9 +6,9 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 # ==============================================================================
-#  CONFIGURATION - UPDATED FOR PURNIA
+#  CONFIGURATION 
 # ==============================================================================
-CITY = "Purnia" 
+CITY = "Tokyo" 
 UNITS = "m" 
 # ==============================================================================
 
