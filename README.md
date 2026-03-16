@@ -72,7 +72,6 @@ kissed by a striking <strong>Copper-Orange</strong> border that glows like a set
 
 ### ⚡ Option A — Theme Only *(Minimal)*
 
-Just want the colors and wallpaper? Run this single command:
 
 ```bash
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
