@@ -8,7 +8,7 @@ from urllib3.util.retry import Retry
 # ==============================================================================
 #  CONFIGURATION 
 # ==============================================================================
-CITY = "Tokyo" 
+CITY = "Purnia" 
 UNITS = "m" 
 # "m" for Metric, "u" for US/Imperial
 # ==============================================================================
@@ -65,15 +65,15 @@ def get_weather():
         unit_label = "°C"
         
         # UI Colors matched to your Waybar theme
-        # Border: #788587, Text: #dcd6d6, Accent: #85abbc
-        tt = "<b><span color='#85abbc'>╔════════ METEOROLOGICAL DATA ════════╗</span></b>\n"
-        tt += f"<b><span color='#85abbc'>║ LOCATION</span></b>   <span color='#dcd6d6'>{city_name.upper()}, {country_name.upper()}</span>\n"
-        tt += f"<b><span color='#85abbc'>║ STATUS</span></b>     <span color='#dcd6d6'>{desc}</span>\n"
-        tt += f"<b><span color='#85abbc'>║ TEMP</span></b>       <span color='#85abbc'>{temp}{unit_label}</span> <span color='#788587'>(Feels: {current['FeelsLikeC']}{unit_label})</span>\n"
-        tt += f"<b><span color='#85abbc'>║ HUMIDITY</span></b>   <span color='#39515A'>[{get_progress_bar(humidity)}]</span> <span color='#dcd6d6'>{humidity}%</span>\n"
-        tt += "<b><span color='#788587'>╠═════════════════════════════════════╣</span></b>\n"
+        # Border: #788587, Text: #dcd6d6, Accent: #85abbc #cdd6f4
+        tt = "<b><span color='#cba6f7'>╔════════ METEOROLOGICAL DATA ════════╗</span></b>\n"
+        tt += f"<b><span color='#89b4fa'>║ LOCATION</span></b>   <span color='#dcd6d6'>{city_name.upper()}, {country_name.upper()}</span>\n"
+        tt += f"<b><span color='#a6e3a1'>║ STATUS</span></b>     <span color='#dcd6d6'>{desc}</span>\n"
+        tt += f"<b><span color='#fab387'>║ TEMP</span></b>       <span color='#dcd6d6'>{temp}{unit_label}</span> <span color='#dcd6d6'>(Feels: {current['FeelsLikeC']}{unit_label})</span>\n"
+        tt += f"<b><span color='#89b4fa'>║ HUMIDITY</span></b>   <span color='#dcd6d6'>[{get_progress_bar(humidity)}]</span> <span color='#dcd6d6'>{humidity}%</span>\n"
+        tt += "<b><span color='#cba6f7'>╠═════════════════════════════════════╣</span></b>\n"
         
-        tt += "<b><span color='#85abbc'>║ 24-HOUR TRAJECTORY                  ║</span></b>\n"
+        tt += "<b><span color='#f9e2af'>║ 24-HOUR TRAJECTORY                  ║</span></b>\n"
         hourly_data = []
         for day in weather['weather'][:2]: 
             for hour in day['hourly']:
@@ -84,9 +84,9 @@ def get_weather():
             h_icon = WEATHER_CODES.get(hour['weatherCode'], '✨')
             h_temp = f"{hour['tempC']}{unit_label}"
             h_rain = f"{hour['chanceofrain']}%"
-            tt += f"<b><span color='#788587'>║</span></b> <span color='#dcd6d6'>{h_time:<9}</span> {h_icon} <span color='#85abbc'>{h_temp:<4}</span> <span color='#85abbc'>󰖗 {h_rain:>3}</span>\n"
+            tt += f"<b><span color='#cba6f7'>║</span></b> <span color='#cdd6f4'>{h_time:<9}</span> {h_icon} <span color='#f5c2e7'>{h_temp:<4}</span> <span color='#f5c2e7'>󰖗 {h_rain:>3}</span>\n"
 
-        tt += "<b><span color='#788587'>╚═════════════════════════════════════╝</span></b>"
+        tt += "<b><span color='#cba6f7'>╚═════════════════════════════════════╝</span></b>"
 
         data['text'] = f"{WEATHER_CODES.get(code, '✨')} {temp}{unit_label}"
         data['tooltip'] = tt

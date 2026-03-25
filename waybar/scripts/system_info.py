@@ -119,26 +119,26 @@ def get_sys_info():
     tt = "<b><span color='#cba6f7'>╔════════ SYSTEM DIAGNOSTICS ════════╗</span></b>\n"
 
     # Row 1: CPU Visuals (NEW)
-    tt += f"<b><span color='#89b4fa'>║ CPU    </span></b> <span color='#45475a'>[{get_progress_bar(cpu_percent)}]</span> <span color='#cdd6f4'>{cpu_percent}%</span>\n"
+    tt += f"<b><span color='#89b4fa'>║ CPU    </span></b> <span color='#dcd6d6'>[{get_progress_bar(cpu_percent)}]</span> <span color='#dcd6d6'>{cpu_percent}%</span>\n"
 
     # Row 2: GPU Visuals (if available)
     if gpu_usage is not None:
-        tt += f"<b><span color='#f38ba8'>║ GPU    </span></b> <span color='#45475a'>[{get_progress_bar(gpu_usage)}]</span> <span color='#cdd6f4'>{gpu_usage}%</span>\n"
+        tt += f"<b><span color='#f38ba8'>║ GPU    </span></b> <span color='#dcd6d6'>[{get_progress_bar(gpu_usage)}]</span> <span color='#dcd6d6'>{gpu_usage}%</span>\n"
         if gpu_mem_percent is not None:
-            tt += f"<b><span color='#f38ba8'>║</span></b> <span color='#cdd6f4'>VRAM: {fmt(gpu_mem_used):<8}</span> <span color='#6c7086'>│</span> <span color='#cdd6f4'>Total: {fmt(gpu_mem_total)}</span>\n"
+            tt += f"<b><span color='#f38ba8'>║</span></b> <span color='#dcd6d6'>VRAM: {fmt(gpu_mem_used):<8}</span> <span color='#dcd6d6'>│</span> <span color='#dcd6d6'>Total: {fmt(gpu_mem_total)}</span>\n"
         if gpu_name and gpu_name != "GPU":
-            tt += f"<b><span color='#f38ba8'>║</span></b> <span color='#cdd6f4'>{gpu_name[:30]}</span>\n"
+            tt += f"<b><span color='#f38ba8'>║</span></b> <span color='#dcd6d6'>{gpu_name[:30]}</span>\n"
 
     # Row 3: Memory Visuals
-    tt += f"<b><span color='#a6e3a1'>║ MEMORY </span></b> <span color='#45475a'>[{get_progress_bar(mem.percent)}]</span> <span color='#cdd6f4'>{int(mem.percent)}%</span>\n"
-    tt += f"<b><span color='#a6e3a1'>║</span></b> <span color='#cdd6f4'>Used: {fmt(mem.used):<8}</span> <span color='#6c7086'>│</span> <span color='#cdd6f4'>Free: {fmt(mem.available)}</span>\n"
+    tt += f"<b><span color='#a6e3a1'>║ MEMORY </span></b> <span color='#dcd6d6'>[{get_progress_bar(mem.percent)}]</span> <span color='#dcd6d6'>{int(mem.percent)}%</span>\n"
+    tt += f"<b><span color='#a6e3a1'>║</span></b> <span color='#dcd6d6'>Used: {fmt(mem.used):<8}</span> <span color='#dcd6d6'>│</span> <span color='#dcd6d6'>Free: {fmt(mem.available)}</span>\n"
 
     # Row 4: Swap Visuals
-    tt += f"<b><span color='#fab387'>║ SWAP   </span></b> <span color='#45475a'>[{get_progress_bar(swap.percent)}]</span> <span color='#cdd6f4'>{int(swap.percent)}%</span>\n"
+    tt += f"<b><span color='#fab387'>║ SWAP   </span></b> <span color='#dcd6d6'>[{get_progress_bar(swap.percent)}]</span> <span color='#dcd6d6'>{int(swap.percent)}%</span>\n"
 
     # Row 5: Storage Visuals
-    tt += f"<b><span color='#89b4fa'>║ DISK   </span></b> <span color='#45475a'>[{get_progress_bar(disk_percent)}]</span> <span color='#cdd6f4'>{int(disk_percent)}%</span>\n"
-    tt += f"<b><span color='#89b4fa'>║</span></b> <span color='#cdd6f4'>Used: {fmt(disk.used):<8}</span> <span color='#6c7086'>│</span> <span color='#cdd6f4'>Total: {fmt(disk.total)}</span>\n"
+    tt += f"<b><span color='#89b4fa'>║ DISK   </span></b> <span color='#dcd6d6'>[{get_progress_bar(disk_percent)}]</span> <span color='#dcd6d6'>{int(disk_percent)}%</span>\n"
+    tt += f"<b><span color='#89b4fa'>║</span></b> <span color='#dcd6d6'>Used: {fmt(disk.used):<8}</span> <span color='#dcd6d6'>│</span> <span color='#dcd6d6'>Total: {fmt(disk.total)}</span>\n"
     
     tt += "<b><span color='#cba6f7'>╠════════════════════════════════════╣</span></b>\n"
 

@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # --- THEME COLORS (Synced with your Waybar CSS) ---
-C_BORDER='#788587'   # Waybar @border
-C_WIFI='#85abbc'     # Waybar @selected-text
-C_IP='#85abbc'       
-C_TRAFFIC='#dcd6d6'  # Waybar @text
-C_TEXT='#dcd6d6'     
-C_SUB='#39515A'      # Waybar @accent
-C_SEP='#788587'      
-C_VAL='#85abbc'      
+C_BORDER='#cba6f7'   # Waybar @border
+C_WIFI='#f9e2af'     # Waybar @selected-text
+C_IP='#cba6f7'       
+C_TRAFFIC='#f9e2af'  # Waybar @text
+C_TEXT='#cdd6f4'     
+C_SUB='#dcd6d6'      # Waybar @accent
+C_SEP='#a6e3a1'      
+C_VAL='#f5c2e7'      
 
 # --- DATA GATHERING ---
 INTERFACE=$(ip route | grep default | awk '{print $5}' | head -n 1)
