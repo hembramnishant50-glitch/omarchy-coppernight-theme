@@ -210,7 +210,8 @@ APP_MAP = {    #----- All Flathub Versions ----
     "org.omarchy.terminal": ("", "#f9e2af", "Terminal"),
     "docker":         ("", "#2496ed", "Docker"),
     "localhost":      ("", "#00ff00", "Localhost"),
-
+    # --- 10. EXTRA
+    "com-tonikelope-megabasterd-mainpanel":    ("󰗽", "#d92323", "MegaBuster"),
 }
 
 PATTERNS = [" ▃▆▄", " ▄▃▇", " ▆▃▅", " ▇▆▃", " ▃▅▇"]
