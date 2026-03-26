@@ -122,7 +122,7 @@ Copper Night ships with **three Waybar layouts**. Pick the one that fits your st
 ### 🅰️ Default Waybar *(included with Option B)*
 
 <div align="center">
-<img width="1920" height="64" alt="Default Waybar" src="https://github.com/user-attachments/assets/5c325dde-bac2-4533-85f7-edefc5da1941" />
+<img width="1920" height="55" alt="Image" src="https://github.com/user-attachments/assets/2aab9a8e-2bed-45e9-ab6b-a2c2e6c51d77" />
 <p><em>Clean, minimal — ships with the full install out of the box.</em></p>
 </div>
 
