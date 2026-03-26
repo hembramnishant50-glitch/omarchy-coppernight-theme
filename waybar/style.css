@@ -99,6 +99,26 @@ window#waybar {
     100% { opacity: 1; }
 }
 
+#custom-net_speed {
+    background: rgba(17, 17, 27, 0.6); /* Darker "Crust" color */
+    color: #cdd6f4;
+    border-radius: 12px;
+    padding: 0 10px;
+    margin: 4px 4px;
+    /* This creates a light highlight on top and a dark shadow on bottom */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+#custom-net_speed:hover {
+    background: rgba(49, 50, 68, 0.8);
+    box-shadow: 0 0 10px rgba(166, 227, 161, 0.2);
+    transition: all 0.3s ease;
+}
+
+
+
 /* -----------------------------------------------------
    System Module (The "Pill")
    ----------------------------------------------------- */

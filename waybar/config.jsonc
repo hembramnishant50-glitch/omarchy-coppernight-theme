@@ -13,6 +13,7 @@
     "modules-center": ["clock"],
 
     "modules-right": [
+        "custom/net_speed",
         "custom/system",
         "custom/weather", 
         "pulseaudio", 
@@ -87,6 +88,17 @@
         "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
         "on-click": "pavucontrol"
     },
+    
+
+    "custom/net_speed": {
+        "exec": "~/.config/waybar/scripts/net_speed.sh",
+        "return-type": "json",
+        "interval": 2,
+        "format": "{}",
+        "on-click": "omarchy-launch-or-focus-tui btop", // Opens btop to see details
+        "tooltip": true
+    },
+
 
     "custom/wifi": {
         "exec": "~/.config/waybar/scripts/wifi_info.sh",
