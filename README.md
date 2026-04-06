@@ -84,25 +84,35 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 Installs **all system dependencies**, safely **backs up** your existing Waybar config, and applies the complete **Copper Night** theme with a fully configured Waybar.
 
 ```bash
-# 1. Install dependencies
-sudo pacman -S --needed python-requests python-psutil networkmanager papirus-icon-theme pavucontrol bc && sudo systemctl enable --now NetworkManager
+# 1. Install dependencies and ensure NetworkManager is active
+sudo pacman -S --needed python-requests python-psutil networkmanager papirus-icon-theme pavucontrol bc
+sudo systemctl enable --now NetworkManager
 
 # 2. Install the theme
+# Note: Ensure the 'omarchy' tool is already in your PATH
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
 
-# 3. Backup existing Waybar config (safe — uses a random suffix)
-[ -d ~/.config/waybar ] && mv ~/.config/waybar ~/.config/waybar-backup-$RANDOM
+# 3. Backup existing Waybar config (using a timestamp for better organization)
+[ -d ~/.config/waybar ] && mv ~/.config/waybar ~/.config/waybar-backup-$(date +%Y%m%d_%H%M%S)
 
 # 4. Apply the Copper Night Waybar config
 mkdir -p ~/.config/waybar
-cp -r ~/.config/omarchy/themes/coppernight/waybar/. ~/.config/waybar/
-chmod +x ~/.config/waybar/scripts/*
+# Check if the source directory exists before copying to avoid errors
+if [ -d ~/.config/omarchy/themes/coppernight/waybar/ ]; then
+    cp -r ~/.config/omarchy/themes/coppernight/waybar/* ~/.config/waybar/
+    # Ensure scripts are executable if the scripts directory exists
+    [ -d ~/.config/waybar/scripts ] && chmod +x ~/.config/waybar/scripts/*
+else
+    echo "Source theme directory not found. Please check step 2."
+fi
 
 # 5. Apply Papirus Dark icons
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
 # 6. Restart Waybar
-killall waybar; (waybar > /dev/null 2>&1 &)
+# Using 'pkill' is often cleaner; trailing '&' starts it in the background
+killall -q waybar
+nohup waybar > /dev/null 2>&1 &
 ```
 
 > 💡 **Tip:** Your old Waybar config is backed up as `~/.config/waybar-backup-XXXXX`. Nothing is deleted.
