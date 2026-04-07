@@ -13,6 +13,42 @@ MUSIC_WEB_KEYWORDS = ["spotify", "soundcloud", "music", "deezer", "bandcamp"]
 
 # --- APP & WEBSITE MAP ---
 APP_MAP = {    #----- All Flathub Versions ----
+    
+    # --- 0. Google / Proton ---
+    "google-chrome":                  ("", "#4285f4", "Chrome"),
+    "google-gmail":                   ("󰊭", "#ea4335", "Gmail"),
+    "google-drive":                   ("󰝰", "#34a853", "Drive"),
+    "google-calendar":                ("󰸗", "#4285f4", "Calendar"),
+    "Chrome-calendar.google.com":     ("󰸗", "#4285f4", "Calendar"),
+    "google-keep":                    ("󰟶", "#fbbc04", "Keep"),
+    "google-maps":                    ("󰉙", "#34a853", "Maps"),
+    "google-docs":                    ("󰈙", "#4285f4", "Docs"),
+    "google-sheets":                  ("󰈛", "#34a853", "Sheets"),
+    "google-slides":                  ("󰈧", "#fbbc04", "Slides"),
+    "google-meet":                    ("󰻵", "#00897b", "Meet"),
+    "google-photos":                  ("󰄄", "#ff4500", "Photos"),
+    "google-youtube":                 ("󰗃", "#ff0000", "YouTube"),
+    "chrome-calendar.google.com__-default": ("󰸗", "#4285f4", "Calendar"),
+    "chrome-mail.google.com__-default":     ("󰊭", "#ea4335", "Gmail"),
+    "chrome-drive.google.com__-default":    ("󰝰", "#34a853", "Drive"),
+    "chrome-keep.google.com__-default":     ("󰟶", "#fbbc04", "Keep"),
+    "chrome-docs.google.com__-default":     ("󰈙", "#4285f4", "Docs"),
+    "chrome-sheets.google.com__-default":   ("󰈛", "#34a853", "Sheets"),
+    "chrome-slides.google.com__-default":   ("󰈧", "#fbbc04", "Slides"),
+    "chrome-meet.google.com__-default":     ("󰻵", "#00897b", "Meet"),
+    "chrome-photos.google.com__-default":   ("󰄄", "#ff4500", "Photos"),
+    "chrome-youtube.com__-default":         ("󰗃", "#ff0000", "YouTube"),
+    "chrome-www.google.com__-default":      ("", "#4285f4", "Google"),
+    "chrome-notebooklm.google.com__-default": ("󰠮", "#4285f4", "NotebookLM"),
+
+
+    "chrome-mail.proton.me__-default":       ("󰇮", "#6d4aff", "Proton Mail"),
+    "chrome-calendar.proton.me__-default":   ("󰸗", "#6d4aff", "Proton Calendar"),
+    "chrome-drive.proton.me__-default":      ("󰝰", "#6d4aff", "Proton Drive"),
+    "chrome-pass.proton.me__-default":       ("󰷖", "#6d4aff", "Proton Pass"),
+    "chrome-vpn.proton.me__-default":        ("󰖂", "#6d4aff", "Proton VPN"),
+    "chrome-lumo.proton.me__-default":       ("󱔐", "#6d4aff", "Proton Lumo"),
+
 
     # --- 1. STUDENT & RESEARCH (Flathub Versions) ---
     "md.obsidian.Obsidian":           ("󱓧", "#7c4dff", "Obsidian"),
