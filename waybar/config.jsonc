@@ -116,10 +116,15 @@
         "critical": 15
     },
     "format": "{icon} {capacity}%",
+    "on-click": "omarchy-menu power",
     "format-charging": "󱐋 {icon} {capacity}%",
-    "format-plugged": "󱐋 {icon} {capacity}%",  /* Added icon here */
-    "format-full": "󱐋 {icon} {capacity}%",     /* Keeps icon when at 100% */
+    "format-plugged": "󱐋 {icon} {capacity}%",
+    "format-full": "󱐋 {icon} {capacity}%",
     "format-icons": ["", "", "", "", ""],
-    "max-length": 25
+    "max-length": 25,
+    
+    /* Power Draw Tooltips */
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%"
 }
 }
