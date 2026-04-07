@@ -110,15 +110,16 @@
     },
 
     "battery": {
-        "interval": 2,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󱐋 {icon} {capacity}%",
-        "format-plugged": " {icon} {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "max-length": 25
-    }
+    "interval": 2,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󱐋 {icon} {capacity}%",
+    "format-plugged": "󱐋 {icon} {capacity}%",  /* Added icon here */
+    "format-full": "󱐋 {icon} {capacity}%",     /* Keeps icon when at 100% */
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+}
 }
