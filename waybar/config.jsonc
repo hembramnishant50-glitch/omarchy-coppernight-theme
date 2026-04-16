@@ -75,7 +75,7 @@
     },
 
     "custom/weather": {
-        "exec": "~/.config/waybar/scripts/weather.py",
+        "exec": "~/.config/waybar/scripts/weather.sh",
         "return-type": "json",
         "interval": 600,
         "format": "{}",
