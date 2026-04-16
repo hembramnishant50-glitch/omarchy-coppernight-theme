@@ -2,7 +2,7 @@
    OMARCHY THEME - GTK Color Match Omarchy Coppernight Theme
    ============================================================================= */
 
-@define-color background     #000000;
+@define-color background     #11111b;
 @define-color foreground     #e6e6e6;
 @define-color black          #11111b;
 @define-color red            #f38ba8;   /* Waybar Active Pink/Red */
