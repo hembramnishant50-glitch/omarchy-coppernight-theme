@@ -84,33 +84,40 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 Installs **all system dependencies**, safely **backs up** your existing Waybar config, and applies the complete **Copper Night** theme with a fully configured Waybar.
 
 ```bash
-# 1. Install dependencies and ensure NetworkManager is active
+## 1. Install dependencies
 sudo pacman -S --needed python-requests python-psutil networkmanager papirus-icon-theme pavucontrol bc
 sudo systemctl enable --now NetworkManager
 
-# 2. Install the theme
-# Note: Ensure the 'omarchy' tool is already in your PATH
+## 2. Install the theme
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
 
-# 3. Backup existing Waybar config (using a timestamp for better organization)
-[ -d ~/.config/waybar ] && mv ~/.config/waybar ~/.config/waybar-backup-$(date +%Y%m%d_%H%M%S)
-
-# 4. Apply the Copper Night Waybar config
-mkdir -p ~/.config/waybar
-# Check if the source directory exists before copying to avoid errors
-if [ -d ~/.config/omarchy/themes/coppernight/waybar/ ]; then
-    cp -r ~/.config/omarchy/themes/coppernight/waybar/* ~/.config/waybar/
-    # Ensure scripts are executable if the scripts directory exists
-    [ -d ~/.config/waybar/scripts ] && chmod +x ~/.config/waybar/scripts/*
-else
-    echo "Source theme directory not found. Please check step 2."
+## 3. Backup existing Waybar config
+# Format: waybar-backup-DD-MM-YYYY-RandomNumber
+if [ -d ~/.config/waybar ]; then
+    BACKUP_NAME="waybar-backup-$(date +%d-%m-%Y)-$RANDOM"
+    mv ~/.config/waybar ~/.config/"$BACKUP_NAME"
+    echo "Existing config backed up to ~/.config/$BACKUP_NAME"
 fi
 
-# 5. Apply Papirus Dark icons
+## 4. Apply the Copper Night Waybar config
+mkdir -p ~/.config/waybar
+
+# Checking for the Waybar files in the 'current/theme' path
+SOURCE_DIR="$HOME/.config/omarchy/current/theme/waybar"
+
+if [ -d "$SOURCE_DIR" ]; then
+    cp -r "$SOURCE_DIR"/* ~/.config/waybar/
+    # Make scripts executable
+    [ -d ~/.config/waybar/scripts ] && chmod +x ~/.config/waybar/scripts/*
+    echo "Waybar configuration applied successfully."
+else
+    echo "Error: Source directory $SOURCE_DIR not found."
+fi
+
+## 5. Apply Papirus Dark icons
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
-# 6. Restart Waybar
-# Using 'pkill' is often cleaner; trailing '&' starts it in the background
+## 6. Restart Waybar
 killall -q waybar
 nohup waybar > /dev/null 2>&1 &
 ```
