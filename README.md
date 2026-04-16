@@ -189,7 +189,7 @@ The weather widget displays **New York** by default. Change it in three steps:
 
 ```bash
 # Step 1 — Open the weather script
-nano ~/.config/waybar/scripts/weather.py
+nano ~/.config/waybar/scripts/weather.sh
 ```
 
 ```python
