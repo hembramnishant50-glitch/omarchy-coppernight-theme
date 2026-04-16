@@ -13,6 +13,9 @@ MUSIC_WEB_KEYWORDS = ["spotify", "soundcloud", "music", "deezer", "bandcamp"]
 
 # --- APP & WEBSITE MAP ---
 APP_MAP = {    #----- All Flathub Versions ----
+           
+           
+    "io.github.linx_systems.clamui":  ("󰒃", "#61dafb", "ClamUI"),
     
     # --- 0. Google / Proton ---
     "google-chrome":                  ("", "#4285f4", "Chrome"),
@@ -51,6 +54,8 @@ APP_MAP = {    #----- All Flathub Versions ----
 
 
     # --- 1. STUDENT & RESEARCH (Flathub Versions) ---
+    
+    "ClamUI":           ("󱓧", "#7c4dff", "Obsidian"),
     "md.obsidian.Obsidian":           ("󱓧", "#7c4dff", "Obsidian"),
     "net.ankiweb.Anki":               ("󰮔", "#ffffff", "Anki"),
     "org.zotero.Zotero":              ("󱓷", "#cc2914", "Zotero"),
@@ -59,11 +64,13 @@ APP_MAP = {    #----- All Flathub Versions ----
     "com.github.xournalpp.xournalpp": ("󱞈", "#2980b9", "Xournal++"),
     "com.github.johnfactotum.Foliate":("󰂵", "#629c44", "Foliate"),
     "org.kde.kalgebra":               ("󰪚", "#3daee9", "KAlgebra"),
+    "io.github.fabrialberio.pinapp":   ("󰐚", "#4caf50", "Pins"),
+    "org.bunkus.mkvtoolnix-gui": ("󰔑", "#81a2be", "MKVToolNix"), # Flatpak ID
+    "garden.jamie.Morphosis": ("󰈹", "#3584e4", "Morphosis"), # Flatpak ID
 
     # --- 2. WEB BROWSERS (Flathub Versions) ---
     "io.github.zen_browser.zen":      ("󰈹", "#4f4f4f", "Zen Browser"),
     "org.mozilla.firefox":            ("", "#ff7139", "Firefox"),
-    "com.brave.Browser":              ("", "#ff1a1a", "Brave"),
     "org.qutebrowser.qutebrowser":    ("󰈹", "#8dc21f", "qutebrowser"),
     "io.gitlab.librewolf-community":  ("󰈹", "#3269d6", "LibreWolf"),
     "com.vivaldi.Vivaldi":            ("", "#ef3939", "Vivaldi"),
@@ -93,15 +100,34 @@ APP_MAP = {    #----- All Flathub Versions ----
     "io.github.hlubek.Eyedropper":    ("󰈊", "#3584e4", "Eyedropper"),
     "io.github.kolunmi.Bazaar": ("", "#5da7e4", "Bazaar Weather"),
     "io.github.michelegiacalone.bazaar": ("", "#e74c3c", "Bazaar"),
+    "org.audacityteam.Audacity":      ("󰓃", "#0000eb", "Audacity"),
+    "audacity":                       ("󰓃", "#0000eb", "Audacity"),
+    "com.rafaelmardojai.Blanket":     ("󰖗", "#3daee9", "Blanket"),
+    "blanket":                        ("󰖗", "#3daee9", "Blanket"),
+    "org.gnome.gitlab.YaLTeR.VideoTrimmer": ("󰐊", "#c061cb", "Video Trimmer"),
+    "org.libretro.RetroArch":          ("󰊴", "#3daee9", "RetroArch"),
+    "pinapp":                          ("󰐚", "#4caf50", "Pins"),
+    "Pins":                            ("󰐚", "#4caf50", "Pins"),
+    
     
     
     # --- 6. SOCIAL (Flathub Versions) ---
     "com.discordapp.Discord":         ("", "#5865f2", "Discord"),
     "org.telegram.desktop":           ("", "#24a1de", "Telegram"),
     "com.ayugram.desktop":            ("", "#3399ff", "AyuGram"),
+    
 
 
     # --- Omarchy Versions
+    
+    # --- Gaming ----
+    "minecraft-launcher":             ("󰍳", "#3e8527", "Minecraft"),
+    "minecraft launcher":             ("󰍳", "#3e8527", "Minecraft"),
+    "org.prismlauncher.PrismLauncher": ("󰍳", "#52b12e", "Prism"),
+    "org.multimc.MultiMC":            ("󰍳", "#f9b000", "MultiMC"),
+    "com.gdlauncher.gdlauncher":       ("󰍳", "#14b1e7", "GDLauncher"),
+    "retroarch":                       ("󰊴", "#3daee9", "RetroArch"),
+    "RetroArch":                       ("󰊴", "#3daee9", "RetroArch"),
 
     # --- 1. AI & EDUCATION ---
     "careerwill":     ("🎓", "#ff9900", "Careerwill"),
@@ -112,12 +138,13 @@ APP_MAP = {    #----- All Flathub Versions ----
     "perplexity":     ("󰚩", "#2ebfab", "Perplexity"),
 
     # --- 2. BROWSERS (Specific IDs first) ---
+    "com.brave.Browser":              ("󰖟", "#ff542b", "Brave"),
+    "brave-browser":                  ("󰖟", "#ff542b", "Brave"),
     "mullvad-browser":  ("󰇚", "#3c9519", "Mullvad Browser"),
     "omarchy-chromium": ("", "#00bcd4", "Omarchy Chromium"),
     "librewolf":        ("󰈹", "#3269d6", "LibreWolf"),
     "tor-browser":      ("", "#7d4698", "Tor Browser"),
     "ungoogled-chromium": ("", "#ffffff", "Ungoogled Chromium"),
-    "brave-browser":    ("", "#ff1a1a", "Brave"),
     "google-chrome":    ("", "#4285f4", "Google Chrome"),
     "microsoft-edge":   ("", "#0078d7", "Microsoft Edge"),
     "firefox":          ("", "#ff7139", "Firefox"),
@@ -127,6 +154,12 @@ APP_MAP = {    #----- All Flathub Versions ----
     "vivaldi":          ("", "#ef3939", "Vivaldi"),
     "epiphany":         ("󰈹", "#3584e4", "GNOME Web"),
     "helium":           ("󰈹", "#ffeb3b", "Helium"),
+    
+    "mullvad-browser":      ("󰖟", "#ffdc00", "Mullvad"), # Standard package name
+    "mullvadbrowser":       ("󰖟", "#ffdc00", "Mullvad"), # Common binary name
+    "mullvadbrowser.real":  ("󰖟", "#ffdc00", "Mullvad"), # The actual WM_CLASS
+    "mullvad-browser-bin":  ("󰖟", "#ffdc00", "Mullvad"), # AUR package specific
+    "mullvad browser":      ("󰖟", "#ffdc00", "Mullvad"),
 
     # --- 3. SOCIAL MEDIA & COMMUNICATION ---
     "com.ayugram.desktop": ("", "#3399ff", "AyuGram"),
@@ -144,6 +177,9 @@ APP_MAP = {    #----- All Flathub Versions ----
     "pinterest":           ("", "#bd081c", "Pinterest"),
     "tumblr":              ("", "#35465c", "Tumblr"),
     "tiktok":              ("", "#ff0050", "TikTok"),
+    "org.signal.Signal":               ("󰭹", "#3a76f0", "Signal"),
+    "signal-desktop":                  ("󰭹", "#3a76f0", "Signal"),
+    "signal":                          ("󰭹", "#3a76f0", "Signal"),
 
     # --- 4. PRODUCTIVITY & OFFICE ---
     "onlyoffice":     ("󰏆", "#ff6f21", "ONLYOFFICE"),
@@ -167,6 +203,7 @@ APP_MAP = {    #----- All Flathub Versions ----
     "outlook":        ("", "#0078d4", "Outlook"),
     "hey":            ("󰮏", "#ffcc00", "HEY Mail"),
     "basecamp":            ("", "#ffcc00", "basecamp"),
+    "chrome-app.zoom.us__wc_home-default": ("󰕧", "#2d8cff", "Zoom"),
     
 
     
@@ -199,6 +236,38 @@ APP_MAP = {    #----- All Flathub Versions ----
     "Com-abdownloadmanager-desktop-appkt": ("󰇚", "#00aaff", "AB Download Manager"),
     "aether":         ("󰑭", "#a29bfe", "Aether"),
     "typora": ("󰂺", "#b4637a", "Typora"),
+    "1password": ("", "#0572ec", "1Password"),
+    "Io.gitlab.adhami3310.converter":  ("󱊲", "#3584e4", "Converter"),
+    "fr.handbrake.ghb":                ("󱁆", "#b71c1c", "Handbrake"),
+    "curlew":                          ("󰕧", "#2e7d32", "Curlew"),
+    "soundconverter":                  ("󰓃", "#f57c00", "SoundConverter"),
+    "mystiq":                          ("󰕧", "#00d2ff", "MystiQ"),
+    "Gitlab.yalter.videotrimmer":      ("󰐊", "#c061cb", "Video Trimmer"),
+    "org.gnome.gitlab.YaLTeR.VideoTrimmer": ("󰐊", "#c061cb", "Video Trimmer"),
+    "com.ozmartians.VidCutter":        ("󰐊", "#2d8cff", "VidCutter"),
+    "losslesscut":                     ("󰐊", "#000000", "LosslessCut"),
+    "io.gitlab.clark_johnston.Footage": ("󰿚", "#3584e4", "Footage"),
+    "Stremio.stremio":                ("󰐊", "#7b3fe4", "Stremio"),
+    "com.stremio.Stremio":            ("󰐊", "#7b3fe4", "Stremio"),
+    "stremio":                        ("󰐊", "#7b3fe4", "Stremio"),
+    "com.stremio.Service":            ("󱑫", "#7b3fe4", "Stremio Service"),
+    "Io.github.sigmasd.stimulator":    ("󰅶", "#f57c00", "Stimulator"),
+    "io.github.sigmasd.stimulator":    ("󰅶", "#f57c00", "Stimulator"),
+    "stimulator":                     ("󰅶", "#f57c00", "Stimulator"),
+    "de.haeckerfelix.Shortwave":       ("󰕱", "#613583", "Shortwave"),
+    "Shortwave":                       ("󰕱", "#613583", "Shortwave"),
+    "shortwave":                       ("󰕱", "#613583", "Shortwave"),
+    "fr.romainvigier.MetadataCleaner": ("󰃢", "#5e5c64", "Metadata Cleaner"),
+    "metadatacleaner":                  ("󰃢", "#5e5c64", "Metadata Cleaner"),
+    "Metadata Cleaner":                 ("󰃢", "#5e5c64", "Metadata Cleaner"),
+    "Morphosis":              ("󰈹", "#3584e4", "Morphosis"), # Window Title
+    "morphosis":              ("󰈹", "#3584e4", "Morphosis"), # Binary name
+    "garden.jamie.morphosis": ("󰈹", "#3584e4", "Morphosis"), # Lowercase variant
+    
+    "mkvtoolnix-gui":       ("󰔑", "#81a2be", "MKVToolNix"), # Standard binary/AUR
+    "mkvtoolnix":           ("󰔑", "#81a2be", "MKVToolNix"), # Package name
+    "MKVToolNix GUI":       ("󰔑", "#81a2be", "MKVToolNix"), # Window Title/Class
+    
 
     # --- DOWNLOAD MANAGERS ---
     "com.abdownloadmanager.abdownloadmanager": ("󰇚", "#00aaff", "AB Download Manager"),
@@ -215,17 +284,6 @@ APP_MAP = {    #----- All Flathub Versions ----
     "fdm":            ("󰇚", "#00aaff", "FDM"),
     "kget":           ("󱑢", "#3daee9", "KGet"),
 
-    
-
-
-
-    # --- 7. WEB SERVICES & SHOPPING ---
-    "github":         ("", "#ffffff", "GitHub"),
-    "gitlab":         ("", "#fc6d26", "GitLab"),
-    "stackoverflow":  ("", "#f48024", "StackOverflow"),
-    "amazon":         ("", "#ff9900", "Amazon"),
-    "cafebazaar":     ("󰄶", "#42b029", "Bazaar"),
-    "ir.cafebazaar":  ("󰄶", "#42b029", "Bazaar"),
 
     # --- 8. GNOME SUITE ---
     "org.gnome.clocks":     ("󱎫", "#3584e4", "Clocks"),
@@ -248,6 +306,19 @@ APP_MAP = {    #----- All Flathub Versions ----
     "localhost":      ("", "#00ff00", "Localhost"),
     # --- 10. EXTRA
     "com-tonikelope-megabasterd-mainpanel":    ("󰗽", "#d92323", "MegaBuster"),
+    
+    # --- 7. WEB SERVICES & SHOPPING ---
+    
+    "gitlab":         ("", "#fc6d26", "GitLab"),
+    "github-desktop":           ("󰊤", "#ffffff", "GitHub"), # AUR binary name
+    "GitHub Desktop":           ("󰊤", "#ffffff", "GitHub"), # Window Title/Class
+    "io.github.shiftey.Desktop": ("󰊤", "#ffffff", "GitHub"), # Flatpak ID
+    "github":                   ("󰊤", "#ffffff", "GitHub"), # Generic fallback
+    "stackoverflow":  ("", "#f48024", "StackOverflow"),
+    "amazon":         ("", "#ff9900", "Amazon"),
+    "cafebazaar":     ("󰄶", "#42b029", "Bazaar"),
+    "ir.cafebazaar":  ("󰄶", "#42b029", "Bazaar"),
+    
 }
 
 PATTERNS = [" ▃▆▄", " ▄▃▇", " ▆▃▅", " ▇▆▃", " ▃▅▇"]
