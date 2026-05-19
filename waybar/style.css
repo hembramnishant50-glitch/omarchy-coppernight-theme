@@ -61,11 +61,12 @@ window#waybar {
 #clock, 
 #pulseaudio, 
 #network, 
-#custom-wifi,         /* Matches your "custom/wifi" config */
+#custom-wifi,         
 #custom-weather, 
 #battery,
 #custom-net_speed,
-#custom-system {
+#custom-system,
+#custom-text-extraction {
     padding: 0 10px;
     margin: 4px 2px; 
     border-radius: 12px; 
@@ -79,7 +80,8 @@ window#waybar {
 #custom-weather:hover, 
 #battery:hover,
 #custom-net_speed:hover,
-#custom-system:hover {
+#custom-system:hover,
+#custom-text-extraction:hover {
     background: rgba(137, 180, 250, 0.15);
     border-radius: 12px; 
     color: #89b4fa;
@@ -88,11 +90,21 @@ window#waybar {
 /* -----------------------------------------------------
    Individual Module Colors
    ----------------------------------------------------- */
-#clock { color: #cba6f7; font-weight: bold; }
+#clock { 
+    color: #cba6f7; 
+    font-weight: bold; 
+    margin-right: -2px; /* Pulls right edge closer to Extract */
+}
+
 #pulseaudio { color: #89dceb; }
 #network, #custom-wifi { color: #89dceb; }
 #custom-weather { color: #89dceb; }
 #custom-system { color: #89dceb; }
+
+#custom-text-extraction { 
+    color: #bac2de; 
+    margin-left: -2px; /* Pulls left edge closer to Clock */
+}
 
 /* Net Speed 3D Effect */
 #custom-net_speed {
@@ -125,7 +137,7 @@ tooltip {
 }
 
 tooltip label {
-    font-family: "JetBrainsMono Nerd Font"; /* REQUIRED for ASCII box alignment */
+    font-family: "JetBrainsMono Nerd Font"; 
     padding: 12px; 
     color: #cdd6f4;
 }
