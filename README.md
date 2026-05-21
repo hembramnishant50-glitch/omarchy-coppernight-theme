@@ -180,23 +180,24 @@ cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-2 && chmod +x waybar-set
 <br>
 
 ---
+### 🌤️ Weather Widget — Set Your City (Click & Change)
+
 <div align="center">
-  
-### 🌤️ Change your city – the easy way
-  
+
+No more editing scripts. **One click** changes your weather location.
+
+<br>
+
+| 🖱️ Step 1 | ⌨️ Step 2 | ✅ Step 3 |
+|:---:|:---:|:---:|
+| Click the weather icon<br>`🌡️` `☀️` `🌧️` | Type your city<br>`London` · `Tokyo` · `Paris` | Press `Enter`<br>Weather updates instantly |
+
+<br>
+
+> 💡 **Pro tip** – Your city is saved automatically.  
+> To refresh, just click the icon again or run `killall waybar; waybar &`.
+
 </div>
-
-| | |
-|:---:|:---|
-| 🖱️ **Click** the weather icon (`🌡️/☀️/🌧️`) | → |
-| ⌨️ **Type** your city name (`London`, `Tokyo`, `Paris`) | → |
-| ✅ **Press Enter** – new weather appears instantly | |
-
-<br>
-
-> ✨ No config editing. No terminal. Just click and type.
-
-<br>
 
 ---
 
