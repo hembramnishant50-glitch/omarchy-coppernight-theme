@@ -180,28 +180,21 @@ cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-2 && chmod +x waybar-set
 <br>
 
 ---
+<div align="center">
+  
+### 🌤️ Change your city – the easy way
+  
+</div>
 
-## ⚙️ Configuration
+| | |
+|:---:|:---|
+| 🖱️ **Click** the weather icon (`🌡️/☀️/🌧️`) | → |
+| ⌨️ **Type** your city name (`London`, `Tokyo`, `Paris`) | → |
+| ✅ **Press Enter** – new weather appears instantly | |
 
-### 🌤️ Weather Widget — Set Your City
+<br>
 
-The weather widget displays **New York** by default. Change it in three steps:
-
-```bash
-# Step 1 — Open the weather script
-nano ~/.config/waybar/scripts/weather.sh
-```
-
-```python
-# Step 2 — Find and update CITY
-# ── Configuration ─────────────────────────────
-CITY = "Tokyo"   # ← Replace with your city name
-```
-
-```bash
-# Step 3 — Save (Ctrl+O → Enter), Exit (Ctrl+X), then restart Waybar
-killall waybar; waybar &
-```
+> ✨ No config editing. No terminal. Just click and type.
 
 <br>
 
