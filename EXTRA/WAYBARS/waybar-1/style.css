@@ -13,12 +13,12 @@ window#waybar {
 #custom-menu, #workspaces, #clock, #custom-system, #custom-weather, 
 #custom-wifi, #pulseaudio, #custom-battery, #custom-power, #drawer#websites, #custom-window {
     background-color: rgba(17, 17, 27, 0.9);
-    padding: 4px 16px;
-    margin: 6px 4px;
+    padding: 2px 14px; /* Reduced inner vertical padding */
+    margin: 4px 4px;   /* Reduced outer vertical margin */
     border-radius: 24px;
     border: 1.5px solid;
-    min-height: 26px;
-    transition: all 0.3s ease; /* Adds smooth hover effect */
+    min-height: 24px;  /* Reduced minimum height */
+    transition: all 0.3s ease; 
 }
 
 /* --- WIFI & NETWORK PILL --- */
@@ -56,10 +56,15 @@ window#waybar {
 #custom-system  { color: #94e2d5; border-color: #94e2d5; }
 #custom-weather { color: #f38ba8; border-color: #f38ba8; }
 #pulseaudio     { color: #b4befe; border-color: #89b4fa; }
-#custom-battery { color: #a6e3a1; border-color: #a6e3a1; }
 
+/* --- BATTERY PILL WITH ANIMATION --- */
+#custom-battery { 
+    color: #a6e3a1; 
+    border-color: #a6e3a1; 
+}
 #custom-battery.charging {
-    color: #f9e2af; border-color: #f9e2af;
+    color: #f9e2af; 
+    border-color: #f9e2af;
     animation: charging-glow 1.5s infinite alternate linear;
 }
 
@@ -74,12 +79,12 @@ window#waybar {
 tooltip { 
     background: rgba(17, 17, 27, 0.95); 
     border: 1.5px solid #fab387; 
-    border-radius: 15px; 
+    border-radius: 10px; /* Slightly sharper corners for a smaller box */
 }
 
 tooltip label { 
     font-family: "JetBrainsMono Nerd Font"; 
-    font-size: 15px; 
+    font-size: 14px;     /* Reduced from 15px */
     color: #cdd6f4; 
-    padding: 12px; 
+    padding: 6px 10px;   /* Reduced from 12px to shrink the overall box size */
 }
