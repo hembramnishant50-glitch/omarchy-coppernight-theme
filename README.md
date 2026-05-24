@@ -247,6 +247,37 @@ cp -r ~/.config/omarchy/current/theme/scripts \
 chmod +x ~/.config/hypr/scripts/*
 ```
 
+---
+
+> ## ⚠️ IMPORTANT: Fix Black Screen on Lock if it is happening ⚠️
+>
+> **How to stop your screen from turning black when you lock it**
+>
+>
+> **1. Open the file** — Open your terminal, paste this command, and press Enter:
+>
+> ```bash
+> nano ~/.local/share/omarchy/bin/omarchy-system-lock
+> ```
+>
+> **2. Change one line** — Scroll all the way to the bottom of the file. Find the line that says:
+>
+> ```bash
+> omarchy-brightness-display off
+> ```
+>
+> Put a `#` symbol at the very start of that line so it looks like this:
+>
+> ```bash
+> # omarchy-brightness-display off
+> ```
+>
+> **3. Save and Exit**
+> - Press `Ctrl + O` on your keyboard, then press `Enter` to save.
+> - Press `Ctrl + X` to exit the editor.
+
+---
+
 <br>
 
 ### Restor Old Hyperlock and remove Copper Night hyperlock
