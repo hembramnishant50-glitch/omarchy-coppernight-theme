@@ -30,15 +30,17 @@
     },
 
     "custom/window": {
-        "exec": "~/.config/waybar/scripts/waybar_info.py",
+        "exec": "~/.config/waybar/scripts/window_info.py",
         "return-type": "json",
+        "interval": 1,
         "format": "{}",
-        "tooltip": false,
+        "tooltip": true,
         "on-click": "playerctl play-pause",
         "on-click-right": "playerctl next",
         "on-click-middle": "playerctl previous"
     },
 
+    
     "clock": {
         "format": "󱑂 {:%I:%M %p}",
         "format-alt": "󰃭 {:%A, %d %B %Y}",
