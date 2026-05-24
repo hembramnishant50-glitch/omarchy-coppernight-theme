@@ -1,19 +1,17 @@
 <div align="center">
 
-<br>
-
 ```
-░█▀▀█ ░█▀▀▀█ ░█▀▀█ ░█▀▀█ ░█▀▀▀ ░█▀▀█   ░█▄─░█ ▀█▀ ░█▀▀█ ░█─░█ ▀▀█▀▀
-░█─── ░█──░█ ░█▄▄█ ░█▄▄█ ░█▀▀▀ ░█▄▄▀   ░█░█░█ ░█─ ░█─▄▄ ░█▀▀█ ─░█──
-░█▄▄█ ░█▄▄▄█ ░█─── ░█─── ░█▄▄▄ ░█─░█   ░█──▀█ ▄█▄ ░█▄▄█ ░█─░█ ─░█──
+░█▀▀█ ░█▀▀▀█ ░█▀▀█ ░█▀▀█ ░█▀▀▀ ░█▀▀█   ░█▄─░█ ░█▀▀▀ ░█▀▀█ ░█─░█ ▀▀█▀▀
+░█─── ░█──░█ ░█▄▄█ ░█▄▄█ ░█▀▀▀ ░█▄▄▀   ░█░█░█ ░█▀▀▀ ░█─▄▄ ░█▀▀█ ─░█──
+░█▄▄█ ░█▄▄▄█ ░█─── ░█─── ░█▄▄▄ ░█─░█   ░█──▀█ ░█▄▄▄ ░█▄▄█ ░█─░█ ─░█──
 ```
 
-<h1>🌌 Omarchy: Copper Night</h1>
+# 🌌 Copper Night
 
-<p><em>"Where the deep indigo of Tokyo meets the warm glow of an ember sunset."</em></p>
+> *"Where the deep indigo of Tokyo meets the warm glow of an ember sunset."*
 
-<p>A high-performance <strong>Hyprland</strong> rice for <strong>Omarchy</strong> — featuring a carefully crafted <strong>Tokyo Night</strong> palette<br>
-kissed by a striking <strong>Copper-Orange</strong> border that glows like a setting sun.</p>
+A high-performance **Hyprland** rice for **Omarchy** — featuring a carefully crafted **Tokyo Night** palette  
+kissed by a striking **Copper-Orange** border that glows like a setting sun.
 
 <br>
 
@@ -21,8 +19,6 @@ kissed by a striking <strong>Copper-Orange</strong> border that glows like a set
 [![License](https://img.shields.io/badge/license-MIT-7AA2F7?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 [![Hyprland](https://img.shields.io/badge/Hyprland-Rice-565f89?style=for-the-badge&logo=archlinux&logoColor=white)](https://hyprland.org)
 [![Stars](https://img.shields.io/github/stars/hembramnishant50-glitch/omarchy-coppernight-theme?style=for-the-badge&color=BB9AF7&logo=starship&logoColor=white)](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme/stargazers)
-
-<br>
 
 </div>
 
@@ -41,11 +37,9 @@ kissed by a striking <strong>Copper-Orange</strong> border that glows like a set
 
 </div>
 
-<br>
-
 ---
 
-## ✨ Theme Highlights
+## ✨ Features
 
 <div align="center">
 
@@ -54,106 +48,117 @@ kissed by a striking <strong>Copper-Orange</strong> border that glows like a set
 | 🖼️ | **Wallpaper** | Traditional Japanese Pixel Art Pagoda — handpicked for the aesthetic |
 | 🪟 | **Widgets** | Floating diagnostic panels with custom animated resource bars |
 | 🎨 | **Color Palette** | Deep Indigos · Electric Magentas · Warm Copper-Orange accents |
-| 🌤️ | **Weather Widget** | Live weather display with configurable location |
+| 🌤️ | **Weather Widget** | Live weather with click-to-change city — no script editing needed |
 | 🔒 | **Lock Screen** | Glassmorphism Hyprlock with blur, quotes, and media controls |
 | 🎵 | **Media Controls** | Playerctl integration with full Spotify Flatpak support |
 
 </div>
 
-<br>
+---
+
+## 🎨 Color Palette
+
+<div align="center">
+
+| Swatch | Name | Hex |
+|:---:|:---|:---:|
+| ![](https://placehold.co/40x20/1a1b2e/1a1b2e) | Background | `#1a1b2e` |
+| ![](https://placehold.co/40x20/565f89/565f89) | Deep Indigo | `#565f89` |
+| ![](https://placehold.co/40x20/7aa2f7/7aa2f7) | Electric Blue | `#7aa2f7` |
+| ![](https://placehold.co/40x20/bb9af7/bb9af7) | Magenta | `#bb9af7` |
+| ![](https://placehold.co/40x20/c87941/c87941) | Copper-Orange | `#c87941` |
+| ![](https://placehold.co/40x20/c0caf5/c0caf5) | Foreground | `#c0caf5` |
+
+</div>
 
 ---
 
 ## 🚀 Installation
 
-> **Choose the method that suits you best.** Both paths lead to the same beautiful result.
-
-<br>
-
-### ⚡ Option A — Theme Only *(Minimal)*
-
+### Step 1 — Install the Theme
 
 ```bash
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
 ```
 
-<br>
+---
 
-### 🌟 Option To install Waybar
+### Step 2 — Install Waybar *(Optional)*
 
-📦 Installs all required system and Python dependencies * 🛡️ Safely backs up your existing Waybar configuration
+> 💾 Your existing Waybar config is automatically backed up before anything is changed.
 
 ```bash
-#!/bin/bash
-
-## 1. Install dependencies
-# Added zenity, jq, and curl for Waybar modules, plus python-psutil for system Python
-sudo pacman -S --needed python-requests python-psutil networkmanager papirus-icon-theme pavucontrol bc zenity jq curl
+# Install dependencies
+sudo pacman -S --needed python-requests python-psutil networkmanager \
+  papirus-icon-theme pavucontrol bc zenity jq curl
 sudo systemctl enable --now NetworkManager
-
-# Install psutil via pip to ensure compatibility with custom Python environments (like mise)
 pip install psutil
 
-## 2. Backup existing Waybar config
-# Format: waybar-backup-DD-MM-YYYY-RandomNumber
+# Backup existing Waybar config
 if [ -d ~/.config/waybar ]; then
     BACKUP_NAME="waybar-backup-$(date +%d-%m-%Y)-$RANDOM"
     mv ~/.config/waybar ~/.config/"$BACKUP_NAME"
-    echo "Existing config backed up to ~/.config/$BACKUP_NAME"
+    echo "Backed up to ~/.config/$BACKUP_NAME"
 fi
 
-## 3. Apply the Copper Night Waybar config
+# Apply Copper Night Waybar
 mkdir -p ~/.config/waybar
-
-# Checking for the Waybar files in the 'current/theme' path
 SOURCE_DIR="$HOME/.config/omarchy/current/theme/waybar"
 
 if [ -d "$SOURCE_DIR" ]; then
     cp -r "$SOURCE_DIR"/* ~/.config/waybar/
-    
-    # Make scripts executable
+
     if [ -d ~/.config/waybar/scripts ]; then
         chmod +x ~/.config/waybar/scripts/*
-        
-        # Force all Python scripts to use the system Python to prevent custom environment conflicts
-        find ~/.config/waybar/scripts -type f -name "*.py" -exec sed -i '1s|^#!/usr/bin/env python3|#!/usr/bin/python3|' {} +
+        # Force system Python to prevent environment conflicts
+        find ~/.config/waybar/scripts -type f -name "*.py" \
+          -exec sed -i '1s|^#!/usr/bin/env python3|#!/usr/bin/python3|' {} +
     fi
-    
-    echo "Waybar configuration applied successfully."
-else
-    echo "Error: Source directory $SOURCE_DIR not found."
 fi
 
-## 4. Apply Papirus Dark icons
+# Apply Papirus Dark icons & restart Waybar
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-
-## 5. Restart Waybar
-killall -q waybar
-nohup waybar > /dev/null 2>&1 &
+killall -q waybar; nohup waybar > /dev/null 2>&1 &
 ```
-
-> 💡 **Tip:** Your old Waybar config is backed up as `~/.config/waybar-backup-XXXXX`. Nothing is deleted.
-
-<br>
 
 ---
 
-## 🎨 Waybar Variants
+### Step 3 — Install Hyprlock *(Optional)*
 
-Copper Night ships with **three Waybar layouts**. Pick the one that fits your style.
+```bash
+# Install Playerctl for media key support
+sudo pacman -S --needed playerctl
 
-> ⚠️ **Waybar-1 and Waybar-2** require **Option A or Option B** to be completed first.
+# Fix Spotify media controls (Flatpak)
+if command -v flatpak &> /dev/null; then
+    flatpak override --user \
+      --talk-name=org.mpris.MediaPlayer2.spotify \
+      com.spotify.Client
+fi
+
+# Apply lock screen config
+mv ~/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf-Backup
+cp -r ~/.config/omarchy/current/theme/scripts \
+      ~/.config/omarchy/current/theme/quotes.txt \
+      ~/.config/omarchy/current/theme/hyprlock.conf \
+      ~/.config/hypr/
+chmod +x ~/.config/hypr/scripts/*
+```
+
+---
+
+## 🪟 Waybar Variants
+
+> ⚠️ Waybar-1 and Waybar-2 require **Step 1** or **Step 2** to be completed first.
 
 <br>
 
-### 🅰️ Default Waybar *(included with Option B)*
+### 🅰️ Default Waybar
 
 <div align="center">
-<img width="1920" height="55" alt="Image" src="https://github.com/user-attachments/assets/2aab9a8e-2bed-45e9-ab6b-a2c2e6c51d77" />
-<p><em>Clean, minimal — ships with the full install out of the box.</em></p>
+<img width="1920" height="55" alt="Default Waybar" src="https://github.com/user-attachments/assets/2aab9a8e-2bed-45e9-ab6b-a2c2e6c51d77" />
+<p><em>Clean and minimal — ships out of the box with the full install.</em></p>
 </div>
-
-<br>
 
 ---
 
@@ -164,54 +169,46 @@ Copper Night ships with **three Waybar layouts**. Pick the one that fits your st
 <p><em>Neon pill borders · Rounded segments · Compact & clean</em></p>
 </div>
 
-**Install:**
 ```bash
-cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-1 && chmod +x Setup-Waybar.sh && ./Setup-Waybar.sh && chmod +x ~/.config/waybar/scripts/*
+cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-1 \
+  && chmod +x Setup-Waybar.sh && ./Setup-Waybar.sh \
+  && chmod +x ~/.config/waybar/scripts/*
 ```
-
-> 💡 Your old config is backed up as `~/.config/waybar-XXXX`. Rename it back anytime to restore.
-
-<br>
 
 ---
 
 ### ⚡ Waybar-2 — Ember Arc
 
 <div align="center">
-<img width="1917" height="76" alt="Image" src="https://github.com/user-attachments/assets/803e6c84-9e0e-4122-9441-453fdd2eb792" />
+<img width="1917" height="76" alt="Waybar-2 Ember Arc" src="https://github.com/user-attachments/assets/803e6c84-9e0e-4122-9441-453fdd2eb792" />
 <p><em>Copper warmth · Floating arcs · Glows like a setting sun</em></p>
 </div>
 
-**Install:**
 ```bash
-cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-2 && chmod +x waybar-setup.sh && ./waybar-setup.sh
+cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-2 \
+  && chmod +x waybar-setup.sh && ./waybar-setup.sh
 ```
 
-<br>
-
 ---
-### 🌤️ Weather Widget — Set Your City (Click & Change)
+
+## 🌤️ Weather Widget
+
+No more editing scripts. **One click** updates your city.
 
 <div align="center">
 
-No more editing scripts. **One click** changes your weather location.
-
-<br>
-
-| 🖱️ Step 1 | ⌨️ Step 2 | ✅ Step 3 |
+| 🖱️ Click | ⌨️ Type | ✅ Done |
 |:---:|:---:|:---:|
-| Click the weather icon<br>`🌡️` `☀️` `🌧️` | Type your city<br>`London` · `Tokyo` · `Paris` | Press `Enter`<br>Weather updates instantly |
-
-<br>
-
-> 💡 **Pro tip** – Your city is saved automatically.  
-> To refresh, just click the icon again or run `killall waybar; waybar &`.
+| Tap the weather icon | Enter your city name | Press `Enter` |
+| `🌡️` `☀️` `🌧️` | `London` · `Tokyo` · `Patna` | Updates instantly |
 
 </div>
 
+> 💡 Your city is saved automatically. To refresh, click the icon again or run `killall waybar; waybar &`.
+
 ---
 
-## 🔒 Hyprlock — Custom Lock Screen
+## 🔒 Lock Screen
 
 <div align="center">
 
@@ -221,129 +218,66 @@ No more editing scripts. **One click** changes your weather location.
 
 </div>
 
-<br>
+### Fix: Black Screen on Lock
 
-> ⚠️ **Run this after completing Option A or Option B above.**
+If your screen goes black when locking, apply this one-line fix:
 
 ```bash
-# 1. Install Playerctl (required for media key support)
-sudo pacman -S --needed playerctl
-
-# 2. Fix Spotify media controls (Flatpak only)
-if command -v flatpak &> /dev/null; then
-    flatpak override --user \
-      --talk-name=org.mpris.MediaPlayer2.spotify \
-      com.spotify.Client
-fi
-
-# 3. Copy lock screen config files
-mv ~/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf-Backup && \
-cp -r ~/.config/omarchy/current/theme/scripts \
-      ~/.config/omarchy/current/theme/quotes.txt \
-      ~/.config/omarchy/current/theme/hyprlock.conf \
-      ~/.config/hypr/
-
-# 4. Make scripts executable
-chmod +x ~/.config/hypr/scripts/*
+nano ~/.local/share/omarchy/bin/omarchy-system-lock
 ```
+
+Find the line at the bottom of the file:
+
+```bash
+omarchy-brightness-display off
+```
+
+Comment it out by adding `#` at the start:
+
+```bash
+# omarchy-brightness-display off
+```
+
+Save with `Ctrl+O` → `Enter`, then exit with `Ctrl+X`.
 
 ---
 
-> ## ⚠️ IMPORTANT: Fix Black Screen on Lock if it is happening ⚠️
->
-> **How to stop your screen from turning black when you lock it**
->
->
-> **1. Open the file** — Open your terminal, paste this command, and press Enter:
->
-> ```bash
-> nano ~/.local/share/omarchy/bin/omarchy-system-lock
-> ```
->
-> **2. Change one line** — Scroll all the way to the bottom of the file. Find the line that says:
->
-> ```bash
-> omarchy-brightness-display off
-> ```
->
-> Put a `#` symbol at the very start of that line so it looks like this:
->
-> ```bash
-> # omarchy-brightness-display off
-> ```
->
-> **3. Save and Exit**
-> - Press `Ctrl + O` on your keyboard, then press `Enter` to save.
-> - Press `Ctrl + X` to exit the editor.
-
----
-
-<br>
-
-### Restor Old Hyperlock and remove Copper Night hyperlock
-```bash
-rm ~/.config/hypr/hyprlock.conf && \
-mv ~/.config/hypr/hyprlock.conf-Backup ~/.config/hypr/hyprlock.conf
-```
-
-### 🖼️ Customizing the Lock Screen
-
-Edit the config to swap your wallpaper and profile picture:
+### Customize the Lock Screen
 
 ```bash
 nano ~/.config/hypr/hyprlock.conf
 ```
 
 ```ini
-# ── Background Wallpaper ──────────────────────────────────────
+# Wallpaper
 background {
     monitor =
-    path = /home/YOUR_USER/Pictures/your-wallpaper.jpg   # ← .jpg or .png
-    blur_passes = 0    # 0 = sharp  |  3 = soft glass  |  5+ = dreamy glow
+    path = /home/YOUR_USER/Pictures/your-wallpaper.jpg
+    blur_passes = 3   # 0 = sharp · 3 = soft glass · 5+ = dreamy
     blur_size   = 7
 }
 
-# ── Profile Picture ───────────────────────────────────────────
+# Profile Picture
 image {
     monitor =
-    path = /home/YOUR_USER/Pictures/your-avatar.png      # ← .jpg or .png
+    path = /home/YOUR_USER/Pictures/your-avatar.png
     size = 150
 }
 ```
 
-<details>
-<summary><b>💡 Blur Presets</b></summary>
-<br>
-
 | `blur_passes` | Effect |
 |:---:|:---|
-| `0` | Sharp — no blur at all |
+| `0` | Sharp — no blur |
 | `2` | Subtle — light frost |
 | `3` | Standard — soft glass |
 | `5+` | Heavy — dreamy glow |
 
-</details>
+### Restore the Original Lock Screen
 
-<br>
-
----
-
-## 🎨 Color Palette
-
-<div align="center">
-
-| Swatch | Name | Hex |
-|:---:|:---|:---|
-| ![](https://placehold.co/40x20/1a1b2e/1a1b2e) | Background | `#1a1b2e` |
-| ![](https://placehold.co/40x20/565f89/565f89) | Deep Indigo | `#565f89` |
-| ![](https://placehold.co/40x20/7aa2f7/7aa2f7) | Electric Blue | `#7aa2f7` |
-| ![](https://placehold.co/40x20/bb9af7/bb9af7) | Magenta | `#bb9af7` |
-| ![](https://placehold.co/40x20/c87941/c87941) | Copper-Orange | `#c87941` |
-| ![](https://placehold.co/40x20/c0caf5/c0caf5) | Foreground | `#c0caf5` |
-
-</div>
-
-<br>
+```bash
+rm ~/.config/hypr/hyprlock.conf \
+  && mv ~/.config/hypr/hyprlock.conf-Backup ~/.config/hypr/hyprlock.conf
+```
 
 ---
 
@@ -351,19 +285,15 @@ image {
 
 <div align="center">
 
-> All wallpapers ship with the theme and are optimized for dark desktop aesthetics.
-
-<br>
+> All wallpapers ship with the theme, optimized for dark desktop aesthetics.
 
 ### 🌙 Featured — Cats at Moonrise
 
-<img src="https://github.com/user-attachments/assets/0d5fdda4-00e9-4478-a342-7dc5f7bb214d" width="100%" alt="Cats at Moonrise — Lofi Ghibli aesthetic, five cats seated before a copper sunset and full moon">
+<img src="https://github.com/user-attachments/assets/0d5fdda4-00e9-4478-a342-7dc5f7bb214d" width="100%" alt="Cats at Moonrise">
 
 *Five cats perched before a copper sunset — the spirit of Copper Night in one frame.*
 
 <br>
-
-### 🖼️ Full Collection
 
 | | |
 |:---:|:---:|
@@ -372,44 +302,34 @@ image {
 | <img src="https://github.com/user-attachments/assets/34e74655-7dd6-4344-b53b-31707e25a4f9" width="100%"> | <img src="https://github.com/user-attachments/assets/ab07a513-d0d3-4daa-9501-ec87862752c1" width="100%"> |
 | 🪶 **Itachi & The Crows** · *Akatsuki* | 🏯 **Mountain Castle** · *Pixel Art* |
 
-<br>
-
-### 📊 Catalog & Specs
+</div>
 
 | Wallpaper | Style | Resolution |
 |:---|:---|:---:|
-| 🐱 **Cats at Moonrise** | Lofi · Ghibli | 3840 × 2160 |
-| 🏯 **Mountain Castle** | Pixel Art | 5120 × 2880 |
-| ⚔️ **The Last Swordsman** | Dark Fantasy | 3840 × 2160 |
-| 👺 **Girl & Hannya** | Monochrome · Yokai | 3840 × 2160 |
-| 🪶 **Itachi & The Crows** | Naruto · Akatsuki | 3840 × 2160 |
-
-</div>
-
-<br>
+| 🐱 Cats at Moonrise | Lofi · Ghibli | 3840 × 2160 |
+| 🏯 Mountain Castle | Pixel Art | 5120 × 2880 |
+| ⚔️ The Last Swordsman | Dark Fantasy | 3840 × 2160 |
+| 👺 Girl & Hannya | Monochrome · Yokai | 3840 × 2160 |
+| 🪶 Itachi & The Crows | Naruto · Akatsuki | 3840 × 2160 |
 
 ---
 
 ## 🤝 Contributing
 
-Got ideas? Found a bug? Contributions are warmly welcome!
+Contributions are warmly welcome!
 
 1. **Fork** this repository
-2. **Create** a feature branch: `git checkout -b feat/your-idea`
+2. **Create** a branch: `git checkout -b feat/your-idea`
 3. **Commit** your changes: `git commit -m "feat: add your idea"`
 4. **Push** and open a **Pull Request**
-
-<br>
 
 ---
 
 <div align="center">
 
-Made with 🧡 to **Omarchy**
+Made with 🧡 for **Omarchy**
 
 *If this theme made your desktop beautiful, consider leaving a ⭐ — it means a lot!*
-
-<br>
 
 [![GitHub](https://img.shields.io/badge/GitHub-hembramnishant50--glitch-181717?style=for-the-badge&logo=github)](https://github.com/hembramnishant50-glitch)
 
