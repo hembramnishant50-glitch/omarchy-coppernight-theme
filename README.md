@@ -123,30 +123,6 @@ killall -q waybar; nohup waybar > /dev/null 2>&1 &
 
 ---
 
-### Step 3 — Install Hyprlock *(Optional)*
-
-```bash
-# Install Playerctl for media key support
-sudo pacman -S --needed playerctl
-
-# Fix Spotify media controls (Flatpak)
-if command -v flatpak &> /dev/null; then
-    flatpak override --user \
-      --talk-name=org.mpris.MediaPlayer2.spotify \
-      com.spotify.Client
-fi
-
-# Apply lock screen config
-mv ~/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf-Backup
-cp -r ~/.config/omarchy/current/theme/scripts \
-      ~/.config/omarchy/current/theme/quotes.txt \
-      ~/.config/omarchy/current/theme/hyprlock.conf \
-      ~/.config/hypr/
-chmod +x ~/.config/hypr/scripts/*
-```
-
----
-
 ## 🪟 Waybar Variants
 
 > ⚠️ Waybar-1 and Waybar-2 require **Step 1** or **Step 2** to be completed first.
@@ -218,27 +194,52 @@ No more editing scripts. **One click** updates your city.
 
 </div>
 
-### Fix: Black Screen on Lock
+### Installation
 
-If your screen goes black when locking, apply this one-line fix:
-
-```bash
-nano ~/.local/share/omarchy/bin/omarchy-system-lock
-```
-
-Find the line at the bottom of the file:
+> ⚠️ Complete **Step 1** (theme install) before running this.
 
 ```bash
-omarchy-brightness-display off
+# Install Playerctl for media key support
+sudo pacman -S --needed playerctl
+
+# Fix Spotify media controls (Flatpak)
+if command -v flatpak &> /dev/null; then
+    flatpak override --user \
+      --talk-name=org.mpris.MediaPlayer2.spotify \
+      com.spotify.Client
+fi
+
+# Apply lock screen config
+mv ~/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf-Backup
+cp -r ~/.config/omarchy/current/theme/scripts \
+      ~/.config/omarchy/current/theme/quotes.txt \
+      ~/.config/omarchy/current/theme/hyprlock.conf \
+      ~/.config/hypr/
+chmod +x ~/.config/hypr/scripts/*
 ```
 
-Comment it out by adding `#` at the start:
+---
 
-```bash
-# omarchy-brightness-display off
-```
-
-Save with `Ctrl+O` → `Enter`, then exit with `Ctrl+X`.
+> ### ⚠️ Fix: Black Screen on Lock
+>
+> If your screen goes black when locking, apply this quick fix.
+>
+> **1. Open the file:**
+> ```bash
+> nano ~/.local/share/omarchy/bin/omarchy-system-lock
+> ```
+>
+> **2. Find this line at the bottom:**
+> ```bash
+> omarchy-brightness-display off
+> ```
+>
+> **3. Comment it out by adding `#` at the start:**
+> ```bash
+> # omarchy-brightness-display off
+> ```
+>
+> **4. Save and exit:** `Ctrl+O` → `Enter` → `Ctrl+X`
 
 ---
 
