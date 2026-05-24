@@ -62,11 +62,11 @@ kissed by a striking **Copper-Orange** border that glows like a setting sun.
 
 | Swatch | Name | Hex |
 |:---:|:---|:---:|
-| ![](https://placehold.co/40x20/1a1b2e/1a1b2e) | Background | `#1a1b2e` |
+| ![](https://placehold.co/40x20/1a1b2e/1a1b2e) | Background | `#11111b` |
 | ![](https://placehold.co/40x20/565f89/565f89) | Deep Indigo | `#565f89` |
 | ![](https://placehold.co/40x20/7aa2f7/7aa2f7) | Electric Blue | `#7aa2f7` |
 | ![](https://placehold.co/40x20/bb9af7/bb9af7) | Magenta | `#bb9af7` |
-| ![](https://placehold.co/40x20/c87941/c87941) | Copper-Orange | `#c87941` |
+| ![](https://placehold.co/40x20/c87941/c87941) | Copper-Orange | `#fab387` |
 | ![](https://placehold.co/40x20/c0caf5/c0caf5) | Foreground | `#c0caf5` |
 
 </div>
