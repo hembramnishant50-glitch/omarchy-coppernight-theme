@@ -79,19 +79,22 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 
 <br>
 
-### 🌟 Option B — Full Install *(Recommended)*
+### 🌟 Option To install Waybar
 
-Installs **all system dependencies**, safely **backs up** your existing Waybar config, and applies the complete **Copper Night** theme with a fully configured Waybar.
+📦 Installs all required system and Python dependencies * 🛡️ Safely backs up your existing Waybar configuration
 
 ```bash
+#!/bin/bash
+
 ## 1. Install dependencies
-sudo pacman -S --needed python-requests python-psutil networkmanager papirus-icon-theme pavucontrol bc
+# Added zenity, jq, and curl for Waybar modules, plus python-psutil for system Python
+sudo pacman -S --needed python-requests python-psutil networkmanager papirus-icon-theme pavucontrol bc zenity jq curl
 sudo systemctl enable --now NetworkManager
 
-## 2. Install the theme
-omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
+# Install psutil via pip to ensure compatibility with custom Python environments (like mise)
+pip install psutil
 
-## 3. Backup existing Waybar config
+## 2. Backup existing Waybar config
 # Format: waybar-backup-DD-MM-YYYY-RandomNumber
 if [ -d ~/.config/waybar ]; then
     BACKUP_NAME="waybar-backup-$(date +%d-%m-%Y)-$RANDOM"
@@ -99,7 +102,7 @@ if [ -d ~/.config/waybar ]; then
     echo "Existing config backed up to ~/.config/$BACKUP_NAME"
 fi
 
-## 4. Apply the Copper Night Waybar config
+## 3. Apply the Copper Night Waybar config
 mkdir -p ~/.config/waybar
 
 # Checking for the Waybar files in the 'current/theme' path
@@ -107,17 +110,24 @@ SOURCE_DIR="$HOME/.config/omarchy/current/theme/waybar"
 
 if [ -d "$SOURCE_DIR" ]; then
     cp -r "$SOURCE_DIR"/* ~/.config/waybar/
+    
     # Make scripts executable
-    [ -d ~/.config/waybar/scripts ] && chmod +x ~/.config/waybar/scripts/*
+    if [ -d ~/.config/waybar/scripts ]; then
+        chmod +x ~/.config/waybar/scripts/*
+        
+        # Force all Python scripts to use the system Python to prevent custom environment conflicts
+        find ~/.config/waybar/scripts -type f -name "*.py" -exec sed -i '1s|^#!/usr/bin/env python3|#!/usr/bin/python3|' {} +
+    fi
+    
     echo "Waybar configuration applied successfully."
 else
     echo "Error: Source directory $SOURCE_DIR not found."
 fi
 
-## 5. Apply Papirus Dark icons
+## 4. Apply Papirus Dark icons
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
-## 6. Restart Waybar
+## 5. Restart Waybar
 killall -q waybar
 nohup waybar > /dev/null 2>&1 &
 ```
