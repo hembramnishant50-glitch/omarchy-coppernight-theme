@@ -6,8 +6,8 @@ local M = {
                 vim.cmd("set termguicolors")
 
                 local colors = {
-                    bg        = "#11111b", -- Updated: Catppuccin Mocha Base
-                    fg        = "#e6e6e6", -- Text
+                    bg        = "#11111b", -- Deep Midnight Black
+                    fg        = "#fab387", -- Peachy orange
                     border    = "#fab387", -- Clock Orange (Waybar Border)
                     primary   = "#89b4fa", -- Menu Blue
                     secondary = "#a6e3a1", -- Workspace Green
@@ -16,7 +16,7 @@ local M = {
                     danger    = "#f38ba8", -- Red/Pink
                     warning   = "#f9e2af", -- Yellow
                     info      = "#94e2d5", -- Teal
-                    muted     = "#6c7086", -- Grey
+                    muted     = "#ffffff", -- Pure deep white for maximum visibility
                     dark      = "#0b0b12", -- Darker shade for contrast in Floats
                     selection = "#313244", -- Selection grey
                     subtle    = "#181825", -- Subtle bg
@@ -30,6 +30,7 @@ local M = {
 
                 -- Main UI
                 set_hl("Normal", { fg = colors.fg, bg = colors.bg })
+                set_hl("NormalNC", { fg = colors.fg, bg = colors.bg }) -- UPDATED: Prevents inactive windows (left panel) from dimming into the dark
                 set_hl("NormalFloat", { fg = colors.fg, bg = colors.dark })
                 set_hl("FloatBorder", { fg = colors.border, bg = colors.bg })
                 set_hl("WinSeparator", { fg = colors.border }) -- Orange split lines
@@ -38,6 +39,21 @@ local M = {
                 set_hl("CursorLineNr", { fg = colors.accent, bold = true }) -- Pink current line
                 set_hl("Visual", { bg = colors.selection })
                 set_hl("Search", { fg = colors.bg, bg = colors.primary }) -- Blue search
+                set_hl("Directory", { fg = colors.primary, bold = true }) -- Standard folders
+
+                -- File Explorers (Neo-tree / NvimTree fixes for the circled area)
+                set_hl("NeoTreeNormal", { fg = colors.fg, bg = colors.bg })
+                set_hl("NeoTreeNormalNC", { fg = colors.fg, bg = colors.bg })
+                set_hl("NeoTreeFileName", { fg = colors.fg })
+                set_hl("NeoTreeDirectoryName", { fg = colors.primary, bold = true })
+                set_hl("NeoTreeGitUntracked", { fg = colors.info })
+                set_hl("NeoTreeGitModified", { fg = colors.warning })
+                
+                set_hl("NvimTreeNormal", { fg = colors.fg, bg = colors.bg })
+                set_hl("NvimTreeNormalNC", { fg = colors.fg, bg = colors.bg })
+                set_hl("NvimTreeNormalFile", { fg = colors.fg })
+                set_hl("NvimTreeFolderName", { fg = colors.primary, bold = true })
+                set_hl("NvimTreeOpenedFolderName", { fg = colors.primary, bold = true })
 
                 -- Syntax (Matched to Omarchy Colors)
                 set_hl("Comment", { fg = colors.muted, italic = true })
