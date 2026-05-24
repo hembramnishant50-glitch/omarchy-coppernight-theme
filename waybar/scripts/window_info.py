@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import subprocess
 import json
 import hashlib
@@ -17,32 +17,35 @@ PATTERNS = [" ▃▆▄", " ▄▃▇", " ▆▃▅", " ▇▆▃", " ▃▅▇"
 
 # --- EXACT USER APP RULES ---
 APP_RULES = {
-    # --- 0. Google / Proton ---
+    # --- 0. Google / Proton / Web apps---
     "google-chrome":                  ("", "#4285f4", "Chrome"),
     "google-gmail":                   ("󰊭", "#ea4335", "Gmail"),
     "google-drive":                   ("󰝰", "#34a853", "Drive"),
     "google-calendar":                ("󰸗", "#4285f4", "Calendar"),
-    "Chrome-calendar.google.com":     ("󰸗", "#4285f4", "Calendar"),
+    "contacts.google.com": ("", "#4285f4", "Google Contacts"),
+    "calendar.google.com":     ("󰸗", "#4285f4", "Calendar"),
     "google-keep":                    ("󰟶", "#fbbc04", "Keep"),
     "google-maps":                    ("󰉙", "#34a853", "Maps"),
+    "maps.google.com": ("", "#ea4335", "Google Maps"),
     "google-docs":                    ("󰈙", "#4285f4", "Docs"),
     "google-sheets":                  ("󰈛", "#34a853", "Sheets"),
     "google-slides":                  ("󰈧", "#fbbc04", "Slides"),
     "google-meet":                    ("󰻵", "#00897b", "Meet"),
     "google-photos":                  ("󰄄", "#ff4500", "Photos"),
     "google-youtube":                 ("󰗃", "#ff0000", "YouTube"),
-    "chrome-calendar.google.com__-default": ("󰸗", "#4285f4", "Calendar"),
-    "chrome-mail.google.com__-default":     ("󰊭", "#ea4335", "Gmail"),
-    "chrome-drive.google.com__-default":    ("󰝰", "#34a853", "Drive"),
-    "chrome-keep.google.com__-default":     ("󰟶", "#fbbc04", "Keep"),
-    "chrome-docs.google.com__-default":     ("󰈙", "#4285f4", "Docs"),
-    "chrome-sheets.google.com__-default":   ("󰈛", "#34a853", "Sheets"),
-    "chrome-slides.google.com__-default":   ("󰈧", "#fbbc04", "Slides"),
-    "chrome-meet.google.com__-default":     ("󰻵", "#00897b", "Meet"),
-    "chrome-photos.google.com__-default":   ("󰄄", "#ff4500", "Photos"),
-    "chrome-youtube.com__-default":         ("󰗃", "#ff0000", "YouTube"),
-    "chrome-www.google.com__-default":      ("", "#4285f4", "Google"),
-    "chrome-notebooklm.google.com__-default": ("󰠮", "#4285f4", "NotebookLM"),
+    "messages.google.com": ("󰍡", "#1a73e8", "Google Messages"),
+    "calendar.google.com": ("󰸗", "#4285f4", "Calendar"),
+    "mail.google.com":     ("󰊭", "#ea4335", "Gmail"),
+    "drive.google.com":    ("󰝰", "#34a853", "Drive"),
+    "keep.google.com":     ("󰟶", "#fbbc04", "Keep"),
+    "docs.google.com":     ("󰈙", "#4285f4", "Docs"),
+    "sheets.google.com":   ("󰈛", "#34a853", "Sheets"),
+    "slides.google.com":   ("󰈧", "#fbbc04", "Slides"),
+    "meet.google.com":     ("󰻵", "#00897b", "Meet"),
+    "photos.google.com":   ("󰄄", "#ff4500", "Photos"),
+    "youtube.com":         ("󰗃", "#ff0000", "YouTube"),
+    "www.google.com":      ("", "#4285f4", "Google"),
+    "notebooklm.google.com": ("󰠮", "#4285f4", "NotebookLM"),
 
     "chrome-mail.proton.me__-default":       ("󰇮", "#6d4aff", "Proton Mail"),
     "chrome-calendar.proton.me__-default":   ("󰸗", "#6d4aff", "Proton Calendar"),
@@ -51,9 +54,13 @@ APP_RULES = {
     "chrome-vpn.proton.me__-default":        ("󰖂", "#6d4aff", "Proton VPN"),
     "chrome-lumo.proton.me__-default":       ("󱔐", "#6d4aff", "Proton Lumo"),
 
+    "app.zoom.us": ("", "#2d8cff", "Zoom"),
+
+
     # --- 1. STUDENT & RESEARCH (Flathub Versions) ---
-    "ClamUI":                         ("󱓧", "#7c4dff", "Obsidian"),
+    "ClamUI":                         ("󰂵", "#7c4dff", "ClamUI"),
     "md.obsidian.Obsidian":           ("󱓧", "#7c4dff", "Obsidian"),
+    "Obsidian":           ("󱓧", "#7c4dff", "Obsidian"),
     "net.ankiweb.Anki":               ("󰮔", "#ffffff", "Anki"),
     "org.zotero.Zotero":              ("󱓷", "#cc2914", "Zotero"),
     "org.libreoffice.LibreOffice":    ("󰏆", "#185abd", "LibreOffice"),
@@ -64,6 +71,9 @@ APP_RULES = {
     "io.github.fabrialberio.pinapp":  ("󰐚", "#4caf50", "Pins"),
     "org.bunkus.mkvtoolnix-gui":      ("󰔑", "#81a2be", "MKVToolNix"),
     "garden.jamie.Morphosis":         ("󰈹", "#3584e4", "Morphosis"),
+    "Io.github.vmkspv.lenspect": ("󰍉", "#14b8a6", "Lenspect"),
+    "Io.gitlab.theevilskeleton.upscaler": ("󰊓", "#d946ef", "Upscaler"),
+    "Net.nokyan.resources": ("󰓅", "#3b82f6", "Resources"),
 
     # --- 2. WEB BROWSERS (Flathub Versions) ---
     "io.github.zen_browser.zen":      ("󰈹", "#4f4f4f", "Zen Browser"),
@@ -95,7 +105,7 @@ APP_RULES = {
     "com.github.unhndrd.pdfarranger": ("󰈦", "#f1c40f", "PDF Arranger"),
     "com.bitwarden.desktop":          ("󰞀", "#175DDC", "Bitwarden"),
     "io.github.hlubek.Eyedropper":    ("󰈊", "#3584e4", "Eyedropper"),
-    "io.github.kolunmi.Bazaar":       ("", "#5da7e4", "Bazaar Weather"),
+    "io.github.kolunmi.Bazaar":       ("", "#e74c3c", "Bazaar"),
     "io.github.michelegiacalone.bazaar": ("", "#e74c3c", "Bazaar"),
     "org.audacityteam.Audacity":      ("󰓃", "#0000eb", "Audacity"),
     "audacity":                       ("󰓃", "#0000eb", "Audacity"),
@@ -103,13 +113,17 @@ APP_RULES = {
     "blanket":                        ("󰖗", "#3daee9", "Blanket"),
     "org.gnome.gitlab.YaLTeR.VideoTrimmer": ("󰐊", "#c061cb", "Video Trimmer"),
     "org.libretro.RetroArch":         ("󰊴", "#3daee9", "RetroArch"),
-    "pinapp":                         ("󰐚", "#4caf50", "Pins"),
-    "Pins":                           ("󰐚", "#4caf50", "Pins"),
+    "Tui.float": ("", "#a6e3a1", "Floating TUI"),
     
     # --- 6. SOCIAL (Flathub Versions) ---
     "com.discordapp.Discord":         ("", "#5865f2", "Discord"),
     "org.telegram.desktop":           ("", "#24a1de", "Telegram"),
     "com.ayugram.desktop":            ("", "#3399ff", "AyuGram"),
+    "App.drey.dialect": ("󰗊", "#3584e4", "Dialect"),
+    "Fingergo": ("󰟆", "#8b5cf6", "Fingergo"),
+    "pinapp":                         ("󰐚", "#4caf50", "Pins"),
+    "Pins":                           ("󰐚", "#4caf50", "Pins"),
+    "Dev.geopjr.collision": ("󰆕", "#c061cb", "Collision"),
 
     # --- Omarchy Versions ---
     # --- Gaming ----
@@ -120,6 +134,7 @@ APP_RULES = {
     "com.gdlauncher.gdlauncher":      ("󰍳", "#14b1e7", "GDLauncher"),
     "retroarch":                      ("󰊴", "#3daee9", "RetroArch"),
     "RetroArch":                      ("󰊴", "#3daee9", "RetroArch"),
+    "app.fizzy.do": ("󰃌", "#f43f5e", "Fizzy"),
 
     # --- AI & EDUCATION ---
     "careerwill":                     ("🎓", "#ff9900", "Careerwill"),
@@ -132,7 +147,7 @@ APP_RULES = {
     # --- BROWSERS ---
     "com.brave.Browser":              ("󰖟", "#ff542b", "Brave"),
     "brave-browser":                  ("󰖟", "#ff542b", "Brave"),
-    "Brave-origin-beta":                  ("󰖟", "#ff542b", "Brave"),
+    "Brave-origin-beta":                  ("󰖟", "#ff542b", "Brave Origin"),
     "omarchy-chromium":               ("", "#00bcd4", "Omarchy Chromium"),
     "librewolf":                      ("󰈹", "#3269d6", "LibreWolf"),
     "tor-browser":                    ("", "#7d4698", "Tor Browser"),
@@ -168,7 +183,6 @@ APP_RULES = {
     "tiktok":                         ("", "#ff0050", "TikTok"),
     "org.signal.Signal":              ("󰭹", "#3a76f0", "Signal"),
     "signal-desktop":                 ("󰭹", "#3a76f0", "Signal"),
-    "signal":                         ("󰭹", "#3a76f0", "Signal"),
 
     # --- PRODUCTIVITY & OFFICE ---
     "onlyoffice":                     ("󰏆", "#ff6f21", "ONLYOFFICE"),
@@ -180,7 +194,6 @@ APP_RULES = {
     "libreoffice-math":               ("󰏆", "#4285f4", "Math"),
     "libreoffice-base":               ("󰏆", "#622a7a", "Base"),
     "DesktopEditors":                 ("󰏆", "#ff6f21", "ONLYOFFICE"),
-    "obsidian":                       ("󱓧", "#7c4dff", "Obsidian"),
     "joplin":                         ("󰮔", "#002e7a", "Joplin"),
     "anki":                           ("󰮔", "#ffffff", "Anki"),
     "zotero":                         ("󱓷", "#cc2914", "Zotero"),
@@ -250,6 +263,12 @@ APP_RULES = {
     "mkvtoolnix-gui":                 ("󰔑", "#81a2be", "MKVToolNix"),
     "mkvtoolnix":                     ("󰔑", "#81a2be", "MKVToolNix"),
     "MKVToolNix GUI":                 ("󰔑", "#81a2be", "MKVToolNix"),
+    "Org.cryptomator.launcher.cryptomator$mainapp": ("󰌋", "#2ebd59", "Cryptomator"),
+    "Nwg-look": ("󰏘", "#0db9d7", "nwg-look"),
+    "Imv": ("", "#06b6d4", "Imv"),
+    "Localsend": ("", "#3db2ff", "LocalSend"),
+    "Mpv": ("󰐊", "#bd93f9", "mpv"),
+    "Github.pintaproject.pinta": ("", "#0ea5e9", "Pinta"),
 
     # --- DOWNLOAD MANAGERS ---
     "com.abdownloadmanager.abdownloadmanager": ("󰇚", "#00aaff", "AB Download Manager"),
@@ -272,6 +291,7 @@ APP_RULES = {
     "gnome-system-monitor":           ("󱓟", "#3584e4", "System Monitor"),
     "gnome-control-center":           ("⚙️", "#9a9996", "Settings"),
     "gnome-software":                 ("🛍️", "#3584e4", "Software"),
+    "Gedit": ("", "#61afef", "Gedit"),
 
     # --- DEVELOPMENT & TERMINALS ---
     "nvim":                           ("", "#57a143", "Neovim"),
@@ -285,6 +305,8 @@ APP_RULES = {
     "org.omarchy.terminal":           ("", "#f9e2af", "Terminal"),
     "docker":                         ("", "#2496ed", "Docker"),
     "localhost":                      ("", "#00ff00", "Localhost"),
+    "Recent Documents": ("󰈚", "#eab308", "Documents"),
+
     
     # --- EXTRA ---
     "com-tonikelope-megabasterd-mainpanel": ("󰗽", "#d92323", "MegaBuster"),
