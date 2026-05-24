@@ -1,50 +1,82 @@
-/* Color variables synced with Omarchy / Catppuccin Mocha base */
-@define-color background      rgba(0, 0, 0, 0);
-@define-color waybarBg        rgba(17, 17, 27, 0.6); /* #11111b at 60% opacity */
-@define-color foreground      #e6e6e6;
-@define-color surface         #313244;
-@define-color inactive        #45475a;
+/* ────────────────────────────────────────────────────────────
+   COLOR VARIABLES
+   ──────────────────────────────────────────────────────────── */
+@define-color base     #11111b;
+@define-color text     #fab387;
+@define-color lavender #fab387;
+@define-color mauve    #fab385;
 
-/* Omarchy Accent Colors */
-@define-color accent_orange   #fab387; /* Clock/Border Orange */
-@define-color accent_green    #a6e3a1; /* Wifi/Music Green */
-@define-color accent_blue     #89b4fa; /* Menu Blue */
-@define-color accent_pink     #f38ba8; /* Active/Critical Pink */
-@define-color accent_critical #f38ba8;
-
-#waybar {
-  background-color: @waybarBg;
-  border-bottom: 1px solid alpha(@inactive, 0.3);
+/* ────────────────────────────────────────────────────────────
+   MAIN WINDOW
+   ──────────────────────────────────────────────────────────── */
+window#waybar {
+    background-color: @base;
+    border: none;
+    box-shadow: none;
 }
 
-#battery.charging,
-#battery.plugged {
-  color: @accent_green;
+/* ← THIS draws the full bottom border line */
+window#waybar > box {
+    border-bottom: 2px solid @lavender;
 }
 
-#battery.warning:not(.charging) {
-  color: @accent_orange;
+/* ────────────────────────────────────────────────────────────
+   WORKSPACES
+   ──────────────────────────────────────────────────────────── */
+#workspaces button,
+#workspaces button.persistent,
+#workspaces button.hidden,
+#workspaces button.empty {
+    color: @text;
+    padding: 0 8px;
+    border-bottom: 2px solid transparent;
+    background: transparent;
 }
 
-#battery.critical:not(.charging) {
-  color: @accent_critical;
+#workspaces button.active {
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
+    background: linear-gradient(to top, rgba(190, 154, 238, 0.15), transparent);
 }
 
-#pulseaudio.muted {
-  color: @accent_critical;
+/* ────────────────────────────────────────────────────────────
+   MODULE SPACING
+   ──────────────────────────────────────────────────────────── */
+#pulseaudio,
+#network,
+#cpu,
+#battery,
+#bluetooth,
+#clock {
+    color: @text;
+    padding: 0 1px;
+    margin: 0;
 }
 
-#network.disconnected {
-  color: @accent_critical;
+#tray {
+    padding: 0 15px;
 }
 
-/* Tooltips updated to match #11111b base */
+#tray > .passive,
+#tray > .active,
+#tray > .needs-attention {
+    margin: 0 12px;
+}
+
+label {
+    color: @text;
+}
+
+/* ────────────────────────────────────────────────────────────
+   TOOLTIPS
+   ──────────────────────────────────────────────────────────── */
 tooltip {
-  background: #11111b;
-  border-radius: 10px;
-  border: 1px solid @accent_orange;
+    background: @base;
+    border: 2px solid @mauve;
+    border-radius: 7px;
 }
 
 tooltip label {
-  color: @foreground;
+    padding: 10px;
+    color: @text;
 }
