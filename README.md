@@ -156,7 +156,7 @@ cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-1 \
 ### ⚡ Waybar-2 — Ember Arc
 
 <div align="center">
-<img width="1917" height="76" alt="Waybar-2 Ember Arc" src="https://github.com/user-attachments/assets/803e6c84-9e0e-4122-9441-453fdd2eb792" />
+<img width="1917" height="76" alt="Waybar-2 Ember Arc" src="https://github.com/user-attachments/assets/72af47f3-be44-4c73-bca3-d028735b69c0" />
 <p><em>Copper warmth · Floating arcs · Glows like a setting sun</em></p>
 </div>
 
