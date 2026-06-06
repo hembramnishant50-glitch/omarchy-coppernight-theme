@@ -68,23 +68,26 @@
 
     // ─── Network ──────────────────────────────────────────────
     "network": {
-        "format-wifi": "󱛁",
+        "format-wifi": "",
         "format-ethernet": "󰈀",
         "format-disconnected": "󱛅",
         "format-linked": "󰈀",
-        "tooltip-format-wifi": "󱛁  {essid}\n󰓅  {signalStrength}%\n󰆧  {frequency}MHz\n  {ipaddr}",
-        "tooltip-format-ethernet": "󰈀  {ifname}\n󰕒  {bandwidthUpBits}\n󰇚  {bandwidthDownBits}\n  {ipaddr}",
-        "tooltip-format-disconnected": "󱛅  Disconnected",
+        "tooltip-format-wifi": "<span color='#a6e3a1'><b>  {essid}</b></span>\n<span color='#cdd6f4'>󰓅  Signal: </span><span color='#fab387'>{signalStrength}%</span>\n<span color='#cdd6f4'>󰆧  Freq: </span><span color='#89b4fa'>{frequency}</span>\n<span color='#cdd6f4'>󰩟  IP: </span><span color='#94e2d5'>{ipaddr}</span>",
+        "tooltip-format-ethernet": "<span color='#a6e3a1'><b>󰈀  {ifname}</b></span>\n<span color='#cdd6f4'>󰕒  Up: </span><span color='#fab387'>{bandwidthUpBits}</span>\n<span color='#cdd6f4'>󰇚  Down: </span><span color='#89b4fa'>{bandwidthDownBits}</span>\n<span color='#cdd6f4'>󰩟  IP: </span><span color='#94e2d5'>{ipaddr}</span>",
+        "tooltip-format-disconnected": "<span color='#f38ba8'>󱛅  Disconnected</span>",
         "on-click": "omarchy-launch-wifi"
     },
 
     // ─── Battery ──────────────────────────────────────────────
     "battery": {
         "states": { "warning": 30, "critical": 15 },
-        "format": "{icon}",
-        "format-charging": "󱐋 {icon}",
+        "format": "{icon} {capacity}%",
+        "format-charging": "󱐋 {icon} {capacity}%",
+        "format-plugged": "󱐋 {icon} {capacity}%",
+        "format-discharging": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
-        "tooltip-format": "{capacity}%",
+        "tooltip": true,
+        "tooltip-format": "{capacity}% 󱐋{power}",
         "on-click": "omarchy-menu power"
     },
 }

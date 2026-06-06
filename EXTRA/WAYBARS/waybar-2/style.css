@@ -140,7 +140,7 @@ window#waybar {
    Audio
 ────────────────────────────────────────────── */
 #pulseaudio {
-    color: #f9e2af;
+    color: @mauve;
 }
 
 #pulseaudio.muted {
@@ -152,7 +152,7 @@ window#waybar {
    Network
 ────────────────────────────────────────────── */
 #network {
-    color: #94e2d5;
+    color: @mauve;
 }
 
 #network.disconnected {
@@ -163,12 +163,12 @@ window#waybar {
    Battery
 ────────────────────────────────────────────── */
 #battery {
-    color: @bat-discharging;
+    color: @mauve;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: @bat-charging;
+    color: @mauve;
 }
 
 #battery.warning:not(.charging) {
