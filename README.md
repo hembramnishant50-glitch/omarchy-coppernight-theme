@@ -209,13 +209,7 @@ if command -v flatpak &> /dev/null; then
       com.spotify.Client
 fi
 
-# Apply lock screen config
-mv ~/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf-Backup
-cp -r ~/.config/omarchy/current/theme/scripts \
-      ~/.config/omarchy/current/theme/quotes.txt \
-      ~/.config/omarchy/current/theme/hyprlock.conf \
-      ~/.config/hypr/
-chmod +x ~/.config/hypr/scripts/*
+chmod +x ~/.config/omarchy/current/theme/scripts/*
 ```
 
 ---
