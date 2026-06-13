@@ -240,7 +240,7 @@ chmod +x ~/.config/omarchy/current/theme/scripts/*
 ### Customize the Lock Screen
 
 ```bash
-nano ~/.config/hypr/hyprlock.conf
+nano ~/.config/omarchy/current/theme/hyprlock.conf
 ```
 
 ```ini
