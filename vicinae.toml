@@ -4,7 +4,7 @@ name = "Omarchy"
 description = "Follow your Omarchy system theme."
 variant = "dark"
 inherits = "vicinae-dark"
-icon = "/home/atif/.local/share/omarchy/icon.png"
+icon = "/home/nishant/.local/share/omarchy/icon.png"
 
 [colors.core]
 background = "#1e1e2e"           # Aether @background
