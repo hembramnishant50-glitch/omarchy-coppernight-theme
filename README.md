@@ -199,17 +199,26 @@ No more editing scripts. **One click** updates your city.
 > ⚠️ Complete **Step 1** (theme install) before running this.
 
 ```bash
-# Install Playerctl for media key support
+# 1. Install Playerctl (required for media key support)
 sudo pacman -S --needed playerctl
 
-# Fix Spotify media controls (Flatpak)
+# 2. Fix Spotify media controls (Flatpak only)
 if command -v flatpak &> /dev/null; then
     flatpak override --user \
       --talk-name=org.mpris.MediaPlayer2.spotify \
       com.spotify.Client
 fi
 
-chmod +x ~/.config/omarchy/current/theme/scripts/*
+# 3. Copy lock screen config files
+mv ~/.config/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf-Backup && \
+cp -r ~/.config/omarchy/current/theme/scripts \
+      ~/.config/omarchy/current/theme/quotes.txt \
+      ~/.config/omarchy/current/theme/hyprlock.conf \
+      ~/.config/hypr/
+
+# 4. Make scripts executable
+chmod +x ~/.config/hypr/scripts/*
+
 ```
 
 ---
