@@ -1,0 +1,199 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 45,
+    "margin-top": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+
+    "modules-left": ["custom/omarchy", "hyprland/workspaces", "mpris"],
+    "modules-center": ["clock", "custom/update", "custom/voxtype", "custom/screenrecording-indicator", "custom/idle-indicator", "custom/notification-silencing-indicator"],
+    "modules-right": [
+        "group/tray-expander",
+        "custom/weather",
+        "group/hardware",
+        "network",
+        "pulseaudio",
+        "battery",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "persistent-workspaces": { "1": [], "2": [], "3": [], "4": [], "5": [] }
+    },
+
+    "clock": {
+        "format": "󱑂 {:%I:%M %p}",
+        "format-alt": "󰃭 {:%A, %d %B %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "left",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#11111b' background='#cba6f7'><b>  {}  </b></span>",
+                "days":       "<span color='#cdd6f4'>{}</span>",
+                "weeks":      "<span color='#94e2d5'><b>W{}</b></span>",
+                "weekdays":   "<span color='#fab387'><b>{}</b></span>",
+                "today":      "<span color='#11111b' background='#f38ba8'><b>{}</b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": { "transition-duration": 500, "children-class": "hw-item", "transition-left-to-right": false },
+        "modules": ["cpu", "bluetooth", "custom/gaming"]
+    },
+
+    "cpu": { "format": "󰍛", "on-click": "omarchy-launch-or-focus-tui btop" },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "on-click": "omarchy-launch-bluetooth"
+    },
+
+    "mpris": { "format": "{player_icon} {title}", "player-icons": { "default": "󰝚" }, "max-length": 20, "on-click": "playerctl play-pause" },
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": " ",
+        "format-disconnected": " ",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+        "interval": 3,
+        "on-click": "omarchy-launch-wifi",
+        "on-click-right": "omarchy-menu network"
+    },
+
+    "custom/update": {
+        "format": "{icon}",
+        "exec": "omarchy-update-available",
+        "return-type": "json",
+        "format-icons": {
+            "update": "",
+            "uptodate": ""
+        },
+        "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+        "tooltip-format": "{tooltip}",
+        "signal": 7,
+        "interval": 21600
+    },
+
+    "custom/omarchy": {
+    "format": "<span font='omarchy'>\ue900</span>",
+    "on-click": "omarchy-menu",
+    "on-click-right": "xdg-terminal-exec",
+    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+},
+    "pulseaudio": {
+        "format": "{icon}",
+        "on-click": "omarchy-launch-audio",
+        "on-click-right": "pamixer -t",
+        "tooltip-format": "Playing at {volume}%",
+        "scroll-step": 5,
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "battery": {
+        "interval": 5,
+        "states": { "warning": 20, "critical": 10 },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󱐋 {icon} {capacity}%",
+        "format-plugged": " {icon} {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-full": "󰂅",
+        "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+        "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+        "on-click": "omarchy-menu power"
+    },
+
+    "custom/power": { "format": "󰐥", "on-click": "omarchy-menu system" },
+
+    "custom/gaming": {
+        "exec": "/home/nishant/.config/waybar/scripts/gaming-status.sh",
+        "return-type": "json",
+        "format": "{text}",
+        "signal": 12,
+        "interval": 5,
+        "on-click": "/home/nishant/.config/waybar/scripts/gaming-mode.sh"
+    },
+
+    "group/tray-expander": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "tray-group-item"
+        },
+        "modules": ["custom/expand-icon", "tray"]
+    },
+    "custom/expand-icon": {
+        "format": "",
+        "tooltip": false,
+        "on-scroll-up": "",
+        "on-scroll-down": "",
+        "on-scroll-left": "",
+        "on-scroll-right": ""
+    },
+    "custom/screenrecording-indicator": {
+        "on-click": "omarchy-capture-screenrecording",
+        "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
+        "signal": 8,
+        "return-type": "json"
+    },
+    "custom/idle-indicator": {
+        "on-click": "omarchy-toggle-idle",
+        "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+        "signal": 9,
+        "return-type": "json"
+    },
+    "custom/notification-silencing-indicator": {
+        "on-click": "omarchy-toggle-notification-silencing",
+        "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+        "signal": 10,
+        "return-type": "json"
+    },
+    "custom/voxtype": {
+        "exec": "omarchy-voxtype-status",
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "idle": "",
+            "recording": "󰍬",
+            "transcribing": "󰔟"
+        },
+        "tooltip": true,
+        "on-click-right": "omarchy-voxtype-config",
+        "on-click": "omarchy-voxtype-model"
+    },
+    "tray": {
+        "icon-size": 12,
+        "spacing": 17
+    },
+
+    // -- Weather
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 900,
+        "on-click": "~/.config/waybar/scripts/weather.sh --menu",
+        "on-click-right": "~/.config/waybar/scripts/weather.sh --toggle-unit",
+        "signal": 11
+    }
+}
