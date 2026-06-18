@@ -166,6 +166,19 @@ cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-2 \
 ```
 
 ---
+### 🍬 Waybar-3 — Pastel Capsule
+
+<div align="center">
+<img width="1917" height="76" alt="Waybar-2 Ember Arc" src="https://github.com/user-attachments/assets/a7b5d807-249c-4641-bad3-f6b2a8c113ea" />
+<p><em>Neon pastel · Rounded capsules · Floating in a dark sky</em></p>
+</div>
+
+```bash
+cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-3 \
+  && chmod +x waybar-setup.sh && ./waybar-setup.sh
+```
+
+---
 
 ## 🌤️ Weather Widget
 
