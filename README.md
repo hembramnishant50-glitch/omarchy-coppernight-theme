@@ -180,6 +180,23 @@ cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-3 \
 
 ---
 
+### 🌆 Waybar-4 — Catppuccin Mocha Capsule
+
+<div align="center">
+<img width="1917" height="76" alt="Waybar-4 Catppuccin Mocha Capsule" />
+<p><em>Catppuccin Mocha · Copper borders · Rounded capsules with workspace circles</em></p>
+</div>
+
+<img width="1920" height="57" alt="Image" src="https://github.com/user-attachments/assets/71e5fc69-c0f0-43d9-ad9c-d9782941b0ed" />
+
+```bash
+cd ~/.config/omarchy/current/theme/EXTRA/WAYBARS/waybar-4 \
+  && chmod +x waybar-setup.sh && ./waybar-setup.sh
+```
+
+---
+
+
 ## 🌤️ Weather Widget
 
 No more editing scripts. **One click** updates your city.
