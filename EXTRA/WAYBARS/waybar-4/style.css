@@ -1,0 +1,162 @@
+/* =============================================================================
+ * Waybar Style Sheet - Omarchy Catppuccin Mocha Theme
+ * ============================================================================= */
+
+/* --- Catppuccin Mocha Palette (from ~/.config/omarchy/current/theme/colors.toml) --- */
+@define-color base    #11111b;
+@define-color mantle  #181825;
+@define-color surface0 #1e1e2e;
+@define-color surface1 #313244;
+@define-color surface2 #45475a;
+@define-color overlay0 #585b70;
+@define-color text    #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color blue    #89b4fa;
+@define-color green   #a6e3a1;
+@define-color teal    #94e2d5;
+@define-color yellow  #f9e2af;
+@define-color peach   #fab387;
+@define-color mauve   #cba6f7;
+@define-color pink    #e06b8b;
+@define-color red     #f38ba8;
+
+/* --- Tooltip Styling --- */
+tooltip {
+    background: @base;
+    border: 2px solid @peach;
+    border-radius: 12px;
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+tooltip label {
+    color: @text;
+    padding: 8px 12px;
+}
+
+/* --- Main Bar Shell --- */
+window#waybar {
+    background-color: @base;
+    border-radius: 0px 0px 12px 12px;
+    border-bottom: 2px solid @peach;
+    border-left: 2px solid @peach;
+    border-right: 2px solid @peach;
+    color: @text;
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* --- Inner Modular Capsules Style --- */
+#clock,
+#custom-weather,
+#custom-window,
+#custom-coffee,
+#custom-update,
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator,
+#custom-voxtype,
+#custom-network,
+#custom-cpu-ram,
+#custom-netspeed,
+#battery {
+    border-radius: 6px;
+    padding: 2px 12px;
+    margin: 5px 4px;
+}
+
+/* --- Left Side Accents --- */
+#clock {
+    color: @mauve;
+    margin-left: 12px;
+}
+
+#custom-weather {
+    color: @teal;
+}
+
+#custom-window {
+    color: @text;
+}
+
+/* --- Workspace Circles --- */
+#workspaces {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces button {
+    background-color: @surface1;
+    border-radius: 50%;
+    min-width: 8px;
+    min-height: 8px;
+    padding: 0;
+    margin: 14px 6px;
+    border: none;
+    color: transparent;
+    font-size: 0;
+}
+
+#workspaces button.active {
+    background-color: @peach;
+    border-radius: 4px;
+    min-width: 24px;
+    min-height: 8px;
+    margin: 14px 6px;
+}
+
+#workspaces button:hover {
+    background-color: @surface2;
+}
+
+#workspaces button.active:hover {
+    background-color: @peach;
+}
+
+/* --- Right Side Accents --- */
+#custom-coffee {
+    color: @overlay0;
+}
+
+#custom-coffee.on {
+    color: @mauve;
+}
+
+#custom-update {
+    color: @text;
+}
+
+#custom-screenrecording-indicator.active {
+    color: @red;
+}
+
+#custom-idle-indicator.active {
+    color: @yellow;
+}
+
+#custom-notification-silencing-indicator.active {
+    color: @mauve;
+}
+
+#custom-network {
+    color: @blue;
+}
+
+#custom-cpu-ram {
+    color: @green;
+}
+
+#custom-netspeed {
+    color: @subtext0;
+}
+
+#battery {
+    color: @yellow;
+    padding: 2px 10px;
+}
+
+

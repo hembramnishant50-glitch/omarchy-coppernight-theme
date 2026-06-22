@@ -1,0 +1,182 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "margin-top": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+
+    // Choose which modules you want on your bar
+    "modules-left": [
+        "clock",
+        "custom/weather",
+        "custom/window"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "custom/screenrecording-indicator",
+        "custom/idle-indicator",
+        "custom/notification-silencing-indicator",
+        "custom/voxtype"
+    ],
+    "modules-right": [
+        "custom/netspeed",
+        "custom/cpu-ram",
+        "custom/coffee",
+        "custom/network",
+        "battery"
+    ],
+
+    // --- Modules Definitions ---
+
+    "custom/omarchy": {
+        "format": "<span font='omarchy'>\ue900</span>",
+        "on-click": "omarchy-menu",
+        "on-click-right": "xdg-terminal-exec",
+        "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰝟 Muted",
+        "on-click": "omarchy-launch-audio",
+        "on-click-right": "pamixer -t",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%A %d %B %Y}",
+        "tooltip-format": "{:%A, %B %d %Y}\n<tt><span size='medium'>{calendar}</span></tt>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#f9e2af'><b>{}</b></span>",
+                "weekdays": "<span color='#cba6f7'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'>{}</span>",
+                "today": "<span color='#fab387'><b><u>{}</u></b></span>",
+                "weeks": "<span color='#585b70'>{}</span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "interval": 30,
+        "exec": "/home/nishant/.config/waybar/scripts/weather.sh",
+        "return-type": "json",
+        "on-click": "~/.config/waybar/scripts/weather-config.sh",
+        "tooltip": true
+    },
+
+    "custom/window": {
+        "exec": "~/.config/waybar/scripts/window-info.py 2>/dev/null",
+        "exec-if": "hyprctl activewindow 2>/dev/null | grep -q '^Window'",
+        "interval": 1,
+        "return-type": "json",
+        "tooltip": true
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "active-only": false,
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        },
+        "format": ""
+    },
+
+    "custom/screenrecording-indicator": {
+        "on-click": "omarchy-capture-screenrecording",
+        "exec": "/home/nishant/.local/share/omarchy/default/waybar/indicators/screen-recording.sh",
+        "signal": 8,
+        "return-type": "json"
+    },
+
+    "custom/idle-indicator": {
+        "on-click": "omarchy-toggle-idle",
+        "exec": "/home/nishant/.local/share/omarchy/default/waybar/indicators/idle.sh",
+        "signal": 9,
+        "return-type": "json"
+    },
+
+    "custom/notification-silencing-indicator": {
+        "on-click": "omarchy-toggle-notification-silencing",
+        "exec": "/home/nishant/.local/share/omarchy/default/waybar/indicators/notification-silencing.sh",
+        "signal": 10,
+        "return-type": "json"
+    },
+
+    "custom/voxtype": {
+        "exec": "omarchy-voxtype-status",
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "idle": "",
+            "recording": "󰍬",
+            "transcribing": "󰔟"
+        }
+    },
+
+    "custom/network": {
+        "format": "{}",
+        "interval": 10,
+        "exec": "~/.config/waybar/scripts/network.sh",
+        "return-type": "json",
+        "on-click": "omarchy-launch-wifi"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-charging": " {icon} {capacity}%",
+        "on-click": "omarchy-menu power",
+        "tooltip-format-discharging": "<span color='#fab387'>{power:>1.0f}W</span>↓  <span color='#f9e2af'>{capacity}%</span>\n<span color='#94e2d5'> {time}</span>\n<span color='#cba6f7'>♻ {cycles}</span> cycles  <span color='#a6e3a1'> {health}%</span>",
+        "tooltip-format-charging": "<span color='#a6e3a1'>{power:>1.0f}W</span> ↑  <span color='#f9e2af'>{capacity}%</span>\n<span color='#94e2d5'> {time}</span>\n<span color='#cba6f7'>♻ {cycles}</span> cycles  <span color='#a6e3a1'> {health}%</span>"
+    },
+
+    "custom/coffee": {
+        "format": "{}",
+        "exec": "if [ -f /tmp/waybar-caffeine.pid ]; then jq -nc --arg t \"<span color='#cba6f7'>Caffeine: On</span>\" '{text: \"\", tooltip: $t, class: \"on\"}'; else jq -nc --arg t \"<span color='#585b70'>Caffeine: Off</span>\" '{text: \"\", tooltip: $t, class: \"off\"}'; fi",
+        "on-click": "~/.config/waybar/scripts/caffeine.sh",
+        "interval": 2,
+        "return-type": "json",
+        "tooltip": true
+    },
+
+    "custom/cpu-ram": {
+        "format": "{}",
+        "interval": 5,
+        "exec": "~/.config/waybar/scripts/cpu-ram.sh",
+        "return-type": "json",
+        "on-click": "omarchy-launch-or-focus-tui btop"
+    },
+
+    "custom/netspeed": {
+        "format": "{}",
+        "interval": 2,
+        "exec": "/home/nishant/.config/waybar/scripts/netspeed.sh 2>/dev/null",
+        "return-type": "json"
+    }
+}
