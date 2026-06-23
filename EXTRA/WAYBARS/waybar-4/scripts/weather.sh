@@ -70,14 +70,18 @@ prog_bar() {
 }
 
 case "$DESC" in
-  *[Ss]unny*|*[Cc]lear*)             ICON=""; CLASS="clear" ;;
-  *[Pp]artly*[Cc]loudy*|*[Oo]vercast*) ICON="⛅"; CLASS="cloudy" ;;
+  *[Ss]unny*|*[Cc]lear*)             ICON="☀️"; CLASS="clear" ;;
+  *[Pp]artly*[Cc]loudy*)             ICON="⛅";  CLASS="cloudy" ;;
+  *[Oo]vercast*)                      ICON="☁️"; CLASS="cloudy" ;;
   *[Cc]loudy*)                        ICON="☁️"; CLASS="cloudy" ;;
-  *[Rr]ain*|*[Dd]rizzle*|*[Ss]hower*) ICON="🌦"; CLASS="rain" ;;
-  *[Tt]hunder*|*[Ss]torm*)            ICON="⛈"; CLASS="storm" ;;
-  *[Ss]now*|*[Hh]ail*|*[Ii]ce*)       ICON="❄️"; CLASS="snow" ;;
-  *[Ff]og*|*[Mm]ist*|*[Hh]aze*)       ICON="🌫"; CLASS="fog" ;;
-  *)                                  ICON=""; CLASS="" ;;
+  *[Dd]rizzle*)                       ICON="🌦️"; CLASS="rain" ;;
+  *[Rr]ain*|*[Ss]hower*)             ICON="🌧️"; CLASS="rain" ;;
+  *[Tt]hunder*|*[Ss]torm*)           ICON="⛈️"; CLASS="storm" ;;
+  *[Ss]now*|*[Bb]lizzard*)           ICON="🌨️"; CLASS="snow" ;;
+  *[Hh]ail*|*[Ii]ce*)               ICON="🧊";  CLASS="snow" ;;
+  *[Ff]og*|*[Mm]ist*|*[Hh]aze*)     ICON="🌫️"; CLASS="fog" ;;
+  *[Ww]ind*|*[Bb]reez*)             ICON="💨";  CLASS="windy" ;;
+  *)                                  ICON="☀️"; CLASS="" ;;
 esac
 
 DIV="<span color='#585b70'>━━━━━━━━━━━━━━━━━━━━━</span>"
@@ -122,12 +126,14 @@ while IFS= read -r hour; do
   else H_TIME="$((TIME_INT - 12))pm"; fi
 
   case "$H_CODE" in
-    113) H_ICON="" ;; 116) H_ICON="⛅" ;; 119|122) H_ICON="☁️" ;;
-    143|248|260) H_ICON="🌫" ;;
-    176|263|266|293|296|299|302|305|308|311|314|317|350|353|356|359|362|365) H_ICON="🌦" ;;
-    179|182|185|227|230|320|323|326|329|332|335|338|368|371|374|377|395) H_ICON="❄️" ;;
-    200|386|389|392) H_ICON="⛈" ;;
-    *) H_ICON="" ;;
+    113) H_ICON="☀️" ;;
+    116) H_ICON="⛅" ;;
+    119|122) H_ICON="☁️" ;;
+    143|248|260) H_ICON="🌫️" ;;
+    176|263|266|293|296|299|302|305|308|311|314|317|350|353|356|359|362|365) H_ICON="🌧️" ;;
+    179|182|185|227|230|320|323|326|329|332|335|338|368|371|374|377|395) H_ICON="🌨️" ;;
+    200|386|389|392) H_ICON="⛈️" ;;
+    *) H_ICON="☀️" ;;
   esac
 
   TT+="
@@ -152,12 +158,14 @@ while IFS= read -r day; do
   fi
 
   case "$FCODE" in
-    113) F_ICON="" ;; 116) F_ICON="⛅" ;; 119|122) F_ICON="☁️" ;;
-    143|248|260) F_ICON="🌫" ;;
-    176|263|266|293|296|299|302|305|308|311|314|317|350|353|356|359|362|365) F_ICON="🌦" ;;
-    179|182|185|227|230|320|323|326|329|332|335|338|368|371|374|377|395) F_ICON="❄️" ;;
-    200|386|389|392) F_ICON="⛈" ;;
-    *) F_ICON="" ;;
+    113) F_ICON="☀️" ;;
+    116) F_ICON="⛅" ;;
+    119|122) F_ICON="☁️" ;;
+    143|248|260) F_ICON="🌫️" ;;
+    176|263|266|293|296|299|302|305|308|311|314|317|350|353|356|359|362|365) F_ICON="🌧️" ;;
+    179|182|185|227|230|320|323|326|329|332|335|338|368|371|374|377|395) F_ICON="🌨️" ;;
+    200|386|389|392) F_ICON="⛈️" ;;
+    *) F_ICON="☀️" ;;
   esac
 
   FDAY=$(date -d "$FDATE" +%a 2>/dev/null || echo "$FDATE")

@@ -77,7 +77,7 @@
     "custom/weather": {
         "format": "{}",
         "interval": 30,
-        "exec": "/home/nishant/.config/waybar/scripts/weather.sh",
+        "exec": "~/.config/waybar/scripts/weather.sh",
         "return-type": "json",
         "on-click": "~/.config/waybar/scripts/weather-config.sh",
         "tooltip": true
@@ -110,14 +110,14 @@
 
     "custom/idle-indicator": {
         "on-click": "omarchy-toggle-idle",
-        "exec": "/home/nishant/.local/share/omarchy/default/waybar/indicators/idle.sh",
+        "exec": "~/.local/share/omarchy/default/waybar/indicators/idle.sh",
         "signal": 9,
         "return-type": "json"
     },
 
     "custom/notification-silencing-indicator": {
         "on-click": "omarchy-toggle-notification-silencing",
-        "exec": "/home/nishant/.local/share/omarchy/default/waybar/indicators/notification-silencing.sh",
+        "exec": "~/.local/share/omarchy/default/waybar/indicators/notification-silencing.sh",
         "signal": 10,
         "return-type": "json"
     },
@@ -176,7 +176,7 @@
     "custom/netspeed": {
         "format": "{}",
         "interval": 2,
-        "exec": "/home/nishant/.config/waybar/scripts/netspeed.sh 2>/dev/null",
+        "exec": "~/.config/waybar/scripts/netspeed.sh 2>/dev/null",
         "return-type": "json"
     }
 }
