@@ -2,9 +2,9 @@
    COLOR VARIABLES
    ──────────────────────────────────────────────────────────── */
 @define-color base     #11111b;
-@define-color text     #cdd6f4;
-@define-color lavender #cba6f7;
-@define-color mauve    #cba6f7;
+@define-color text     #e6e6e6;
+@define-color lavender #fab387;
+@define-color mauve    #f38ba8;
 
 /* ────────────────────────────────────────────────────────────
    MAIN WINDOW
