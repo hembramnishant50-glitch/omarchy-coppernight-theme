@@ -151,7 +151,7 @@
             ""
         ],
         "format-charging": " {icon} {capacity}%",
-        "on-click": "omarchy-menu power",
+        "on-click": "/home/hisoka/.config/omarchy/scripts/power-menu.sh",
         "tooltip-format-discharging": "<span color='#fab387'>{power:>1.0f}W</span>↓  <span color='#f9e2af'>{capacity}%</span>\n<span color='#94e2d5'> {time}</span>\n<span color='#cba6f7'>♻ {cycles}</span> cycles  <span color='#a6e3a1'> {health}%</span>",
         "tooltip-format-charging": "<span color='#a6e3a1'>{power:>1.0f}W</span> ↑  <span color='#f9e2af'>{capacity}%</span>\n<span color='#94e2d5'> {time}</span>\n<span color='#cba6f7'>♻ {cycles}</span> cycles  <span color='#a6e3a1'> {health}%</span>"
     },

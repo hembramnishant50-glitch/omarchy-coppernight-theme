@@ -79,7 +79,7 @@ case "$DESC" in
   *[Tt]hunder*|*[Ss]torm*)           ICON="⛈️"; CLASS="storm" ;;
   *[Ss]now*|*[Bb]lizzard*)           ICON="🌨️"; CLASS="snow" ;;
   *[Hh]ail*|*[Ii]ce*)               ICON="🧊";  CLASS="snow" ;;
-  *[Ff]og*|*[Mm]ist*|*[Hh]aze*)     ICON="🌫️"; CLASS="fog" ;;
+  *[Ff]og*|*[Mm]ist*|*[Hh]aze*)     ICON="󰖑"; CLASS="fog" ;;
   *[Ww]ind*|*[Bb]reez*)             ICON="💨";  CLASS="windy" ;;
   *)                                  ICON="☀️"; CLASS="" ;;
 esac
