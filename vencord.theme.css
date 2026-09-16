@@ -1,0 +1,77 @@
+/**
+ * @name Coppernight
+ * @author Nishant
+ * @version 1.0.0
+ * @description Deep indigo canvas with glowing copper accents for Discord.
+ * @source https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme
+**/
+
+.theme-dark {
+  --background-primary: #11111b;
+  --background-secondary: #0b0b12;
+  --background-secondary-alt: #0b0b12;
+  --background-tertiary: #060609;
+  --background-accent: #fab387;
+  --background-floating: #181825;
+  --background-mobile-primary: #11111b;
+  --background-mobile-secondary: #0b0b12;
+  --background-nested-floating: #181825;
+  --background-message-hover: #181825;
+  --background-modifier-hover: #313244;
+  --background-modifier-active: #313244;
+  --background-modifier-selected: #313244;
+  --background-modifier-accent: #313244;
+
+  --text-normal: #cdd6f4;
+  --text-muted: #a6adc8;
+  --text-link: #89b4fa;
+  --text-positive: #a6e3a1;
+  --text-warning: #f9e2af;
+  --text-danger: #f38ba8;
+  --text-brand: #fab387;
+
+  --interactive-normal: #cdd6f4;
+  --interactive-hover: #fab387;
+  --interactive-active: #fab387;
+  --interactive-muted: #585b70;
+
+  --header-primary: #cdd6f4;
+  --header-secondary: #a6adc8;
+
+  --brand-experiment: #fab387;
+  --brand-experiment-hover: #f9e2af;
+  --brand-experiment-active: #fab387;
+  --button-danger-background: #f38ba8;
+  --button-danger-background-hover: #f38ba8;
+  --button-positive-background: #a6e3a1;
+  --button-secondary-background: #313244;
+  --button-secondary-background-hover: #45475a;
+
+  --channeltextarea-background: #181825;
+  --channeltextarea-background-hover: #1e1e2e;
+
+  --scrollbar-thin-thumb: #585b70;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: #585b70;
+  --scrollbar-auto-track: #0b0b12;
+
+  --input-background: #181825;
+  --input-placeholder-text: #585b70;
+
+  --status-positive-background: #a6e3a1;
+  --status-warning-background: #f9e2af;
+  --status-danger-background: #f38ba8;
+
+  --info-positive-foreground: #a6e3a1;
+  --info-warning-foreground: #f9e2af;
+  --info-danger-foreground: #f38ba8;
+
+  --mention-foreground: #fab387;
+  --mention-background: #fab38730;
+}
+
+/* Copper selection + links */
+::selection {
+  background: #313244;
+  color: #cdd6f4;
+}

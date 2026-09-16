@@ -1,0 +1,87 @@
+# Coppernight for yazi — deep indigo + glowing copper
+# Install (yazi not installed yet):
+#   1. mkdir -p ~/.config/yazi/flavors/coppernight.yazi
+#   2. Copy this file to ~/.config/yazi/flavors/coppernight.yazi/theme.toml
+#   3. Copy ../Coppernight.tmTheme to ~/.config/yazi/flavors/coppernight.yazi/Coppernight.tmTheme
+#   4. In ~/.config/yazi/theme.toml set: [flavor] dark = "coppernight"
+
+[manager]
+cwd = { fg = "#fab387", bold = true }
+hovered = { fg = "#cdd6f4", bg = "#313244" }
+preview_hovered = { fg = "#cdd6f4", bg = "#313244" }
+find_keyword = { fg = "#f9e2af", bold = true }
+find_position = { fg = "#fab387", bg = "#313244", bold = true }
+marker_copied = { fg = "#a6e3a1", bg = "#a6e3a1" }
+marker_cut = { fg = "#f38ba8", bg = "#f38ba8" }
+marker_selected = { fg = "#fab387", bg = "#fab387" }
+tab_active = { fg = "#fab387", bg = "#11111b", bold = true }
+tab_inactive = { fg = "#6c7086", bg = "#0b0b12" }
+tab_width = 1
+border_style = { fg = "#585b70" }
+syntect_theme = "Coppernight.tmTheme"
+
+[status]
+overall = { fg = "#cdd6f4", bg = "#0b0b12" }
+sep_left = { open = "", close = " " }
+sep_right = { open = " ", close = "" }
+progress_label = { fg = "#fab387", bold = true }
+progress_normal = { fg = "#313244", bg = "#0b0b12" }
+progress_error = { fg = "#f38ba8", bg = "#0b0b12" }
+perm_sep = { fg = "#585b70" }
+perm_type = { fg = "#f9e2af" }
+perm_read = { fg = "#a6e3a1" }
+perm_write = { fg = "#f38ba8" }
+perm_exec = { fg = "#89b4fa" }
+
+[input]
+title = { fg = "#fab387", bold = true }
+value = { fg = "#cdd6f4" }
+border = { fg = "#fab387" }
+
+[select]
+border = { fg = "#fab387" }
+active = { fg = "#fab387", bold = true }
+inactive = { fg = "#cdd6f4" }
+
+[tasks]
+border = { fg = "#585b70" }
+title = { fg = "#fab387", bold = true }
+hovered = { fg = "#cdd6f4", bg = "#313244" }
+
+[which]
+cols = 3
+mask = { bg = "#313244" }
+cand = { fg = "#94e2d5" }
+rest = { fg = "#6c7086" }
+desc = { fg = "#cba6f7" }
+separator = "  "
+separator_style = { fg = "#585b70" }
+
+[help]
+on = { fg = "#94e2d5" }
+run = { fg = "#cba6f7" }
+desc = { fg = "#cdd6f4" }
+hovered = { fg = "#cdd6f4", bg = "#313244" }
+footer = { fg = "#585b70", bg = "#0b0b12" }
+
+[filetype]
+rules = [
+  { mime = "image/*", fg = "#cba6f7" },
+  { mime = "video/*", fg = "#89b4fa" },
+  { mime = "audio/*", fg = "#94e2d5" },
+  { name = "*.zip", fg = "#f9e2af" },
+  { name = "*.tar*", fg = "#f9e2af" },
+  { name = "*.rar", fg = "#f9e2af" },
+  { name = "*.7z", fg = "#f9e2af" },
+  { name = "*.md", fg = "#a6e3a1" },
+  { name = "*.json", fg = "#fab387" },
+  { name = "*.toml", fg = "#94e2d5" },
+  { name = "*.yaml", fg = "#94e2d5" },
+  { name = "*.yml", fg = "#94e2d5" },
+  { name = "*.rs", fg = "#fab387" },
+  { name = "*.py", fg = "#a6e3a1" },
+  { name = "*.js", fg = "#f9e2af" },
+  { name = "*.ts", fg = "#89b4fa" },
+  { name = "*.sh", fg = "#a6e3a1" },
+  { name = "*/", fg = "#89b4fa", bold = true },
+]

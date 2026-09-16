@@ -1,0 +1,65 @@
+/* Coppernight for Firefox — deep indigo + glowing copper
+ * Install:
+ *   1. Open about:config, set toolkit.legacyUserProfileCustomizations.stylesheets = true
+ *   2. Open about:support, find "Profile Directory", open the chrome/ folder
+ *      (create chrome/ if missing), copy this file there as userChrome.css
+ *   3. Restart Firefox
+ */
+
+:root {
+  --coppernight-bg: #11111b;
+  --coppernight-panel: #181825;
+  --coppernight-fg: #cdd6f4;
+  --coppernight-copper: #fab387;
+  --coppernight-muted: #585b70;
+}
+
+#navigator-toolbox,
+#nav-bar,
+#PersonalToolbar,
+#tabbrowser-tabs {
+  background: var(--coppernight-bg) !important;
+  color: var(--coppernight-fg) !important;
+  border-color: var(--coppernight-muted) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background {
+  background: var(--coppernight-panel) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-line {
+  background: var(--coppernight-copper) !important;
+}
+
+.tabbrowser-tab .tab-label {
+  color: var(--coppernight-fg) !important;
+}
+
+#urlbar-background,
+#searchbar {
+  background: var(--coppernight-panel) !important;
+  border-color: var(--coppernight-muted) !important;
+}
+
+#urlbar[focused="true"] #urlbar-background {
+  border-color: var(--coppernight-copper) !important;
+}
+
+#urlbar-input,
+#searchbar-input {
+  color: var(--coppernight-fg) !important;
+}
+
+.toolbarbutton-icon {
+  fill: var(--coppernight-fg) !important;
+}
+
+.toolbarbutton-1:hover > .toolbarbutton-icon {
+  fill: var(--coppernight-copper) !important;
+}
+
+#sidebar-box,
+#sidebar {
+  background: var(--coppernight-bg) !important;
+  color: var(--coppernight-fg) !important;
+}

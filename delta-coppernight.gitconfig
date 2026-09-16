@@ -1,0 +1,24 @@
+# Coppernight for delta (git pager) — deep indigo + glowing copper
+# Install:
+#   1. delta is not installed yet: omarchy pkg add git-delta
+#   2. Include this file from ~/.gitconfig:
+#        [include]
+#          path = ~/.config/omarchy/themes/coppernight/delta-coppernight.gitconfig
+#   3. BAT_THEME=Coppernight picks up the Coppernight.tmTheme in this dir
+#      (run: bat cache --build after placing the .tmTheme in bat's themes dir)
+
+[delta]
+  navigate = true
+  line-numbers = true
+  syntax-theme = Coppernight
+  file-style = "#fab387 bold"
+  file-decoration-style = none
+  hunk-header-style = "file line-number syntax"
+  hunk-header-decoration-style = "#585b70 ul"
+  minus-style = syntax "#3d1f2a"
+  minus-emph-style = syntax "#f38ba8"
+  minus-empty-line-marker-style = syntax "#3d1f2a"
+  plus-style = syntax "#1f3329"
+  plus-emph-style = syntax "#a6e3a1"
+  zero-style = syntax
+  commit-decoration-style = "#fab387"

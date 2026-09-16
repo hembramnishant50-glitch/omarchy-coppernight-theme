@@ -1,0 +1,286 @@
+/* =============================================================================
+   OMARCHY THEME - GTK Coppernight - Fully Rounded & Smooth Glass
+   Rounding: 16px | Background #11111b | Accent #fab387
+   ============================================================================= */
+
+@define-color background     #11111b;
+@define-color foreground     #cdd6f4;
+@define-color black          #11111b;
+@define-color red            #f38ba8;
+@define-color green          #a6e3a1;
+@define-color yellow         #f9e2af;
+@define-color blue           #89b4fa;
+@define-color magenta        #cba6f7;
+@define-color cyan           #94e2d5;
+@define-color white          #cdd6f4;
+@define-color bright_black   #313244;
+@define-color bright_red     #f38ba8;
+@define-color bright_green   #a6e3a1;
+@define-color bright_yellow  #fab387;
+@define-color bright_blue    #89b4fa;
+@define-color bright_magenta #cba6f7;
+@define-color bright_cyan    #94e2d5;
+@define-color bright_white   #bac2de;
+
+@define-color accent_bg_color @blue;
+@define-color accent_fg_color @background;
+@define-color accent_color @blue;
+
+@define-color window_bg_color @background;
+@define-color window_fg_color @foreground;
+
+@define-color view_bg_color @background;
+@define-color view_fg_color @foreground;
+@define-color sidebar_bg_color @background;
+@define-color sidebar_fg_color @foreground;
+
+@define-color headerbar_bg_color alpha(@black, 0.72);
+@define-color headerbar_fg_color @foreground;
+@define-color headerbar_backdrop_color @background;
+@define-color headerbar_shade_color transparent;
+@define-color card_bg_color alpha(@bright_black, 0.4);
+@define-color card_fg_color @foreground;
+
+@define-color borders alpha(@bright_black, 0.8);
+@define-color headerbar_border_color alpha(@bright_yellow, 0.25);
+
+@define-color theme_fg_color @foreground;
+@define-color theme_text_color @foreground;
+@define-color theme_bg_color @background;
+@define-color theme_base_color @black;
+@define-color theme_selected_bg_color @blue;
+@define-color theme_selected_fg_color @background;
+
+/* ── Window & Dialog ── */
+window, dialog, messagedialog {
+  background-color: @background;
+  border-radius: 16px;
+}
+
+messagedialog {
+  border: 1px solid alpha(@bright_yellow, 0.35);
+  border-radius: 16px;
+}
+
+messagedialog label {
+  color: @foreground;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+messagedialog button {
+  background-color: alpha(@bright_black, 0.6);
+  color: @foreground;
+  border: 1px solid alpha(@bright_black, 0.8);
+  padding: 10px 18px;
+  border-radius: 12px;
+  transition: all 180ms ease-out;
+}
+
+messagedialog button:hover {
+  background-color: @blue;
+  color: @background;
+  border-color: @blue;
+}
+
+/* ── Headerbar - top rounded only, smooth glass ── */
+headerbar {
+  background-color: alpha(@black, 0.72);
+  border-radius: 16px 16px 0 0;
+  border: 1px solid alpha(@bright_yellow, 0.18);
+  border-bottom: 1px solid alpha(@bright_black, 0.6);
+  box-shadow: 0 1px 3px alpha(black, 0.2);
+}
+
+headerbar:backdrop {
+  background-color: alpha(@black, 0.55);
+}
+
+/* ── Cards & Views - fully rounded ── */
+card {
+  background-color: alpha(@bright_black, 0.38);
+  border: 1px solid alpha(@bright_black, 0.5);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+view, textview, iconview {
+  border-radius: 12px;
+}
+
+/* ── Buttons - pill/rounded ── */
+button {
+  border-radius: 12px;
+  padding: 6px 14px;
+  border: 1px solid alpha(@bright_black, 0.6);
+  background-color: alpha(@bright_black, 0.35);
+  color: @foreground;
+  transition: all 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+button:hover {
+  background-color: alpha(@blue, 0.18);
+  border-color: alpha(@blue, 0.5);
+}
+
+button:active {
+  background-color: alpha(@blue, 0.28);
+}
+
+button.suggested-action {
+  background-color: @blue;
+  color: @background;
+  border-color: @blue;
+  border-radius: 12px;
+}
+
+/* ── Entries & Search ── */
+entry, searchentry {
+  border-radius: 12px;
+  border: 1px solid alpha(@bright_black, 0.7);
+  background-color: alpha(@bright_black, 0.35);
+  padding: 8px 12px;
+  transition: all 160ms ease-out;
+}
+
+entry:focus, searchentry:focus {
+  border-color: alpha(@bright_yellow, 0.7);
+  box-shadow: 0 0 0 2px alpha(@bright_yellow, 0.18);
+}
+
+/* ── Popover & Menu - floating rounded ── */
+popover, popover contents, popover box {
+  border-radius: 16px;
+  background-color: alpha(@black, 0.94);
+  border: 1px solid alpha(@bright_black, 0.7);
+  box-shadow: 0 12px 28px alpha(black, 0.45), 0 4px 10px alpha(black, 0.25);
+  padding: 6px;
+}
+
+menu, menubar, context-menu {
+  border-radius: 14px;
+  background-color: alpha(@black, 0.96);
+  border: 1px solid alpha(@bright_black, 0.6);
+  padding: 6px;
+}
+
+menuitem {
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+
+menuitem:hover {
+  background-color: alpha(@blue, 0.18);
+}
+
+/* ── Sidebar - rounded inset ── */
+sidebar, navigation-sidebar {
+  background-color: alpha(@black, 0.5);
+  border-radius: 12px;
+  margin: 6px;
+}
+
+sidebar row {
+  border-radius: 10px;
+  margin: 2px 6px;
+  padding: 6px 10px;
+}
+
+sidebar row:selected {
+  background-color: alpha(@blue, 0.22);
+}
+
+/* ── Scrollbar - thin rounded ── */
+scrollbar slider {
+  border-radius: 999px;
+  background-color: alpha(@bright_black, 0.9);
+  min-width: 6px;
+  min-height: 6px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+scrollbar slider:hover {
+  background-color: alpha(@bright_yellow, 0.85);
+}
+
+/* ── Toast & Notifications ── */
+toast {
+  background-color: alpha(@black, 0.92);
+  color: @foreground;
+  border: 1px solid alpha(@bright_yellow, 0.4);
+  border-radius: 14px;
+  box-shadow: 0 8px 20px alpha(black, 0.35);
+  margin: 8px;
+}
+
+/* ── Notebook / Tabs - rounded ── */
+notebook header tabs tab {
+  border-radius: 10px 10px 0 0;
+  padding: 8px 16px;
+  background-color: alpha(@bright_black, 0.3);
+  margin: 2px;
+}
+
+notebook header tabs tab:checked {
+  background-color: alpha(@blue, 0.2);
+  border: 1px solid alpha(@blue, 0.3);
+}
+
+/* ── Scale & Progress - rounded track ── */
+scale trough, progressbar trough {
+  border-radius: 999px;
+  background-color: alpha(@bright_black, 0.6);
+}
+
+scale highlight, progressbar progress {
+  border-radius: 999px;
+  background-color: @blue;
+}
+
+scale slider {
+  border-radius: 999px;
+  background-color: @foreground;
+  border: 2px solid @blue;
+}
+
+/* ── Switch - pill ── */
+switch {
+  border-radius: 999px;
+  background-color: alpha(@bright_black, 0.7);
+}
+
+switch:checked {
+  background-color: @blue;
+}
+
+switch slider {
+  border-radius: 999px;
+  background-color: @foreground;
+}
+
+/* ── List rows - rounded ── */
+list row {
+  border-radius: 10px;
+  margin: 2px 6px;
+}
+
+list row:hover {
+  background-color: alpha(@bright_black, 0.35);
+}
+
+/* ── Tooltip - rounded ── */
+tooltip {
+  border-radius: 10px;
+  background-color: alpha(@black, 0.92);
+  border: 1px solid alpha(@bright_black, 0.6);
+}
+
+/* ── Smooth transitions globally ── */
+* {
+  -gtk-outline-radius: 14px;
+}
+
+.svg-icon {
+  filter: sepia(100%) saturate(300%) hue-rotate(190deg) brightness(90%) contrast(100%);
+}
