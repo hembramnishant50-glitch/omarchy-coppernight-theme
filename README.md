@@ -39,35 +39,44 @@
 
 ## ⚡ Installation
 
-### 1. Install the theme
+### One command
+
+Installs the theme, activates it, and applies the file manager background plus Papirus-Dark icons and the Bibata-Amber cursor:
 
 ```bash
+omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git && rm -rf ~/.config/omarchy/themes/coppernight/.git && omarchy theme set coppernight && cd ~/.config/omarchy/themes/coppernight && ./apply-filemanager.sh && ./apply-icons.sh
+```
+
+> Run it in a real terminal — the icon/cursor step needs your sudo password.
+
+### Or step by step
+
+<details>
+<summary><b>Show individual steps</b></summary>
+
+```bash
+# 1. Install the theme
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
-```
 
-### 2. Activate it
-
-```bash
+# 2. Activate it
 rm -rf ~/.config/omarchy/themes/coppernight/.git && omarchy theme set coppernight
+
+# 3. Optional extras — file manager background + Yazi flavor
+cd ~/.config/omarchy/themes/coppernight
+./apply-filemanager.sh
+
+# 4. Optional extras — Papirus-Dark icons + Bibata-Amber cursor
+./apply-icons.sh
 ```
 
-That's it — Hyprland, terminals, GTK apps, and shell styling all refresh together.
+Steps 3 and 4 are opt-in. Skip them if you prefer your current icon set or file manager styling — the theme itself is already active after step 2.
+
+</details>
 
 ### Switch back anytime
 
 ```bash
 omarchy theme set coppernight
-```
-
-### Optional extras
-
-The file manager background and icon/cursor packs are opt-in so your existing setup is never overwritten without consent. Run from the theme directory — install steps need your sudo password, so use a real terminal:
-
-```bash
-cd ~/.config/omarchy/themes/coppernight
-
-./apply-filemanager.sh   # Nautilus #11111b background + Yazi flavor
-./apply-icons.sh         # Papirus-Dark orange folders + Bibata-Modern-Amber cursor
 ```
 
 ---
