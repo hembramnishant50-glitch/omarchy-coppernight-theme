@@ -3,7 +3,7 @@
 # Usage:  ./remove-icons.sh
 # Undoes what apply-icons.sh installed:
 #   - resets icon theme to Yaru-dark (theme default) and removes Papirus,
-#   - resets cursor to Adwaita and removes Bibata (optional).
+#   - resets cursor to Adwaita and removes Catppuccin Macchiato (optional).
 # Run in a terminal (uninstall steps need your sudo password).
 set -e
 
@@ -24,15 +24,18 @@ gsettings set org.gnome.desktop.interface icon-theme "Yaru-dark" 2>/dev/null \
 
 read -r -p "Uninstall papirus-icon-theme? [y/N] " answer
 if [[ "$answer" =~ ^[Yy]$ ]]; then
-  if pacman -Q papirus-icon-theme >/dev/null 2>&1; then
-    if sudo pacman -Rns --noconfirm papirus-icon-theme; then
-      ok "papirus-icon-theme removed"
+  # catppuccin folder colours live inside the papirus theme tree, so drop them first
+  for pkg in papirus-folders-catppuccin-git papirus-icon-theme; do
+    if pacman -Q "$pkg" >/dev/null 2>&1; then
+      if sudo pacman -Rns --noconfirm "$pkg"; then
+        ok "$pkg removed"
+      else
+        warn "could not remove $pkg"
+      fi
     else
-      warn "could not remove papirus-icon-theme"
+      skip "$pkg not installed"
     fi
-  else
-    skip "papirus-icon-theme not installed"
-  fi
+  done
 else
   skip "keeping papirus-icon-theme"
 fi
@@ -45,19 +48,19 @@ if command -v hyprctl >/dev/null 2>&1; then
     && ok "Hyprland cursor reset" || warn "hyprctl setcursor failed"
 fi
 
-read -r -p "Uninstall bibata-cursor-theme? [y/N] " answer
+read -r -p "Uninstall catppuccin-cursors-macchiato? [y/N] " answer
 if [[ "$answer" =~ ^[Yy]$ ]]; then
-  if pacman -Q bibata-cursor-theme >/dev/null 2>&1; then
-    if sudo pacman -Rns --noconfirm bibata-cursor-theme; then
-      ok "bibata-cursor-theme removed"
+  if pacman -Q catppuccin-cursors-macchiato >/dev/null 2>&1; then
+    if sudo pacman -Rns --noconfirm catppuccin-cursors-macchiato; then
+      ok "catppuccin-cursors-macchiato removed"
     else
-      warn "could not remove bibata-cursor-theme"
+      warn "could not remove catppuccin-cursors-macchiato"
     fi
   else
-    skip "bibata-cursor-theme not installed"
+    skip "catppuccin-cursors-macchiato not installed"
   fi
 else
-  skip "keeping bibata-cursor-theme"
+  skip "keeping catppuccin-cursors-macchiato"
 fi
 
 echo "— Summary: $PASS ok, $FAIL failed —"

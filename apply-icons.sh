@@ -1,5 +1,5 @@
 #!/bin/bash
-# Papirus-Dark + orange folders + Bibata-Modern-Amber cursor for coppernight.
+# Papirus-Dark + Catppuccin Macchiato peach folders + peach cursor for coppernight.
 # Run in a terminal (install steps need your sudo password):
 #   ./apply-icons.sh
 set -e
@@ -11,7 +11,7 @@ FAIL=0
 ok()   { PASS=$((PASS + 1)); echo "  ✓ $1"; }
 warn() { FAIL=$((FAIL + 1)); echo "  ✗ $1"; }
 
-echo "→ Coppernight icon + cursor setup (Papirus-Dark orange folders, Bibata-Modern-Amber)"
+echo "→ Coppernight icon + cursor setup (Papirus-Dark + Macchiato peach folders + peach cursor)"
 
 # 1. Install Papirus icon theme if missing
 if pacman -Q papirus-icon-theme >/dev/null 2>&1; then
@@ -27,44 +27,68 @@ else
   warn "omarchy not found — install papirus-icon-theme with your package manager"
 fi
 
-# 2. Orange folders for Papirus-Dark
+# 2. Catppuccin Macchiato peach folders for Papirus-Dark.
+#    NOTE: papirus-folders is a standalone helper script from the Papirus project,
+#    NOT part of papirus-icon-theme. The AUR package papirus-folders-catppuccin-git
+#    ships both the script and the cat-* colour folders. Without it, Papirus-Dark keeps
+#    its stock blue folders.
+if ! command -v papirus-folders >/dev/null 2>&1; then
+  if pacman -Q papirus-folders-catppuccin-git >/dev/null 2>&1; then
+    ok "papirus-folders-catppuccin-git already installed"
+  elif command -v omarchy >/dev/null 2>&1; then
+    echo "→ installing papirus-folders-catppuccin-git (sudo password needed)"
+    if omarchy pkg aur add papirus-folders-catppuccin-git; then
+      ok "papirus-folders installed"
+    else
+      warn "install failed — run 'omarchy pkg aur add papirus-folders-catppuccin-git' manually"
+    fi
+  else
+    warn "omarchy not found — install papirus-folders-catppuccin-git with your package manager"
+  fi
+fi
+
 if command -v papirus-folders >/dev/null 2>&1; then
-  echo "→ papirus-folders -C orange --theme Papirus-Dark"
-  if papirus-folders -C orange --theme Papirus-Dark >/dev/null 2>&1; then
-    ok "folders set to orange"
+  echo "→ papirus-folders -C cat-macchiato-peach --theme Papirus-Dark"
+  if papirus-folders -C cat-macchiato-peach --theme Papirus-Dark >/dev/null 2>&1; then
+    ok "folders set to Catppuccin Macchiato peach"
   else
     warn "papirus-folders failed"
   fi
 else
-  warn "papirus-folders not found (comes with papirus-icon-theme)"
+  warn "papirus-folders unavailable — folders stay stock Papirus blue"
 fi
 
-# 3. Install Bibata cursor theme if missing (AUR)
-if pacman -Q bibata-cursor-theme >/dev/null 2>&1; then
-  ok "bibata-cursor-theme already installed"
+# 3. Install Catppuccin Macchiato cursor theme if missing (AUR).
+#    Ships 16 Macchiato colour variants; we use the peach one, which is
+#    #fab387 — the same Copper accent as the borders, topbar and folders.
+CURSOR_PKG="catppuccin-cursors-macchiato"
+CURSOR_NAME="catppuccin-macchiato-peach-cursors"
+
+if pacman -Q "$CURSOR_PKG" >/dev/null 2>&1; then
+  ok "$CURSOR_PKG already installed"
 elif command -v omarchy >/dev/null 2>&1; then
-  echo "→ installing bibata-cursor-theme from AUR (sudo password needed)"
-  if omarchy pkg aur add bibata-cursor-theme; then
-    ok "bibata-cursor-theme installed"
+  echo "→ installing $CURSOR_PKG from AUR (sudo password needed)"
+  if omarchy pkg aur add "$CURSOR_PKG"; then
+    ok "$CURSOR_PKG installed"
   else
-    warn "install failed — run 'omarchy pkg aur add bibata-cursor-theme' manually"
+    warn "install failed — run 'omarchy pkg aur add $CURSOR_PKG' manually"
   fi
 else
-  warn "omarchy not found — install bibata-cursor-theme from AUR manually"
+  warn "omarchy not found — install $CURSOR_PKG from AUR manually"
 fi
 
-# 4. Apply Bibata-Modern-Amber cursor (GTK + Hyprland, best effort)
-if [ -d /usr/share/icons/Bibata-Modern-Amber ] || [ -d "$HOME/.icons/Bibata-Modern-Amber" ] \
-    || [ -d "$HOME/.local/share/icons/Bibata-Modern-Amber" ]; then
-  echo "→ applying Bibata-Modern-Amber cursor"
-  gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Amber" 2>/dev/null \
+# 4. Apply the peach cursor (GTK + Hyprland, best effort)
+if [ -d "/usr/share/icons/$CURSOR_NAME" ] || [ -d "$HOME/.icons/$CURSOR_NAME" ] \
+    || [ -d "$HOME/.local/share/icons/$CURSOR_NAME" ]; then
+  echo "→ applying $CURSOR_NAME"
+  gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR_NAME" 2>/dev/null \
     && ok "GNOME cursor applied" || warn "gsettings cursor apply failed"
   if command -v hyprctl >/dev/null 2>&1; then
-    hyprctl setcursor Bibata-Modern-Amber 24 >/dev/null 2>&1 \
+    hyprctl setcursor "$CURSOR_NAME" 24 >/dev/null 2>&1 \
       && ok "Hyprland cursor applied" || warn "hyprctl setcursor failed"
   fi
 else
-  warn "Bibata-Modern-Amber not found — cursor not applied"
+  warn "$CURSOR_NAME not found — cursor not applied"
 fi
 
 # 5. Point this theme at Papirus-Dark
@@ -79,4 +103,4 @@ if command -v omarchy >/dev/null 2>&1; then
 fi
 
 echo "— Summary: $PASS ok, $FAIL failed —"
-echo "✓ Done — folders should now be orange Papirus-Dark. Log out/in if icons look stale."
+echo "✓ Done — folders and cursor are now Catppuccin Macchiato peach. Log out/in if anything looks stale."

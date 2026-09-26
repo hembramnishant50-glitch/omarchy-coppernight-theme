@@ -41,7 +41,7 @@
 
 ### One command
 
-Installs the theme, activates it, and applies the file manager background plus Papirus-Dark icons and the Bibata-Amber cursor:
+Installs the theme, activates it, and applies the file manager background plus Papirus-Dark icons with Catppuccin Macchiato peach folders and a matching peach cursor:
 
 ```bash
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git && rm -rf ~/.config/omarchy/themes/coppernight/.git && omarchy theme set coppernight && cd ~/.config/omarchy/themes/coppernight && ./apply-filemanager.sh && ./apply-icons.sh
@@ -65,7 +65,7 @@ rm -rf ~/.config/omarchy/themes/coppernight/.git && omarchy theme set coppernigh
 cd ~/.config/omarchy/themes/coppernight
 ./apply-filemanager.sh
 
-# 4. Optional extras — Papirus-Dark icons + Bibata-Amber cursor
+# 4. Optional extras — Papirus-Dark icons + Catppuccin peach folders & cursor
 ./apply-icons.sh
 ```
 
@@ -215,8 +215,8 @@ omarchy theme set coppernight
 | `backgrounds/` | Five handpicked wallpapers. |
 | `apply-filemanager.sh` | Applies file manager background + Yazi flavor. |
 | `remove-gtk.sh` | Removes the GTK override — back to default. |
-| `apply-icons.sh` | Installs Papirus-Dark (orange folders) + Bibata-Modern-Amber cursor. |
-| `remove-icons.sh` | Removes Papirus/Bibata — back to default icons + cursor. |
+| `apply-icons.sh` | Installs Papirus-Dark with Catppuccin Macchiato peach folders + peach cursor. |
+| `remove-icons.sh` | Removes Papirus/Catppuccin — back to default icons + cursor. |
 
 </details>
 
@@ -230,7 +230,7 @@ omarchy theme set coppernight
 |---|:---:|:---:|
 | `./apply-filemanager.sh` | Nautilus `#11111b` background + Yazi flavor | ➖ |
 | `./remove-gtk.sh` | Revert GTK/file manager to default | ➖ |
-| `./apply-icons.sh` | Install + apply Papirus-Dark and Bibata-Amber | ✅ |
+| `./apply-icons.sh` | Install + apply Papirus-Dark, peach folders and peach cursor | ✅ |
 | `./remove-icons.sh` | Revert icons/cursor, optionally uninstall | ✅ |
 
 </div>
@@ -247,7 +247,7 @@ omarchy theme set coppernight
 cd ~/.config/omarchy/themes/coppernight
 
 ./remove-gtk.sh     # File manager back to default
-./remove-icons.sh   # Default icons + cursor back (asks before uninstalling Papirus/Bibata)
+./remove-icons.sh   # Default icons + cursor back (asks before uninstalling Papirus/Catppuccin)
 ```
 
 ---
