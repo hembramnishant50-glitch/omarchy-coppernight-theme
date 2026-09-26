@@ -31,20 +31,26 @@ fi
 #    NOTE: papirus-folders is a standalone helper from PapirusDevelopmentTeam,
 #    NOT part of papirus-icon-theme. The orange folder SVGs themselves DO ship
 #    with papirus-icon-theme; only the script that applies them is missing.
-#    AUR package: papirus-folders (upstream v1.14.0).
+#    The Catppuccin fork (papirus-folders-catppuccin-git) is what omarchy users
+#    actually end up with, and it is what remove-icons.sh uninstalls — so try it
+#    first and fall back to upstream papirus-folders.
 if ! command -v papirus-folders >/dev/null 2>&1; then
-  if pacman -Q papirus-folders >/dev/null 2>&1; then
-    ok "papirus-folders already installed"
-  elif command -v omarchy >/dev/null 2>&1; then
-    echo "→ installing papirus-folders from AUR (sudo password needed)"
-    if omarchy pkg aur add papirus-folders; then
-      ok "papirus-folders installed"
-    else
-      warn "install failed — run 'omarchy pkg aur add papirus-folders' manually"
+  for pkg in papirus-folders-catppuccin-git papirus-folders; do
+    if pacman -Q "$pkg" >/dev/null 2>&1; then
+      ok "$pkg already installed"
+      break
     fi
-  else
-    warn "omarchy not found — install papirus-folders with your package manager"
-  fi
+    echo "→ installing $pkg (sudo password needed)"
+    if command -v yay >/dev/null 2>&1; then
+      if yay -S --needed --noconfirm "$pkg"; then ok "$pkg installed"; break; fi
+    elif command -v omarchy >/dev/null 2>&1; then
+      if omarchy pkg aur add "$pkg"; then ok "$pkg installed"; break; fi
+    else
+      warn "no AUR helper (yay/omarchy) — install $pkg manually"
+      break
+    fi
+    warn "could not install $pkg"
+  done
 fi
 
 if command -v papirus-folders >/dev/null 2>&1; then
