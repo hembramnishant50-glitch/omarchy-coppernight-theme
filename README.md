@@ -41,7 +41,7 @@
 
 ### One command
 
-Installs the theme, activates it, and applies the file manager background plus Papirus-Dark icons with Catppuccin Macchiato peach folders and a matching peach cursor:
+Installs the theme, activates it, and applies the file manager background plus Papirus-Dark icons with orange folders and a matching peach cursor:
 
 ```bash
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git && rm -rf ~/.config/omarchy/themes/coppernight/.git && omarchy theme set coppernight && cd ~/.config/omarchy/themes/coppernight && ./apply-filemanager.sh && ./apply-icons.sh
@@ -60,11 +60,11 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 | Package | Source | Why it's needed |
 |:---|:---:|:---|
 | `papirus-icon-theme` | `extra` | The Papirus-Dark base icon theme. |
-| `papirus-folders-catppuccin-git` | AUR | Ships the `papirus-folders` script **and** Catppuccin's `cat-*` folder colours. It is *not* part of `papirus-icon-theme` — without it Papirus keeps its stock blue folders. |
+| `papirus-folders` | AUR | The official [PapirusDevelopmentTeam/papirus-folders](https://github.com/PapirusDevelopmentTeam/papirus-folders) helper, which applies the folder colour. The orange SVGs already ship with `papirus-icon-theme` — only the script is missing. |
 | `catppuccin-cursors-macchiato` | AUR | 16 Catppuccin Macchiato cursor variants. The theme uses `catppuccin-macchiato-peach-cursors`. |
 
-Macchiato Peach is `#fab387` — the same Copper accent as the borders, topbar and folders, so
-icons and cursor sit on the same palette as the rest of the theme.
+Folders are set to **orange** via the official Papirus tool. The cursor is Catppuccin
+Macchiato Peach (`#fab387`) — the same Copper accent as the borders and topbar.
 
 `./remove-icons.sh` offers to uninstall all three.
 
@@ -84,7 +84,7 @@ rm -rf ~/.config/omarchy/themes/coppernight/.git && omarchy theme set coppernigh
 cd ~/.config/omarchy/themes/coppernight
 ./apply-filemanager.sh
 
-# 4. Optional extras — Papirus-Dark icons + Catppuccin peach folders & cursor
+# 4. Optional extras — Papirus-Dark icons + orange folders & peach cursor
 ./apply-icons.sh
 ```
 
@@ -234,7 +234,7 @@ omarchy theme set coppernight
 | `backgrounds/` | Five handpicked wallpapers. |
 | `apply-filemanager.sh` | Applies file manager background + Yazi flavor. |
 | `remove-gtk.sh` | Removes the GTK override — back to default. |
-| `apply-icons.sh` | Installs Papirus-Dark with Catppuccin Macchiato peach folders + peach cursor. |
+| `apply-icons.sh` | Installs Papirus-Dark with orange folders + peach cursor. |
 | `remove-icons.sh` | Removes Papirus/Catppuccin — back to default icons + cursor. |
 
 </details>
@@ -249,7 +249,7 @@ omarchy theme set coppernight
 |---|:---:|:---:|
 | `./apply-filemanager.sh` | Nautilus `#11111b` background + Yazi flavor | ➖ |
 | `./remove-gtk.sh` | Revert GTK/file manager to default | ➖ |
-| `./apply-icons.sh` | Install + apply Papirus-Dark, peach folders and peach cursor | ✅ |
+| `./apply-icons.sh` | Install + apply Papirus-Dark, orange folders, peach cursor | ✅ |
 | `./remove-icons.sh` | Revert icons/cursor, optionally uninstall | ✅ |
 
 </div>

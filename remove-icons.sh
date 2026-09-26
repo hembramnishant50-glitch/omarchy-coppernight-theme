@@ -24,8 +24,8 @@ gsettings set org.gnome.desktop.interface icon-theme "Yaru-dark" 2>/dev/null \
 
 read -r -p "Uninstall papirus-icon-theme? [y/N] " answer
 if [[ "$answer" =~ ^[Yy]$ ]]; then
-  # catppuccin folder colours live inside the papirus theme tree, so drop them first
-  for pkg in papirus-folders-catppuccin-git papirus-icon-theme; do
+  # the papirus-folders helper goes first; papirus-icon-theme owns the icon tree
+  for pkg in papirus-folders papirus-icon-theme; do
     if pacman -Q "$pkg" >/dev/null 2>&1; then
       if sudo pacman -Rns --noconfirm "$pkg"; then
         ok "$pkg removed"

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Papirus-Dark + Catppuccin Macchiato peach folders + peach cursor for coppernight.
+# Papirus-Dark + orange folders + peach cursor for coppernight.
 # Run in a terminal (install steps need your sudo password):
 #   ./apply-icons.sh
 set -e
@@ -11,7 +11,7 @@ FAIL=0
 ok()   { PASS=$((PASS + 1)); echo "  ✓ $1"; }
 warn() { FAIL=$((FAIL + 1)); echo "  ✗ $1"; }
 
-echo "→ Coppernight icon + cursor setup (Papirus-Dark + Macchiato peach folders + peach cursor)"
+echo "→ Coppernight icon + cursor setup (Papirus-Dark orange folders + peach cursor)"
 
 # 1. Install Papirus icon theme if missing
 if pacman -Q papirus-icon-theme >/dev/null 2>&1; then
@@ -27,30 +27,30 @@ else
   warn "omarchy not found — install papirus-icon-theme with your package manager"
 fi
 
-# 2. Catppuccin Macchiato peach folders for Papirus-Dark.
-#    NOTE: papirus-folders is a standalone helper script from the Papirus project,
-#    NOT part of papirus-icon-theme. The AUR package papirus-folders-catppuccin-git
-#    ships both the script and the cat-* colour folders. Without it, Papirus-Dark keeps
-#    its stock blue folders.
+# 2. Orange folders for Papirus-Dark, via the official Papirus tool.
+#    NOTE: papirus-folders is a standalone helper from PapirusDevelopmentTeam,
+#    NOT part of papirus-icon-theme. The orange folder SVGs themselves DO ship
+#    with papirus-icon-theme; only the script that applies them is missing.
+#    AUR package: papirus-folders (upstream v1.14.0).
 if ! command -v papirus-folders >/dev/null 2>&1; then
-  if pacman -Q papirus-folders-catppuccin-git >/dev/null 2>&1; then
-    ok "papirus-folders-catppuccin-git already installed"
+  if pacman -Q papirus-folders >/dev/null 2>&1; then
+    ok "papirus-folders already installed"
   elif command -v omarchy >/dev/null 2>&1; then
-    echo "→ installing papirus-folders-catppuccin-git (sudo password needed)"
-    if omarchy pkg aur add papirus-folders-catppuccin-git; then
+    echo "→ installing papirus-folders from AUR (sudo password needed)"
+    if omarchy pkg aur add papirus-folders; then
       ok "papirus-folders installed"
     else
-      warn "install failed — run 'omarchy pkg aur add papirus-folders-catppuccin-git' manually"
+      warn "install failed — run 'omarchy pkg aur add papirus-folders' manually"
     fi
   else
-    warn "omarchy not found — install papirus-folders-catppuccin-git with your package manager"
+    warn "omarchy not found — install papirus-folders with your package manager"
   fi
 fi
 
 if command -v papirus-folders >/dev/null 2>&1; then
-  echo "→ papirus-folders -C cat-macchiato-peach --theme Papirus-Dark"
-  if papirus-folders -C cat-macchiato-peach --theme Papirus-Dark >/dev/null 2>&1; then
-    ok "folders set to Catppuccin Macchiato peach"
+  echo "→ papirus-folders -C orange --theme Papirus-Dark"
+  if papirus-folders -C orange --theme Papirus-Dark >/dev/null 2>&1; then
+    ok "folders set to orange"
   else
     warn "papirus-folders failed"
   fi
@@ -103,4 +103,4 @@ if command -v omarchy >/dev/null 2>&1; then
 fi
 
 echo "— Summary: $PASS ok, $FAIL failed —"
-echo "✓ Done — folders and cursor are now Catppuccin Macchiato peach. Log out/in if anything looks stale."
+echo "✓ Done — folders are orange, cursor is Catppuccin Macchiato peach. Log out/in if anything looks stale."
