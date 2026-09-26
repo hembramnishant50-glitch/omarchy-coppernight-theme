@@ -60,13 +60,22 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 | Package | Source | Why it's needed |
 |:---|:---:|:---|
 | `papirus-icon-theme` | `extra` | The Papirus-Dark base icon theme. |
-| `papirus-folders` | AUR | The official [PapirusDevelopmentTeam/papirus-folders](https://github.com/PapirusDevelopmentTeam/papirus-folders) helper, which applies the folder colour. The orange SVGs already ship with `papirus-icon-theme` — only the script is missing. |
+| `papirus-folders-catppuccin-git` | AUR | The Catppuccin **Coppernight** fork of [PapirusDevelopmentTeam/papirus-folders](https://github.com/PapirusDevelopmentTeam/papirus-folders), which applies the orange folder colour. The orange SVGs ship with `papirus-icon-theme` — only the script is missing. |
 | `catppuccin-cursors-macchiato` | AUR | 16 Catppuccin Macchiato cursor variants. The theme uses `catppuccin-macchiato-peach-cursors`. |
 
 Folders are set to **orange** via the official Papirus tool. The cursor is Catppuccin
 Macchiato Peach (`#fab387`) — the same Copper accent as the borders and topbar.
 
 `./remove-icons.sh` offers to uninstall all three.
+
+> **Uninstalling Papirus by hand?** Remove the folder helper and the icon theme in a
+> *single* pacman transaction — `papirus-folders-catppuccin-git` depends on
+> `papirus-icon-theme`, so removing them one at a time fails with
+> `removing papirus-icon-theme breaks dependency ... required by papirus-folders-catppuccin-git`:
+>
+> ```bash
+> sudo pacman -Rns papirus-folders-catppuccin-git papirus-icon-theme
+> ```
 
 ### Or step by step
 
@@ -235,7 +244,7 @@ omarchy theme set coppernight
 | `apply-filemanager.sh` | Applies file manager background + Yazi flavor. |
 | `remove-gtk.sh` | Removes the GTK override — back to default. |
 | `apply-icons.sh` | Installs Papirus-Dark with orange folders + peach cursor. |
-| `remove-icons.sh` | Removes Papirus, papirus-folders and the cursor package — back to default. |
+| `remove-icons.sh` | Removes Papirus, papirus-folders-catppuccin-git and the cursor package — back to default. |
 
 </details>
 
@@ -267,6 +276,17 @@ cd ~/.config/omarchy/themes/coppernight
 
 ./remove-gtk.sh     # File manager back to default
 ./remove-icons.sh   # Default icons + cursor back (asks before uninstalling Papirus, papirus-folders, cursor)
+```
+
+Prefer to do it by hand? Uninstall Papirus in **one** transaction — the folder helper
+depends on the icon theme, so splitting the command fails:
+
+```bash
+sudo pacman -Rns papirus-folders-catppuccin-git papirus-icon-theme
+```
+
+```bash
+sudo pacman -Rns catppuccin-cursors-macchiato   # optional: the peach cursor
 ```
 
 ---

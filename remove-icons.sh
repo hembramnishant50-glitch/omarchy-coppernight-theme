@@ -24,18 +24,25 @@ gsettings set org.gnome.desktop.interface icon-theme "Yaru-dark" 2>/dev/null \
 
 read -r -p "Uninstall papirus-icon-theme? [y/N] " answer
 if [[ "$answer" =~ ^[Yy]$ ]]; then
-  # the papirus-folders helper goes first; papirus-icon-theme owns the icon tree
-  for pkg in papirus-folders papirus-icon-theme; do
+  # One transaction for the whole set: papirus-folders-catppuccin-git depends on
+  # papirus-icon-theme, so removing them separately makes pacman refuse.
+  papirus_pkgs=()
+  for pkg in papirus-folders-catppuccin-git papirus-folders papirus-icon-theme; do
     if pacman -Q "$pkg" >/dev/null 2>&1; then
-      if sudo pacman -Rns --noconfirm "$pkg"; then
-        ok "$pkg removed"
-      else
-        warn "could not remove $pkg"
-      fi
+      papirus_pkgs+=("$pkg")
     else
       skip "$pkg not installed"
     fi
   done
+  if ((${#papirus_pkgs[@]})); then
+    if sudo pacman -Rns --noconfirm "${papirus_pkgs[@]}"; then
+      ok "removed: ${papirus_pkgs[*]}"
+    else
+      warn "could not remove: ${papirus_pkgs[*]}"
+    fi
+  else
+    skip "no papirus packages installed"
+  fi
 else
   skip "keeping papirus-icon-theme"
 fi
