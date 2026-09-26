@@ -5,7 +5,7 @@
 # Alpha companions (where present) range from 0 (invisible) to 1 (opaque).
 background       = "#11111b"
 background-alpha = 1.0
-text             = "#cdd6f4"
+text             = "#fab387"
 # Modules calling attention to themselves (recording, voxtype, alerts, updates)
 active           = "#fab387"
 # Cross-axis size at font base-size 12. size-horizontal is the height of
@@ -30,9 +30,9 @@ active-border-foreground = "#fab387"
 # N, "Y X", "T X B", or "T R B L". Per-side keys like
 # normal-border-width-left override the list. Each *-border accepts either a
 # solid color or a Hyprland-style gradient, e.g. "rgba(...) rgba(...) 45deg".
-normal-color        = "#cdd6f4"
+normal-color        = "#cad3f5"
 normal-fill-alpha   = 0.04
-normal-border       = "#cdd6f4"
+normal-border       = "#cad3f5"
 normal-border-width = 1
 normal-border-alpha = 0.4
 
@@ -51,7 +51,7 @@ focus-border-width = 1
 focus-border-alpha = 0.45
 
 # Selected: persistent chosen/current state.
-selected-color        = "#cdd6f4"
+selected-color        = "#cad3f5"
 selected-fill-alpha   = 0.18
 selected-border       = "#fab387"
 selected-border-width = 0
@@ -123,7 +123,7 @@ base-size = 12
 # individual border-width-top/right/bottom/left keys override the list.
 background       = "#11111b"
 background-alpha = 1.0
-text             = "#cdd6f4"
+text             = "#cad3f5"
 border           = "hyprland.active-border"
 border-alpha     = 1.0
 # border-width     = 2
@@ -133,14 +133,14 @@ border-alpha     = 1.0
 # 0.97 mirrors the legacy hard-coded tooltip opacity.
 background       = "#11111b"
 background-alpha = 0.97
-text             = "#cdd6f4"
+text             = "#cad3f5"
 border           = "hyprland.active-border-foreground"
 border-alpha     = 1.0
 
 [notifications]
 background       = "#11111b"
 background-alpha = 1.0
-text             = "#cdd6f4"
+text             = "#cad3f5"
 # Conventionally matches the Hyprland active-window border. Border accepts
 # either a solid color or the full active-border gradient.
 border           = "hyprland.active-border"
@@ -155,12 +155,12 @@ countdown        = "#fab387"
 # mirror [menu] with the card at 0.95 to preserve the legacy translucency.
 background                = "#11111b"
 background-alpha          = 0.95
-text                      = "#cdd6f4"
+text                      = "#cad3f5"
 border                    = "hyprland.active-border-foreground"
 border-alpha              = 1.0
 scrim                     = "#11111b"
 scrim-alpha               = 0.5
-selected-background       = "#cdd6f4"
+selected-background       = "#cad3f5"
 selected-background-alpha = 0.08
 selected-text             = "#fab387"
 selected-border           = "hyprland.active-border-foreground"
@@ -172,12 +172,12 @@ selected-border-alpha     = 0.25
 # behind the card. Clipboard and emojis inherit these tokens.
 background                = "#11111b"
 background-alpha          = 1.0
-text                      = "#cdd6f4"
+text                      = "#cad3f5"
 border                    = "hyprland.active-border-foreground"
 border-alpha              = 1.0
 scrim                     = "#11111b"
 scrim-alpha               = 0.5
-selected-background       = "#cdd6f4"
+selected-background       = "#cad3f5"
 selected-background-alpha = 0.08
 selected-text             = "#fab387"
 selected-border           = "hyprland.active-border-foreground"
@@ -191,10 +191,10 @@ selected-border-alpha     = 0.25
 # border-error (the two states are mutually exclusive in time).
 background       = "#11111b"
 background-alpha = 1.0
-text             = "#cdd6f4"
-text-error       = "#f38ba8"
+text             = "#cad3f5"
+text-error       = "#ed8796"
 border           = "hyprland.active-border"
-border-error     = "#f38ba8"
+border-error     = "#ed8796"
 border-alpha     = 1.0
 scrim            = "#11111b"
 scrim-alpha      = 0.5
@@ -209,12 +209,12 @@ accent           = "#fab387"
 # exclusive in time).
 background       = "#11111b"
 background-alpha = 0.8
-text             = "#cdd6f4"
-placeholder      = "#8d93aa"
-text-error       = "#f38ba8"
+text             = "#cad3f5"
+placeholder      = "#939ab2"
+text-error       = "#ed8796"
 border           = "hyprland.active-border"
 border-active    = "hyprland.active-border"
-border-error     = "#f38ba8"
+border-error     = "#ed8796"
 border-alpha     = 1.0
 # selection is the text-selection tint inside the input field.
 selection        = "#fab387"
@@ -227,8 +227,8 @@ selection-alpha  = 0.45
 # unselected-border-alpha softens carousel slices that aren't selected.
 scrim                   = "#11111b"
 scrim-alpha             = 0.5
-text                    = "#cdd6f4"
+text                    = "#cad3f5"
 selected-border         = "#fab387"
 selected-border-alpha   = 1.0
-unselected-border       = "#cdd6f4"
+unselected-border       = "#cad3f5"
 unselected-border-alpha = 0.28

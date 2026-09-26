@@ -3,7 +3,7 @@ theme[main_bg]="#11111b"
 theme_background=true
 
 # Main text color
-theme[main_fg]="#cdd6f4"
+theme[main_fg]="#cad3f5"
 
 # Title color for boxes
 theme[title]="#fab387"
@@ -15,10 +15,10 @@ theme[hi_fg]="#fab387"
 theme[selected_bg]="#313244"
 
 # Foreground color of selected item in processes box
-theme[selected_fg]="#cdd6f4"
+theme[selected_fg]="#cad3f5"
 
 # Color of inactive/disabled text
-theme[inactive_fg]="#585b70"
+theme[inactive_fg]="#5b6078"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
 theme[proc_misc]="#fab387"
@@ -32,33 +32,33 @@ theme[div_line]="#313244"
 
 # Gradient for all meters and graphs
 theme[temp_start]="#fab387"
-theme[temp_mid]="#f9e2af"
-theme[temp_end]="#a6e3a1"
+theme[temp_mid]="#eed49f"
+theme[temp_end]="#a6da95"
 
 theme[cpu_start]="#fab387"
-theme[cpu_mid]="#f9e2af"
-theme[cpu_end]="#a6e3a1"
+theme[cpu_mid]="#eed49f"
+theme[cpu_end]="#a6da95"
 
-theme[free_start]="#94e2d5"
-theme[free_mid]="#89b4fa"
-theme[free_end]="#74c7ec"
+theme[free_start]="#8bd5ca"
+theme[free_mid]="#8aadf4"
+theme[free_end]="#8aadf4"
 
-theme[cached_start]="#89b4fa"
-theme[cached_mid]="#74c7ec"
-theme[cached_end]="#89dceb"
+theme[cached_start]="#8aadf4"
+theme[cached_mid]="#8aadf4"
+theme[cached_end]="#8bd5ca"
 
-theme[available_start]="#a6e3a1"
-theme[available_mid]="#94e2d5"
-theme[available_end]="#89dceb"
+theme[available_start]="#a6da95"
+theme[available_mid]="#8bd5ca"
+theme[available_end]="#8bd5ca"
 
 theme[used_start]="#fab387"
-theme[used_mid]="#f9e2af"
-theme[used_end]="#f38ba8"
+theme[used_mid]="#eed49f"
+theme[used_end]="#ed8796"
 
-theme[download_start]="#89b4fa"
-theme[download_mid]="#74c7ec"
-theme[download_end]="#89dceb"
+theme[download_start]="#8aadf4"
+theme[download_mid]="#8aadf4"
+theme[download_end]="#8bd5ca"
 
 theme[upload_start]="#fab387"
-theme[upload_mid]="#f9e2af"
-theme[upload_end]="#f38ba8"
+theme[upload_mid]="#eed49f"
+theme[upload_end]="#ed8796"

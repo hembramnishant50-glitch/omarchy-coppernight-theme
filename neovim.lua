@@ -17,19 +17,19 @@ return {
         colors.bg_sidebar = "#181825"
         colors.bg_popup = "#181825"
         colors.bg_search = "#313244"
-        colors.fg = "#cdd6f4"
-        colors.fg_dark = "#bac2de"
-        colors.fg_gutter = "#a6adc8"
-        colors.blue = "#89b4fa"
-        colors.green = "#a6e3a1"
-        colors.yellow = "#f9e2af"
+        colors.fg = "#cad3f5"
+        colors.fg_dark = "#b8c0e0"
+        colors.fg_gutter = "#a5adcb"
+        colors.blue = "#8aadf4"
+        colors.green = "#a6da95"
+        colors.yellow = "#eed49f"
         colors.orange = "#fab387"
-        colors.red = "#f38ba8"
-        colors.magenta = "#cba6f7"
-        colors.cyan = "#94e2d5"
-        colors.purple = "#cba6f7"
-        colors.teal = "#94e2d5"
-        colors.comment = "#a6adc8"
+        colors.red = "#ed8796"
+        colors.magenta = "#c6a0f6"
+        colors.cyan = "#8bd5ca"
+        colors.purple = "#c6a0f6"
+        colors.teal = "#8bd5ca"
+        colors.comment = "#a5adcb"
         colors.border = "#fab387"
       end,
       -- Bright, colourful file names + text, dark background untouched
@@ -38,8 +38,8 @@ return {
         hl.Directory = { fg = c.blue, bold = true }
 
         -- Comments / line numbers: bright, never dim grey
-        hl.Comment = { fg = "#a6adc8", italic = true }
-        hl.LineNr = { fg = "#a6adc8" }
+        hl.Comment = { fg = "#a5adcb", italic = true }
+        hl.LineNr = { fg = "#a5adcb" }
         hl.CursorLineNr = { fg = c.orange, bold = true }
 
         -- Neo-tree (if installed later)
@@ -60,7 +60,7 @@ return {
         -- Snacks picker + explorer (LazyVim default)
         hl.SnacksPickerDir = { fg = c.blue, bold = true }
         hl.SnacksPickerFile = { fg = c.fg, bold = true }
-        hl.SnacksPickerPathHidden = { fg = "#a6adc8" }
+        hl.SnacksPickerPathHidden = { fg = "#a5adcb" }
         hl.SnacksPickerTitle = { fg = c.orange, bold = true }
         hl.SnacksPickerPrompt = { fg = c.orange, bold = true }
         hl.SnacksPickerMatch = { fg = c.orange, bold = true }

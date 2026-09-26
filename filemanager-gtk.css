@@ -1,0 +1,16 @@
+/* Coppernight file manager background — color only.
+ * Everything else (rounding, padding, buttons, layout) stays at default.
+ * Applied to ~/.config/gtk-3.0/gtk.css and ~/.config/gtk-4.0/gtk.css
+ * by apply-filemanager.sh
+ */
+@define-color window_bg_color #11111b;
+@define-color view_bg_color #11111b;
+@define-color sidebar_bg_color #11111b;
+@define-color headerbar_bg_color #11111b;
+
+window,
+.nautilus-window,
+.nautilus-window placessidebar,
+sidebar {
+  background-color: #11111b;
+}

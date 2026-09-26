@@ -14,11 +14,11 @@
   file-style = "#fab387 bold"
   file-decoration-style = none
   hunk-header-style = "file line-number syntax"
-  hunk-header-decoration-style = "#585b70 ul"
+  hunk-header-decoration-style = "#5b6078 ul"
   minus-style = syntax "#3d1f2a"
-  minus-emph-style = syntax "#f38ba8"
+  minus-emph-style = syntax "#ed8796"
   minus-empty-line-marker-style = syntax "#3d1f2a"
   plus-style = syntax "#1f3329"
-  plus-emph-style = syntax "#a6e3a1"
+  plus-emph-style = syntax "#a6da95"
   zero-style = syntax
   commit-decoration-style = "#fab387"

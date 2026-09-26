@@ -22,49 +22,49 @@
   --background-modifier-selected: #313244;
   --background-modifier-accent: #313244;
 
-  --text-normal: #cdd6f4;
-  --text-muted: #a6adc8;
-  --text-link: #89b4fa;
-  --text-positive: #a6e3a1;
-  --text-warning: #f9e2af;
-  --text-danger: #f38ba8;
+  --text-normal: #cad3f5;
+  --text-muted: #a5adcb;
+  --text-link: #8aadf4;
+  --text-positive: #a6da95;
+  --text-warning: #eed49f;
+  --text-danger: #ed8796;
   --text-brand: #fab387;
 
-  --interactive-normal: #cdd6f4;
+  --interactive-normal: #cad3f5;
   --interactive-hover: #fab387;
   --interactive-active: #fab387;
-  --interactive-muted: #585b70;
+  --interactive-muted: #5b6078;
 
-  --header-primary: #cdd6f4;
-  --header-secondary: #a6adc8;
+  --header-primary: #cad3f5;
+  --header-secondary: #a5adcb;
 
   --brand-experiment: #fab387;
-  --brand-experiment-hover: #f9e2af;
+  --brand-experiment-hover: #eed49f;
   --brand-experiment-active: #fab387;
-  --button-danger-background: #f38ba8;
-  --button-danger-background-hover: #f38ba8;
-  --button-positive-background: #a6e3a1;
+  --button-danger-background: #ed8796;
+  --button-danger-background-hover: #ed8796;
+  --button-positive-background: #a6da95;
   --button-secondary-background: #313244;
-  --button-secondary-background-hover: #45475a;
+  --button-secondary-background-hover: #313244;
 
   --channeltextarea-background: #181825;
   --channeltextarea-background-hover: #1e1e2e;
 
-  --scrollbar-thin-thumb: #585b70;
+  --scrollbar-thin-thumb: #5b6078;
   --scrollbar-thin-track: transparent;
-  --scrollbar-auto-thumb: #585b70;
+  --scrollbar-auto-thumb: #5b6078;
   --scrollbar-auto-track: #0b0b12;
 
   --input-background: #181825;
-  --input-placeholder-text: #585b70;
+  --input-placeholder-text: #5b6078;
 
-  --status-positive-background: #a6e3a1;
-  --status-warning-background: #f9e2af;
-  --status-danger-background: #f38ba8;
+  --status-positive-background: #a6da95;
+  --status-warning-background: #eed49f;
+  --status-danger-background: #ed8796;
 
-  --info-positive-foreground: #a6e3a1;
-  --info-warning-foreground: #f9e2af;
-  --info-danger-foreground: #f38ba8;
+  --info-positive-foreground: #a6da95;
+  --info-warning-foreground: #eed49f;
+  --info-danger-foreground: #ed8796;
 
   --mention-foreground: #fab387;
   --mention-background: #fab38730;
@@ -73,5 +73,5 @@
 /* Copper selection + links */
 ::selection {
   background: #313244;
-  color: #cdd6f4;
+  color: #cad3f5;
 }

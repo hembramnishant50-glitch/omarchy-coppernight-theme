@@ -16,11 +16,11 @@ $character"""
 
 [character]
 success_symbol = "[❯](bold #fab387)"
-error_symbol = "[✗](bold #f38ba8)"
+error_symbol = "[✗](bold #ed8796)"
 
 [username]
 format = "[$user]($style) "
-style = "bold #a6e3a1"
+style = "bold #a6da95"
 
 [hostname]
 format = "@[$hostname]($style) "
@@ -28,25 +28,25 @@ style = "bold #fab387"
 
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style) "
-style = "bold #89b4fa"
+style = "bold #8aadf4"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-style = "bold #cba6f7"
+style = "bold #c6a0f6"
 
 [git_status]
 format = '([\[$all_status\]]($style))'
-style = "#a6e3a1"
+style = "#a6da95"
 
 [python]
 format = "[${symbol}${pyenv_prefix}(${version})(${virtualenv})]($style) "
-style = "#89b4fa"
+style = "#8aadf4"
 
 [nodejs]
 format = "[$symbol($version)]($style) "
-style = "#a6e3a1"
+style = "#a6da95"
 
 [rust]
 format = "[$symbol($version)]($style) "
@@ -54,11 +54,11 @@ style = "#fab387"
 
 [golang]
 format = "[$symbol($version)]($style) "
-style = "#89b4fa"
+style = "#8aadf4"
 
 [cmd_duration]
 format = "[$duration]($style) "
-style = "#f9e2af"
+style = "#eed49f"
 
 [line_break]
 disabled = false

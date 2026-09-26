@@ -20,10 +20,10 @@
 <br/>
 
 [![Version](https://img.shields.io/badge/Version-2.0.0-fab387?style=for-the-badge&logo=git&logoColor=11111b)](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme)
-[![Omarchy Quattro](https://img.shields.io/badge/Omarchy-Quattro-89b4fa?style=for-the-badge&logo=archlinux&logoColor=11111b)](https://omarchy.org/)
-[![Hyprland](https://img.shields.io/badge/Hyprland-Ready-a6e3a1?style=for-the-badge&logo=hyprland&logoColor=11111b)](https://hyprland.org)
-[![License](https://img.shields.io/badge/License-MIT-f5c2e7?style=for-the-badge&logo=opensourceinitiative&logoColor=11111b)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/hembramnishant50-glitch/omarchy-coppernight-theme?style=for-the-badge&color=cba6f7&logo=github&logoColor=11111b)](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme/stargazers)
+[![Omarchy Quattro](https://img.shields.io/badge/Omarchy-Quattro-8aadf4?style=for-the-badge&logo=archlinux&logoColor=11111b)](https://omarchy.org/)
+[![Hyprland](https://img.shields.io/badge/Hyprland-Ready-a6da95?style=for-the-badge&logo=hyprland&logoColor=11111b)](https://hyprland.org)
+[![License](https://img.shields.io/badge/License-MIT-f5bde6?style=for-the-badge&logo=opensourceinitiative&logoColor=11111b)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/hembramnishant50-glitch/omarchy-coppernight-theme?style=for-the-badge&color=c6a0f6&logo=github&logoColor=11111b)](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme/stargazers)
 
 <br/>
 
@@ -65,10 +65,15 @@ omarchy theme set coppernight
 | | **Feature** | **What Makes It Special** |
 |:---:|---|---|
 | 🌑 | **Deep Indigo Canvas** | An OLED-friendly ` #11111b ` base, carefully tuned for contrast, comfort, and long coding nights. |
-| 🌅 | **Copper & Mauve Borders** | Active windows glow in warm Copper ` #fab387 `, while inactive windows rest in soft Mauve ` #cba6f7 `. |
-| 🎨 | **Pastel Harmony** | A cohesive accent suite — Lite Green ` #a6e3a1 `, Lite Pink ` #f5c2e7 `, Sky ` #89dceb `, and Mauve ` #cba6f7 ` — balanced for syntax, UI, and highlights. |
+| 🌅 | **Copper & Mauve Borders** | Active windows glow in warm Copper ` #fab387 `, while inactive windows rest in soft Mauve ` #c6a0f6 `. |
+| 🎨 | **Pastel Harmony** | A cohesive accent suite — Lite Green ` #a6da95 `, Lite Pink ` #f5bde6 `, Lite Blue ` #8aadf4 `, Teal ` #8bd5ca `, and Mauve ` #c6a0f6 ` — balanced for syntax, UI, and highlights. |
 | 🪟 | **Hyprland — Rounded & Fluid** | `rounding 16px` with `rounding_power 2.0`, `gaps 6 / 14`, `blur 12 / 3`, `shadow 30`, and Mac-style `popin 85%` animations for buttery-smooth switching. |
 | 💻 | **Unified Terminals** | Alacritty, Ghostty, Foot, and Kitty — fully stripped of upstream palettes and reborn in pure Copper Night. |
+| ✨ | **Animated Kitty Cursor** | Beam cursor with smooth fade blink and a copper cursor-trail that glides as you type. |
+| 🔤 | **Macchiato Text** | All text and syntax tones follow the Catppuccin Macchiato scale on the deep indigo canvas. |
+| 🧡 | **Copper Topbar** | Shell bar text and icons glow in Copper ` #fab387 `. |
+| 🖼️ | **Icons & Cursor Scripts** | `apply-icons.sh` installs Papirus-Dark with orange folders plus the Bibata-Modern-Amber cursor. |
+| 🗂️ | **File Manager Scripts** | `apply-filemanager.sh` paints Nautilus `#11111b` (color only, rest stays default); `remove-gtk.sh` undoes it. |
 | 🌐 | **Web — 136+ Userstyles** | YouTube, GitHub, Crunchyroll, CareerWill, Claude, ChatGPT, and more — beautifully themed via `Stylus.json`. |
 | 🧩 | **Apps — Fully Themed** | Neovim, VS Code, Helix, btop, CAVA, GTK 3/4, Chromium, Icons, Starship, and Fastfetch — one palette, everywhere. |
 | 🎵 | **Discord — Vencord** | A bespoke `vencord.theme.css` that brings Copper Night to your conversations. |
@@ -94,7 +99,6 @@ omarchy theme set coppernight
 | `alacritty.toml` | Alacritty terminal — clean Copper Night palette. |
 | `kitty.conf` | Kitty terminal — clean Copper Night palette. |
 | `ghostty.conf` | Ghostty terminal — primary Copper Night palette. |
-| `ghostty_override.conf` | Ghostty override — refined padding and cursor tuning. |
 | `foot.ini` | Foot terminal — clean Copper Night palette. |
 | `starship.toml` | Starship prompt — minimal, copper-accented. |
 | `config.fish` | Fish shell — tailored completions and colors. |
@@ -104,6 +108,15 @@ omarchy theme set coppernight
 | `vencord.theme.css` | Discord Vencord — chat in full Copper Night. |
 | `chromium.theme` | Chromium flags for dark-mode harmony. |
 | `icons.theme` | Papirus-Dark icon linkage. |
+| `shell.toml` | Omarchy shell — copper topbar, popups, menus, and dialogs. |
+| `gum_env.lua` | Gum prompt styling for Omarchy menus. |
+| `zed.json` | Zed editor theme. |
+| `yazi-theme.toml` | Yazi file manager flavor. |
+| `filemanager-gtk.css` | Nautilus background color only (`#11111b`), rest stays default. |
+| `apply-filemanager.sh` | Applies the file manager background + Yazi flavor. |
+| `remove-gtk.sh` | Removes the GTK override, back to default. |
+| `apply-icons.sh` | Installs Papirus-Dark (orange folders) + Bibata-Modern-Amber cursor. |
+| `remove-icons.sh` | Removes Papirus/Bibata, back to default icons + cursor. |
 | `backgrounds/` | Five high-resolution wallpapers, handpicked for the palette. |
 
 </div>
@@ -120,12 +133,15 @@ omarchy theme set coppernight
 | ![#181825](https://img.shields.io/badge/-%23181825-181825?style=flat-square) | **Mantle** | `#181825` | Sidebars, panels, and dropdown containers. |
 | ![#313244](https://img.shields.io/badge/-%23313244-313244?style=flat-square) | **Surface0** | `#313244` | Cards, input fields, and inactive borders. |
 | ![#fab387](https://img.shields.io/badge/-%23fab387-fab387?style=flat-square) | **Copper — Accent** | `#fab387` | Active borders, focused states, and primary highlights. |
-| ![#cdd6f4](https://img.shields.io/badge/-%23cdd6f4-cdd6f4?style=flat-square) | **Foreground / Text** | `#cdd6f4` | Standard text and icons — crisp and readable. |
-| ![#a6e3a1](https://img.shields.io/badge/-%23a6e3a1-a6e3a1?style=flat-square) | **Lite Green** | `#a6e3a1` | Success states, strings, and active indicators. |
-| ![#f5c2e7](https://img.shields.io/badge/-%23f5c2e7-f5c2e7?style=flat-square) | **Lite Pink** | `#f5c2e7` | Special accents, tags, badges, and highlights. |
-| ![#89b4fa](https://img.shields.io/badge/-%2389b4fa-89b4fa?style=flat-square) | **Lite Blue** | `#89b4fa` | Links, functions, keywords, and info states. |
-| ![#cba6f7](https://img.shields.io/badge/-%23cba6f7-cba6f7?style=flat-square) | **Mauve** | `#cba6f7` | Secondary accent, syntax keywords, and inactive borders. |
-| ![#f38ba8](https://img.shields.io/badge/-%23f38ba8-f38ba8?style=flat-square) | **Red** | `#f38ba8` | Warnings, errors, and critical notices. |
+| ![#cad3f5](https://img.shields.io/badge/-%23cad3f5-cad3f5?style=flat-square) | **Foreground / Text** | `#cad3f5` | Standard text and icons — crisp and readable. |
+| ![#a6da95](https://img.shields.io/badge/-%23a6da95-a6da95?style=flat-square) | **Lite Green** | `#a6da95` | Success states, strings, and active indicators. |
+| ![#f5bde6](https://img.shields.io/badge/-%23f5bde6-f5bde6?style=flat-square) | **Lite Pink** | `#f5bde6` | Special accents, tags, badges, and highlights. |
+| ![#8aadf4](https://img.shields.io/badge/-%238aadf4-8aadf4?style=flat-square) | **Lite Blue** | `#8aadf4` | Links, functions, keywords, and info states. |
+| ![#c6a0f6](https://img.shields.io/badge/-%23c6a0f6-c6a0f6?style=flat-square) | **Mauve** | `#c6a0f6` | Secondary accent, syntax keywords, and inactive borders. |
+| ![#eed49f](https://img.shields.io/badge/-%23eed49f-eed49f?style=flat-square) | **Yellow** | `#eed49f` | Warnings, highlights, and warm accents. |
+| ![#8bd5ca](https://img.shields.io/badge/-%238bd5ca-8bd5ca?style=flat-square) | **Teal** | `#8bd5ca` | Operators, links, and cool accents. |
+| ![#5b6078](https://img.shields.io/badge/-%235b6078-5b6078?style=flat-square) | **Muted** | `#5b6078` | Comments, line numbers, and disabled states. |
+| ![#ed8796](https://img.shields.io/badge/-%23ed8796-ed8796?style=flat-square) | **Red** | `#ed8796` | Warnings, errors, and critical notices. |
 
 </div>
 
@@ -146,10 +162,18 @@ omarchy theme set coppernight
 ├── chromium.theme                 # Chromium dark flags
 ├── icons.theme                    # Icon theme linkage
 ├── alacritty.toml                 # Terminal
-├── kitty.conf                     # Terminal
+├── kitty.conf                     # Terminal — animated beam cursor + trail
 ├── ghostty.conf                   # Terminal
-├── ghostty_override.conf          # Terminal — override tuning
 ├── foot.ini                       # Terminal
+├── shell.toml                     # Omarchy shell — copper topbar
+├── gum_env.lua                    # Gum prompt styling
+├── zed.json                       # Zed editor
+├── yazi-theme.toml                # Yazi flavor
+├── filemanager-gtk.css            # Nautilus background color only
+├── apply-filemanager.sh           # Apply file manager background
+├── remove-gtk.sh                  # Undo GTK override
+├── apply-icons.sh                 # Papirus-Dark + Bibata-Amber setup
+├── remove-icons.sh                # Undo icons + cursor setup
 ├── starship.toml                  # Prompt
 ├── config.fish                    # Fish shell
 ├── helix.toml                     # Helix editor
