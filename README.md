@@ -49,6 +49,25 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 
 > Run it in a real terminal — the icon/cursor step needs your sudo password.
 
+> **Heads up:** re-running the installer wipes and replaces the theme folder.
+> `omarchy-theme-install` deletes `~/.config/omarchy/themes/coppernight` *before* it clones, so
+> if the clone fails you are left with nothing. Keep any local edits backed up elsewhere.
+
+### Packages installed by the extras
+
+`./apply-icons.sh` needs these. The last two come from the AUR, so it will ask for your password:
+
+| Package | Source | Why it's needed |
+|:---|:---:|:---|
+| `papirus-icon-theme` | `extra` | The Papirus-Dark base icon theme. |
+| `papirus-folders-catppuccin-git` | AUR | Ships the `papirus-folders` script **and** Catppuccin's `cat-*` folder colours. It is *not* part of `papirus-icon-theme` — without it Papirus keeps its stock blue folders. |
+| `catppuccin-cursors-macchiato` | AUR | 16 Catppuccin Macchiato cursor variants. The theme uses `catppuccin-macchiato-peach-cursors`. |
+
+Macchiato Peach is `#fab387` — the same Copper accent as the borders, topbar and folders, so
+icons and cursor sit on the same palette as the rest of the theme.
+
+`./remove-icons.sh` offers to uninstall all three.
+
 ### Or step by step
 
 <details>
