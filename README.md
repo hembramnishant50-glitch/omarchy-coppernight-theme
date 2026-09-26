@@ -235,7 +235,7 @@ omarchy theme set coppernight
 | `apply-filemanager.sh` | Applies file manager background + Yazi flavor. |
 | `remove-gtk.sh` | Removes the GTK override — back to default. |
 | `apply-icons.sh` | Installs Papirus-Dark with orange folders + peach cursor. |
-| `remove-icons.sh` | Removes Papirus/Catppuccin — back to default icons + cursor. |
+| `remove-icons.sh` | Removes Papirus, papirus-folders and the cursor package — back to default. |
 
 </details>
 
@@ -266,7 +266,7 @@ omarchy theme set coppernight
 cd ~/.config/omarchy/themes/coppernight
 
 ./remove-gtk.sh     # File manager back to default
-./remove-icons.sh   # Default icons + cursor back (asks before uninstalling Papirus/Catppuccin)
+./remove-icons.sh   # Default icons + cursor back (asks before uninstalling Papirus, papirus-folders, cursor)
 ```
 
 ---
