@@ -33,7 +33,7 @@
 
 <br/>
 
-[✨ Features](#-features) • [⚡ Installation](#-installation) • [🛠️ Helper Scripts](#️-helper-scripts) • [📁 Theme Files](#-theme-files) • [🎨 Color Palette](#-color-palette) • [📁 Theme Structure](#-theme-structure) • [🤝 Contributing](#-contributing)
+[✨ Features](#-features) • [⚡ Installation](#-installation) • [📁 Theme Files](#-theme-files) • [🎨 Color Palette](#-color-palette) • [📁 Theme Structure](#-theme-structure) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing)
 
 </div>
 
@@ -56,31 +56,16 @@ omarchy theme set coppernight
 
 > The theme applies instantly — Hyprland, terminals, GTK apps, and browser styles are all refreshed together.
 
----
-
-## 🛠️ Helper Scripts
-
-Extra setup lives beside the theme as runnable scripts. Run them from the theme directory (install steps need your sudo password, so use a terminal):
-
-| Script | What It Does |
-|---|---|
-| `apply-filemanager.sh` | Applies the Nautilus background color only (`#11111b`, rest stays default) + installs the Yazi flavor. |
-| `remove-gtk.sh` | Removes the GTK override — file manager back to default. |
-| `apply-icons.sh` | Installs Papirus-Dark with orange folders + the Bibata-Modern-Amber cursor, and points the theme at them. |
-| `remove-icons.sh` | Removes Papirus/Bibata — back to default icons and cursor. |
+Optional extras — run from the theme directory (install steps need your sudo password, so use a terminal):
 
 ```bash
 cd ~/.config/omarchy/themes/coppernight
 
-# File manager background (#11111b, color only)
+# File manager background (#11111b, color only) + Yazi flavor
 ./apply-filemanager.sh
-# Undo it
-./remove-gtk.sh
 
 # Papirus-Dark orange folders + Bibata-Modern-Amber cursor
 ./apply-icons.sh
-# Undo it
-./remove-icons.sh
 ```
 
 ---
@@ -209,6 +194,28 @@ cd ~/.config/omarchy/themes/coppernight
 ├── vencord.theme.css              # Discord Vencord
 ├── backgrounds/                   # 5 wallpapers
 └── README.md                      # This documentation
+```
+
+---
+
+## 🧹 Uninstall
+
+Remove the optional extras (run from the theme directory):
+
+```bash
+cd ~/.config/omarchy/themes/coppernight
+
+# File manager GTK back to default
+./remove-gtk.sh
+
+# Default icons + cursor back (asks before uninstalling Papirus/Bibata)
+./remove-icons.sh
+```
+
+To remove the theme itself:
+
+```bash
+rm -rf ~/.config/omarchy/themes/coppernight && omarchy theme set "Tokyo Night"
 ```
 
 ---
