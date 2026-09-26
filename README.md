@@ -31,28 +31,7 @@
 
 <br/>
 
-[✨ Highlights](#-highlights) • [⚡ Installation](#-installation) • [🖥️ What's Included](#-whats-included) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [🛠️ Scripts](#-scripts) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing)
-
-</div>
-
----
-
-## ✨ Highlights
-
-<div align="center">
-
-| | **Highlight** | **Details** |
-|:---:|---|---|
-| 🌑 | **Deep Indigo Canvas** | OLED-friendly `#11111b` base, tuned for contrast, comfort, and long coding nights. |
-| 🌅 | **Copper & Mauve Borders** | Active windows glow Copper `#fab387`; inactive windows rest in soft Mauve `#c6a0f6`. |
-| 🔤 | **Macchiato Text** | All text and syntax tones follow the Catppuccin Macchiato scale on the indigo canvas. |
-| 🪟 | **Rounded & Fluid Hyprland** | `rounding 16px`, `rounding_power 2.0`, `gaps 6 / 14`, `blur 12 / 3`, `shadow 30`, and Mac-style `popin 85%` animations. |
-| 💻 | **Four Unified Terminals** | Alacritty, Ghostty, Foot, and Kitty — upstream palettes stripped and rebuilt in Copper Night. |
-| ✨ | **Animated Kitty Cursor** | Beam cursor with a smooth fade blink and a copper cursor-trail that glides as you type. |
-| 🧡 | **Copper Topbar** | Shell bar text and icons glow in Copper `#fab387`. |
-| 🧩 | **50+ Apps Covered** | Editors, CLI/TUI tools, browsers, Discord, and AI coding CLIs — one palette everywhere. |
-| 🌐 | **136+ Web Userstyles** | YouTube, GitHub, Crunchyroll, Claude, ChatGPT, and more via `Stylus.json`. |
-| 🖼️ | **Icons & Cursor** | Papirus-Dark with orange folders plus the Bibata-Modern-Amber cursor. |
+[⚡ Installation](#-installation) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [🛠️ Scripts](#-scripts) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing)
 
 </div>
 
@@ -90,36 +69,6 @@ cd ~/.config/omarchy/themes/coppernight
 ./apply-filemanager.sh   # Nautilus #11111b background + Yazi flavor
 ./apply-icons.sh         # Papirus-Dark orange folders + Bibata-Modern-Amber cursor
 ```
-
-> 💡 Both scripts are idempotent — safe to re-run any time. Their undo counterparts live in [🧹 Uninstall](#-uninstall).
-
-### Requirements
-
-| Requirement | Version |
-|---|---|
-| OS | Arch Linux / Omarchy (Quattro) |
-| Compositor | Hyprland |
-| Icons | `papirus-icon-theme` + `papirus-folders` *(auto-installed)* |
-| Cursor | `bibata-cursor-theme` *(auto-installed)* |
-
----
-
-## 🖥️ What's Included
-
-<div align="center">
-
-| Category | Coverage |
-|---|---|
-| **🖥️ Desktop & Shell** | Hyprland, Omarchy shell (topbar, popups, menus, dialogs), GTK 3/4, Gums, Yazi, Nautilus |
-| **💻 Terminals** | Alacritty, Ghostty, Foot, Kitty, tmux |
-| **🪄 Shells** | Fish, Zsh, Starship, fzf, terminal color helpers |
-| **📝 Editors** | Neovim, Helix, Zed, Vim, Emacs, Sublime Text, VS Code, Obsidian |
-| **🛠️ CLI & TUI** | btop, CAVA, lazygit, delta, Fastfetch, claude, opencode, pi, t3code, hermes |
-| **🌐 Web & Browser** | Chromium, Firefox `userChrome.css`, 136+ Stylus userstyles, standalone YouTube theme |
-| **💬 Apps** | Discord (Vencord), Hyprland share-picker, keyboard RGB |
-| **🎨 Extras** | Icon theme, cursor theme, 5 wallpapers |
-
-</div>
 
 ---
 
@@ -292,14 +241,6 @@ cd ~/.config/omarchy/themes/coppernight
 ./remove-icons.sh   # Default icons + cursor back (asks before uninstalling Papirus/Bibata)
 ```
 
-### Remove the theme
-
-```bash
-rm -rf ~/.config/omarchy/themes/coppernight && omarchy theme set "Tokyo Night"
-```
-
-> If you installed a different theme, replace `"Tokyo Night"` with its name — run `omarchy theme list` to see available themes.
-
 ---
 
 ## 🤝 Contributing
@@ -320,7 +261,7 @@ We warmly welcome **bug reports**, **new website userstyles**, **wallpapers**, a
 
 1. Copy the existing pattern — most app themes are a single JSON/TOML/CSS file.
 2. Use the hex values from `colors.toml` so everything stays consistent.
-3. Add a row to [📁 File Reference](#-file-reference) and [🖥️ What's Included](#-whats-included).
+3. Add a row to [📁 File Reference](#-file-reference).
 
 Found a bug? Open an [Issue](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme/issues) — we reply quickly and kindly 💬
 
