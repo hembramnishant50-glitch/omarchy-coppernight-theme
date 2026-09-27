@@ -1,19 +1,7 @@
 <div align="center">
 
 ```
-██████╗ ██████╗ ██████╗ ██████╗ ███████╗██████╗ 
-██╔════╝██╔═══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
-██║     ██║   ██║██████╔╝██████╔╝█████╗  ██████╔╝
-██║     ██║   ██║██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══██╗
-╚██████╗╚██████╔╝██║     ██║     ███████╗██║  ██║
- ╚═════╝ ╚═════╝ ╚═╝     ╚═╝     ╚══════╝╚═╝  ╚═╝
-
-███╗   ██╗██╗ ██████╗ ██╗  ██╗████████╗
-████╗  ██║██║██╔════╝ ██║  ██║╚══██╔══╝
-██╔██╗ ██║██║██║  ███╗███████║   ██║   
-██║╚██╗██║██║██║   ██║██╔══██║   ██║   
-██║ ╚████║██║╚██████╔╝██║  ██║   ██║   
-╚═╝  ╚═══╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝ 
+█▀▀ ███ █▀ █▀ ██▀ █▀▄  ██▄█ █ █▀█ █ █ ▀█▀
 ```
 
 # 🌌 銅夜 — Copper Night
@@ -47,15 +35,15 @@
 
 ## 🏮 美学 — The Design Philosophy
 
-Copper Night borrows its mood from three ideas that run through Japanese aesthetics:
+Copper Night is built from three decisions, each one about restraint:
 
 | Concept | Meaning | How it shows up in the theme |
 |:---:|:---|:---|
-| **侘寂** *wabi-sabi* | Beauty in quiet, imperfect, weathered things | Muted indigo base instead of pure black — nothing is ever harshly flat |
-| **間** *ma* | The purposeful space *between* elements | Generous `16px` rounding, soft blur, and breathing room in every panel |
-| **灯** *tomoshibi* | A single lantern glowing in the dark | One accent — copper `#fab387` — is allowed to be warm; everything else stays cool and restrained |
+| **藍** *ai* — indigo | Indigo is *dyed*, never printed. Its depth comes from layering, not from one flat coat. | Four separate blacks — `#11111b` canvas, `#0b0b12` and `#060609` for wells, `#1e1e2e` for raised surfaces. You should feel cloth, not slabs. |
+| **鈍** *don* — blunt, unsharpened | A surface that has been handled a thousand times loses its glare. | Soft `10–16px` corners, dimmed `#5b6078` for comments and line numbers, no pure-white anywhere. Nothing snaps. |
+| **銅** *dō* — copper | Metal that has been held for a century, not a fresh LED. | Exactly one warm hue — `#fab387` — and it only appears where your attention already belongs: focus rings, the active border, the topbar. |
 
-The result reads like a quiet side-street in Shinjuku at 2am: neon signage reflected in wet asphalt, everything else asleep.
+Indigo for the ninety-nine percent of the night that is empty; copper for the one percent that isn't. The whole theme is arranged so the only warm pixel on your screen is the one you were looking for.
 
 ---
 
