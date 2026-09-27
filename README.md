@@ -31,7 +31,7 @@
 
 <br/>
 
-[⚡ Installation](#-installation) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [🛠️ Scripts](#-scripts) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing)
+[⚡ Installation](#-installation) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [🛠️ Scripts](#-scripts) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
 
 </div>
 
@@ -41,7 +41,8 @@
 
 ### One command
 
-Installs the theme, activates it, and applies the file manager background plus Papirus-Dark icons with orange folders and a matching peach cursor:
+Installs the theme, activates it, then applies the file manager background and the
+Papirus-Dark icons with orange folders and a matching peach cursor:
 
 ```bash
 omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git && rm -rf ~/.config/omarchy/themes/coppernight/.git && omarchy theme set coppernight && cd ~/.config/omarchy/themes/coppernight && ./apply-filemanager.sh && ./apply-icons.sh
@@ -59,23 +60,16 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 
 | Package | Source | Why it's needed |
 |:---|:---:|:---|
-| `papirus-icon-theme` | `extra` | The Papirus-Dark base icon theme. |
-| `papirus-folders-catppuccin-git` | AUR | The Catppuccin **Coppernight** fork of [PapirusDevelopmentTeam/papirus-folders](https://github.com/PapirusDevelopmentTeam/papirus-folders), which applies the orange folder colour. The orange SVGs ship with `papirus-icon-theme` — only the script is missing. |
+| `papirus-icon-theme` | `extra` | The Papirus-Dark base icon theme. Ships stock **blue** folders. |
+| `papirus-folders-catppuccin-git` | AUR | Relinks Papirus folders to the Catppuccin palette. *Provides* `papirus-folders`, *depends on* `papirus-icon-theme` — which is why the two must be removed together. |
 | `catppuccin-cursors-macchiato` | AUR | 16 Catppuccin Macchiato cursor variants. The theme uses `catppuccin-macchiato-peach-cursors`. |
 
-Folders are set to **orange** via the official Papirus tool. The cursor is Catppuccin
-Macchiato Peach (`#fab387`) — the same Copper accent as the borders and topbar.
+Folders are set to **orange** by `papirus-folders -C orange --theme Papirus-Dark`.
+The cursor is Catppuccin Macchiato Peach (`#fab387`) — the same Copper accent as the
+borders and topbar.
 
-`./remove-icons.sh` offers to uninstall all three.
-
-> **Uninstalling Papirus by hand?** Remove the folder helper and the icon theme in a
-> *single* pacman transaction — `papirus-folders-catppuccin-git` depends on
-> `papirus-icon-theme`, so removing them one at a time fails with
-> `removing papirus-icon-theme breaks dependency ... required by papirus-folders-catppuccin-git`:
->
-> ```bash
-> sudo pacman -Rns papirus-folders-catppuccin-git papirus-icon-theme
-> ```
+`./remove-icons.sh` asks before uninstalling any of them, and uninstalls the Papirus
+pair in a single pacman transaction so the dependency resolves cleanly.
 
 ### Or step by step
 
@@ -101,11 +95,22 @@ Steps 3 and 4 are opt-in. Skip them if you prefer your current icon set or file 
 
 </details>
 
-### Switch back anytime
+### Update or switch away
 
 ```bash
-omarchy theme set coppernight
+omarchy theme switcher        # pick a different theme
+omarchy theme set <name>      # or set one directly
+omarchy theme remove coppernight
 ```
+
+> **Updating to the latest commit:** the one-liner deletes the theme's `.git`, so
+> `omarchy theme update` has nothing to pull. Either re-run the
+> [one-liner](#one-command), or keep the clone and pull it yourself:
+>
+> ```bash
+> git -C ~/.config/omarchy/themes/coppernight pull
+> omarchy theme set coppernight
+> ```
 
 ---
 
@@ -263,30 +268,50 @@ omarchy theme set coppernight
 
 </div>
 
-> Run from `~/.config/omarchy/themes/coppernight`. All scripts are idempotent and report an ok/failed summary. `remove-icons.sh` asks before uninstalling packages.
+> Run from `~/.config/omarchy/themes/coppernight`. All four are idempotent and print an
+> ok/failed summary. `sudo` is only needed when a package is actually missing or being
+> removed — re-running on a set-up machine asks for nothing. `remove-icons.sh` prompts
+> before uninstalling anything.
+>
+> `apply-icons.sh` re-checks `places/folder.svg` at every icon size after running
+> `papirus-folders`, because that tool exits `0` even when it relinks nothing — and
+> Nautilus then silently falls back to blue folders.
 
 ---
 
 ## 🧹 Uninstall
 
-### Revert the optional extras
+### 1. Revert the optional extras
 
 ```bash
 cd ~/.config/omarchy/themes/coppernight
 
-./remove-gtk.sh     # File manager back to default
-./remove-icons.sh   # Default icons + cursor back (asks before uninstalling Papirus, papirus-folders, cursor)
+./remove-gtk.sh     # file manager back to default
+./remove-icons.sh   # icons + cursor back to default (asks before uninstalling packages)
 ```
 
-Prefer to do it by hand? Uninstall Papirus in **one** transaction — the folder helper
-depends on the icon theme, so splitting the command fails:
+### 2. By hand
+
+> **One transaction, not two.** `papirus-folders-catppuccin-git` *depends on*
+> `papirus-icon-theme`, so removing them separately fails with
+> `removing papirus-icon-theme breaks dependency … required by papirus-folders-catppuccin-git`.
 
 ```bash
 sudo pacman -Rns papirus-folders-catppuccin-git papirus-icon-theme
+sudo pacman -Rns catppuccin-cursors-macchiato   # optional: the peach cursor
 ```
 
+### 3. Remove the theme itself
+
 ```bash
-sudo pacman -Rns catppuccin-cursors-macchiato   # optional: the peach cursor
+omarchy theme set <some-other-theme>   # switch away first
+omarchy theme remove coppernight       # then delete it
+```
+
+Or just delete the directory:
+
+```bash
+rm -rf ~/.config/omarchy/themes/coppernight
 ```
 
 ---
