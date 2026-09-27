@@ -31,7 +31,7 @@
 
 <br/>
 
-[⚡ Installation](#-installation) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [🛠️ Scripts](#-scripts) • [🚀 Fastfetch](#-fastfetch) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
+[⚡ Installation](#-installation) • [📁 File Reference](#-file-reference) • [🚀 Fastfetch](#-fastfetch) • [🧹 Uninstall](#-uninstall) • [🎨 Color Palette](#-color-palette) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
 
 </div>
 
@@ -53,102 +53,6 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 > **Heads up:** re-running the installer wipes and replaces the theme folder.
 > `omarchy-theme-install` deletes `~/.config/omarchy/themes/coppernight` *before* it clones, so
 > if the clone fails you are left with nothing. Keep any local edits backed up elsewhere.
-
-### Packages installed by the extras
-
-`./apply-icons.sh` needs these. The last two come from the AUR, so it will ask for your password:
-
-| Package | Source | Why it's needed |
-|:---|:---:|:---|
-| `papirus-icon-theme` | `extra` | The Papirus-Dark base icon theme. Ships stock **blue** folders. |
-| `papirus-folders-catppuccin-git` | AUR | Relinks Papirus folders to the Catppuccin palette. *Provides* `papirus-folders`, *depends on* `papirus-icon-theme` — which is why the two must be removed together. |
-| `catppuccin-cursors-macchiato` | AUR | 16 Catppuccin Macchiato cursor variants. The theme uses `catppuccin-macchiato-peach-cursors`. |
-
-Folders are set to **orange** by `papirus-folders -C orange --theme Papirus-Dark`.
-The cursor is Catppuccin Macchiato Peach (`#fab387`) — the same Copper accent as the
-borders and topbar.
-
-`./remove-icons.sh` asks before uninstalling any of them, and uninstalls the Papirus
-pair in a single pacman transaction so the dependency resolves cleanly.
-
-### Or step by step
-
-<details>
-<summary><b>Show individual steps</b></summary>
-
-```bash
-# 1. Install the theme
-omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme.git
-
-# 2. Activate it
-rm -rf ~/.config/omarchy/themes/coppernight/.git && omarchy theme set coppernight
-
-# 3. Optional extras — file manager background + Yazi flavor
-cd ~/.config/omarchy/themes/coppernight
-./apply-filemanager.sh
-
-# 4. Optional extras — Papirus-Dark icons + orange folders & peach cursor
-./apply-icons.sh
-```
-
-Steps 3 and 4 are opt-in. Skip them if you prefer your current icon set or file manager styling — the theme itself is already active after step 2.
-
-</details>
-
-### Update or switch away
-
-```bash
-omarchy theme switcher        # pick a different theme
-omarchy theme set <name>      # or set one directly
-omarchy theme remove coppernight
-```
-
-> **Updating to the latest commit:** the one-liner deletes the theme's `.git`, so
-> `omarchy theme update` has nothing to pull. Either re-run the
-> [one-liner](#one-command), or keep the clone and pull it yourself:
->
-> ```bash
-> git -C ~/.config/omarchy/themes/coppernight pull
-> omarchy theme set coppernight
-> ```
-
----
-
-## 🎨 Color Palette
-
-<div align="center">
-
-### Core
-
-| Swatch | Token | Hex | Role |
-|:---:|:---|:---:|:---|
-| ![#11111b](https://img.shields.io/badge/-%2311111b-11111b?style=flat-square) | **background** | `#11111b` | Deep indigo canvas — main app background. |
-| ![#0b0b12](https://img.shields.io/badge/-%230b0b12-0b0b12?style=flat-square) | **dark_background** | `#0b0b12` | Deeper wells, terminal backgrounds. |
-| ![#060609](https://img.shields.io/badge/-%23060609-060609?style=flat-square) | **darker_background** | `#060609` | Deepest wells, OLED black. |
-| ![#1e1e2e](https://img.shields.io/badge/-%231e1e2e-1e1e2e?style=flat-square) | **lighter_background** | `#1e1e2e` | Raised surfaces. |
-| ![#313244](https://img.shields.io/badge/-%23313244-313244?style=flat-square) | **selection** | `#313244` | Selection, cards, inactive borders. |
-| ![#cad3f5](https://img.shields.io/badge/-%23cad3f5-cad3f5?style=flat-square) | **foreground** | `#cad3f5` | Primary text and icons. |
-| ![#b8c0e0](https://img.shields.io/badge/-%23b8c0e0-b8c0e0?style=flat-square) | **light_foreground** | `#b8c0e0` | Bright secondary text. |
-| ![#6e738d](https://img.shields.io/badge/-%236e738d-6e738d?style=flat-square) | **dark_foreground** | `#6e738d` | Dimmed text. |
-| ![#5b6078](https://img.shields.io/badge/-%235b6078-5b6078?style=flat-square) | **muted** | `#5b6078` | Comments, line numbers, disabled states. |
-
-### Accents
-
-| Swatch | Token | Hex | Role |
-|:---:|:---|:---:|:---|
-| ![#fab387](https://img.shields.io/badge/-%23fab387-fab387?style=flat-square) | **accent / orange** | `#fab387` | **Copper** — active borders, focus, highlights, topbar. |
-| ![#a6da95](https://img.shields.io/badge/-%23a6da95-a6da95?style=flat-square) | **green** | `#a6da95` | Lite Green — success, strings, active indicators. |
-| ![#eed49f](https://img.shields.io/badge/-%23eed49f-eed49f?style=flat-square) | **yellow** | `#eed49f` | Yellow — warnings, warm accents. |
-| ![#8bd5ca](https://img.shields.io/badge/-%238bd5ca-8bd5ca?style=flat-square) | **cyan** | `#8bd5ca` | Teal — operators, links, cool accents. |
-| ![#8aadf4](https://img.shields.io/badge/-%238aadf4-8aadf4?style=flat-square) | **blue** | `#8aadf4` | Lite Blue — functions, keywords, info states. |
-| ![#c6a0f6](https://img.shields.io/badge/-%23c6a0f6-c6a0f6?style=flat-square) | **magenta** | `#c6a0f6` | Mauve — secondary accent, inactive borders. |
-| ![#f5bde6](https://img.shields.io/badge/-%23f5bde6-f5bde6?style=flat-square) | **pink** | `#f5bde6` | Lite Pink — tags, badges, special highlights. |
-| ![#ed8796](https://img.shields.io/badge/-%23ed8796-ed8796?style=flat-square) | **red / cursor** | `#ed8796` | Red — errors, critical notices, terminal cursor. |
-| ![#7b5b55](https://img.shields.io/badge/-%237b5b55-7b5b55?style=flat-square) | **brown** | `#7b5b55` | Warm muted brown. |
-
-</div>
-
-> `colors.toml` is the single source of truth. Change `accent` there and the whole theme follows.
 
 ---
 
@@ -259,33 +163,6 @@ omarchy theme remove coppernight
 
 ---
 
-## 🛠️ Scripts
-
-<div align="center">
-
-| Script | Purpose | Needs sudo |
-|---|:---:|:---:|
-| `./apply-filemanager.sh` | Nautilus `#11111b` background + Yazi flavor | ➖ |
-| `./remove-gtk.sh` | Revert GTK/file manager to default | ➖ |
-| `./apply-icons.sh` | Install + apply Papirus-Dark, orange folders, peach cursor | ✅ |
-| `./remove-icons.sh` | Revert icons/cursor, optionally uninstall | ✅ |
-| `./install-fastfetch.sh` | Apply the Copper Night fastfetch config | ✅ |
-| `./remove-fastfetch.sh` | Revert fastfetch config, optionally uninstall | ✅ |
-
-</div>
-
-> Run from `~/.config/omarchy/themes/coppernight`. All six are idempotent and print an
-> ok/failed summary. `sudo` is only needed when a package is actually missing or being
-> removed — re-running on a set-up machine asks for nothing. Uninstalling is opt-in:
-> `remove-icons.sh` asks `[y/N]`, and `remove-fastfetch.sh` needs the explicit
-> `--uninstall` flag.
->
-> `apply-icons.sh` re-checks `places/folder.svg` at every icon size after running
-> `papirus-folders`, because that tool exits `0` even when it relinks nothing — and
-> Nautilus then silently falls back to blue folders.
-
----
-
 ## 🚀 Fastfetch
 
 The theme ships a `fastfetch` layout in the Copper palette — Copper keys, blue hardware
@@ -372,6 +249,41 @@ Or just delete the directory:
 rm -rf ~/.config/omarchy/themes/coppernight
 ```
 
+## 🎨 Color Palette
+
+<div align="center">
+
+### Core
+
+| Swatch | Token | Hex | Role |
+|:---:|:---|:---:|:---|
+| ![#11111b](https://img.shields.io/badge/-%2311111b-11111b?style=flat-square) | **background** | `#11111b` | Deep indigo canvas — main app background. |
+| ![#0b0b12](https://img.shields.io/badge/-%230b0b12-0b0b12?style=flat-square) | **dark_background** | `#0b0b12` | Deeper wells, terminal backgrounds. |
+| ![#060609](https://img.shields.io/badge/-%23060609-060609?style=flat-square) | **darker_background** | `#060609` | Deepest wells, OLED black. |
+| ![#1e1e2e](https://img.shields.io/badge/-%231e1e2e-1e1e2e?style=flat-square) | **lighter_background** | `#1e1e2e` | Raised surfaces. |
+| ![#313244](https://img.shields.io/badge/-%23313244-313244?style=flat-square) | **selection** | `#313244` | Selection, cards, inactive borders. |
+| ![#cad3f5](https://img.shields.io/badge/-%23cad3f5-cad3f5?style=flat-square) | **foreground** | `#cad3f5` | Primary text and icons. |
+| ![#b8c0e0](https://img.shields.io/badge/-%23b8c0e0-b8c0e0?style=flat-square) | **light_foreground** | `#b8c0e0` | Bright secondary text. |
+| ![#6e738d](https://img.shields.io/badge/-%236e738d-6e738d?style=flat-square) | **dark_foreground** | `#6e738d` | Dimmed text. |
+| ![#5b6078](https://img.shields.io/badge/-%235b6078-5b6078?style=flat-square) | **muted** | `#5b6078` | Comments, line numbers, disabled states. |
+
+### Accents
+
+| Swatch | Token | Hex | Role |
+|:---:|:---|:---:|:---|
+| ![#fab387](https://img.shields.io/badge/-%23fab387-fab387?style=flat-square) | **accent / orange** | `#fab387` | **Copper** — active borders, focus, highlights, topbar. |
+| ![#a6da95](https://img.shields.io/badge/-%23a6da95-a6da95?style=flat-square) | **green** | `#a6da95` | Lite Green — success, strings, active indicators. |
+| ![#eed49f](https://img.shields.io/badge/-%23eed49f-eed49f?style=flat-square) | **yellow** | `#eed49f` | Yellow — warnings, warm accents. |
+| ![#8bd5ca](https://img.shields.io/badge/-%238bd5ca-8bd5ca?style=flat-square) | **cyan** | `#8bd5ca` | Teal — operators, links, cool accents. |
+| ![#8aadf4](https://img.shields.io/badge/-%238aadf4-8aadf4?style=flat-square) | **blue** | `#8aadf4` | Lite Blue — functions, keywords, info states. |
+| ![#c6a0f6](https://img.shields.io/badge/-%23c6a0f6-c6a0f6?style=flat-square) | **magenta** | `#c6a0f6` | Mauve — secondary accent, inactive borders. |
+| ![#f5bde6](https://img.shields.io/badge/-%23f5bde6-f5bde6?style=flat-square) | **pink** | `#f5bde6` | Lite Pink — tags, badges, special highlights. |
+| ![#ed8796](https://img.shields.io/badge/-%23ed8796-ed8796?style=flat-square) | **red / cursor** | `#ed8796` | Red — errors, critical notices, terminal cursor. |
+| ![#7b5b55](https://img.shields.io/badge/-%237b5b55-7b5b55?style=flat-square) | **brown** | `#7b5b55` | Warm muted brown. |
+
+</div>
+
+> `colors.toml` is the single source of truth. Change `accent` there and the whole theme follows.
 ---
 
 ## 🤝 Contributing
