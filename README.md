@@ -220,17 +220,6 @@ fastfetch
 > **まだ (mada) — not yet here.** Run `./install-fastfetch.sh` and paste your terminal
 > output into a PR — a real render is more useful than a mock-up.
 
-<details>
-<summary><b>How it behaves</b></summary>
-
-- Any existing `~/.config/fastfetch/config.jsonc` or `1.png` is copied to
-  `*.pre-coppernight` **once** — a second run won't overwrite the backup with the
-  already-replaced file.
-- `1.png` is only copied when the config actually points at a local logo source.
-- `./remove-fastfetch.sh` restores those backups, or deletes the files if there are none
-  (fastfetch then falls back to its built-in default). The directory is only removed if
-  it ends up empty, so a hand-written `fastfetch.jsonc` of your own survives.
-
 </details>
 
 To undo it:
