@@ -337,7 +337,7 @@ Found a bug? Open an [Issue](https://github.com/hembramnishant50-glitch/omarchy-
 
 ⛩️ 🌸 ⛩️
 
-### 💖 Crafted with Passion by [Nishant](https://github.com/hembramnishant50-glitch) — with Love for [Omarchy](https://omarchy.org/) 🥰
+### 💖 Crafted with with Love for [Omarchy](https://omarchy.org/) 🥰
 
 *"夜は東京に落ち、永遠の銅の輝きに照らされる —*
 *Night falls on Tokyo, lit by an eternal copper spark —*
