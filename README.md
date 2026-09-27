@@ -31,7 +31,7 @@
 
 <br/>
 
-[⚡ Installation](#-installation) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [💬 Discord](#-discord) • [🛠️ Scripts](#-scripts) • [🚀 Fastfetch](#-fastfetch) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
+[⚡ Installation](#-installation) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [🛠️ Scripts](#-scripts) • [🚀 Fastfetch](#-fastfetch) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
 
 </div>
 
@@ -333,62 +333,6 @@ To undo it:
 # config + pacman -R
 ~/.config/omarchy/themes/coppernight/remove-fastfetch.sh --uninstall
 ```
-
----
-
-## 💬 Discord
-
-`vencord.theme.css` is for **Vencord's QuickCSS** (Settings → Vencord → Themes → QuickCSS
-in the Discord client). It is not applied automatically by the Omarchy theme switcher —
-paste it in, or point QuickCSS at the file.
-
-**It is not hand-written.** The file is the official
-[Catppuccin Discord theme](https://github.com/catppuccin/discord) — **Mocha + peach** —
-vendored verbatim, followed by a short Copper Night override block that pins every
-canvas surface to `#11111b`.
-
-Why Mocha + peach, and not a bespoke palette:
-
-| Copper Night | Catppuccin Mocha | |
-|:---|:---|:---|
-| `#11111b` crust | `#11111b` crust — **identical** | the canvas colour is already correct upstream |
-| `#fab387` copper accent | `#fab387` peach — **identical** | the accent is already correct upstream |
-| `#cdd6f4` text | `#cdd6f4` text — **identical** | so the old copper-text jank is gone, not re-tuned |
-
-Because the crust and the accent already match, nothing needed to be re-designed. The
-override only flattens the *background* layers that Mocha otherwise varies, so the chat,
-server rail, member list, modals, popovers and context menus all sit on one `#11111b`
-canvas while raised surfaces (context menus, popovers, cards) keep a subtle lift via
-`#1e1e2e` → `#2b2b3b` → `#313244`.
-
-> **Keep Discord's Visual Refresh enabled.** Upstream scopes its palette to
-> `.visual-refresh.theme-dark`. With Visual Refresh off you keep the `#11111b` canvas but
-> lose the rest of the palette.
-
-<details>
-<summary><b>Updating from Catppuccin upstream</b></summary>
-
-Do not hand-edit the vendored block. To refresh it:
-
-```bash
-# 1. fetch the current official build
-curl -fsSL -o /tmp/catppuccin-mocha-peach.theme.css \
-  https://catppuccin.github.io/discord/dist/catppuccin-mocha-peach.theme.css
-
-# 2. keep the header (everything up to and including the
-#    "COPPER NIGHT OVERRIDE" marker) and re-append the override block
-```
-
-Or rebuild from source with
-[`catppuccin/discord`](https://github.com/catppuccin/discord) — `npm install && npm run
-build:catppuccin` writes the same `dist/catppuccin-<flavour>-<accent>.theme.css` files.
-Then re-verify that the override block is still the last thing in the file, since it wins
-purely by source order.
-
-The build is **vendored, not hot-linked**, on purpose: QuickCSS should not depend on a CDN
-being reachable.
-
-</details>
 
 ---
 
