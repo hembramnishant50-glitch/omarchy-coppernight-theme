@@ -27,10 +27,11 @@ else
   warn "omarchy not found — install papirus-icon-theme with your package manager"
 fi
 
-# 2. Orange folders for Papirus-Dark, via the official Papirus tool.
-#    NOTE: papirus-folders is a standalone helper from PapirusDevelopmentTeam,
-#    NOT part of papirus-icon-theme. The orange folder SVGs themselves DO ship
-#    with papirus-icon-theme; only the script that applies them is missing.
+# 2. Orange folders for Papirus-Dark, via the papirus-folders helper.
+#    NOTE: papirus-folders is a standalone helper (PapirusDevelopmentTeam, or
+#    the Catppuccin fork) — NOT part of papirus-icon-theme. papirus-icon-theme
+#    ships a full-size set of coloured folder SVGs, but only 16x16/folder-orange;
+#    every other size stays stock blue until the helper relinks them.
 #    The Catppuccin fork (papirus-folders-catppuccin-git) is what omarchy users
 #    actually end up with, and it is what remove-icons.sh uninstalls — so try it
 #    first and fall back to upstream papirus-folders.
@@ -58,11 +59,26 @@ if command -v papirus-folders >/dev/null 2>&1; then
   if papirus-folders -C orange --theme Papirus-Dark >/dev/null 2>&1; then
     ok "folders set to orange"
   else
-    warn "papirus-folders failed"
+    warn "papirus-folders failed — re-run it by hand: papirus-folders -C orange --theme Papirus-Dark"
   fi
 else
   warn "papirus-folders unavailable — folders stay stock Papirus blue"
 fi
+
+# 2b. Verify the relink actually took, per icon size. papirus-folders exits 0
+#     even when it changes nothing, and Nautilus silently falls back to blue,
+#     so check the resolved symlinks rather than trusting the exit code.
+for size in 16x16 24x24 32x32 48x48 64x64 128x128 256x256; do
+  folder="/usr/share/icons/Papirus-Dark/$size/places/folder.svg"
+  # 16x16 ships per-colour drawings rather than symlinks, so only relinked
+  # sizes can be verified this way.
+  [ -L "$folder" ] || continue
+  resolved="$(readlink -f "$folder")"
+  case "$resolved" in
+    *orange*) ;;
+    *) warn "$size folder is not orange -> $(basename "$resolved")" ;;
+  esac
+done
 
 # 3. Install Catppuccin Macchiato cursor theme if missing (AUR).
 #    Ships 16 Macchiato colour variants; we use the peach one, which is
