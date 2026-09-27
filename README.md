@@ -68,11 +68,19 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 
 ## 🖼️ Theme Preview
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/9c7c8452-a2b3-4fb6-944f-1efcc34a5dcb" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/1538d4fe-6e38-4d59-8473-d6742ba6ec1e" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05a63947-d5c7-4944-b331-03fbea8d86bf" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/b5196384-52a2-4d4e-af74-a52cd21dc29b" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/6caa27f7-935f-49ca-a2f1-9cbf3472d53b" />
+<table>
+  <tr>
+    <td width="50%"><img width="100%" alt="Image" src="https://github.com/user-attachments/assets/9c7c8452-a2b3-4fb6-944f-1efcc34a5dcb" /></td>
+    <td width="50%"><img width="100%" alt="Image" src="https://github.com/user-attachments/assets/1538d4fe-6e38-4d59-8473-d6742ba6ec1e" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><img width="100%" alt="Image" src="https://github.com/user-attachments/assets/05a63947-d5c7-4944-b331-03fbea8d86bf" /></td>
+    <td width="50%"><img width="100%" alt="Image" src="https://github.com/user-attachments/assets/b5196384-52a2-4d4e-af74-a52cd21dc29b" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" width="50%"><img width="50%" alt="Image" src="https://github.com/user-attachments/assets/6caa27f7-935f-49ca-a2f1-9cbf3472d53b" /></td>
+  </tr>
+</table>
 
 <div align="right"><a href="#-copper--night">↑ back to top</a></div>
 
