@@ -197,8 +197,8 @@ omarchy theme remove coppernight
 | `neovim.lua` | Neovim colorscheme — Tokyo Night reimagined in Copper Night. |
 | `helix.toml` | Helix — syntax and UI. |
 | `zed.json` | Zed editor theme. |
-| `vscode.json` | VS Code theme linkage. |
-| `vscode-theme.json` | Full VS Code color theme. |
+| `vscode.json` | VS Code settings — drops in the theme, icon theme and editor feel. |
+| `vscode-theme.json` | The Copper Night color theme — 664 tokens, `#11111b` base, `#fab387` accent. |
 | `coppernight.vim` | Vim colorscheme. |
 | `coppernight-theme.el` | Emacs theme. |
 | `Coppernight.tmTheme` | TextMate/Sublime Text scheme. |

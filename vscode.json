@@ -1,3 +1,27 @@
 {
-  "name": "Omarchy"
+  "workbench.colorTheme": "Copper Night",
+  "editor.tokenColorCustomizations": {
+    "editor.foreground": "#cad3f5"
+  },
+  "workbench.iconTheme": "vs-seti",
+  "editor.fontFamily": "'JetBrains Mono Nerd Font', 'JetBrains Mono', 'Fira Code', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.renderLineHighlight": "line",
+  "editor.minimap.enabled": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.stickyScroll.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.guides.indentation": true,
+  "editor.bracketPairColorization.enabled": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.gpuAcceleration": "on"
 }
