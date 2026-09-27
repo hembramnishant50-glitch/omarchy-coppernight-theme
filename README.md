@@ -222,15 +222,6 @@ fastfetch
 
 </details>
 
-To undo it:
-
-```bash
-# config only — restore backups
-~/.config/omarchy/themes/coppernight/remove-fastfetch.sh
-
-# config + pacman -R
-~/.config/omarchy/themes/coppernight/remove-fastfetch.sh --uninstall
-```
 
 <div align="right"><a href="#-copper--night">↑ back to top</a></div>
 
