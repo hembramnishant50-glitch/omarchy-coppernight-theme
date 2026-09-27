@@ -1,8 +1,8 @@
 /**
  * @name Coppernight
  * @author Nishant
- * @version 2.0.0
- * @description Deep indigo #11111b canvas with glowing copper accents for Discord.
+ * @version 2.1.0
+ * @description Deep indigo #11111b canvas with copper #fab387 text throughout.
  * @source https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme
  **/
 
@@ -45,10 +45,19 @@
   --popover-background: #1e1e2e;
   --tooltip-background: #1e1e2e;
 
-  /* ── text: body stays readable, accents are copper ───────────────────── */
-  --text-normal: #cad3f5;
-  --text-muted: #a5adcb;
-  --text-subtle: #a5adcb;
+  /* ── text: everything is copper ─────────────────────────────────────────
+     The brief is #fab387 for all font colour, so --text-normal is the accent
+     itself. To stop every string landing at identical brightness, the quieter
+     roles use dimmer tints of the *same* copper hue rather than a second hue:
+       #fab387  10.67:1  body, headers, channels, links, code, mentions
+       #c98a5e   6.55:1  muted / secondary / nick / header subtitle
+       #b0764d   4.53:1  subtle: timestamps, placeholders, dividers
+       #8a5a3a   3.24:1  UI only (scrollbar thumbs, offline dot, icon idle)
+     Semantic status colours are left alone — a red DANGER or a green success
+     has to stay distinguishable from body text or it stops carrying meaning.  */
+  --text-normal: #fab387;
+  --text-muted: #c98a5e;
+  --text-subtle: #b0764d;
   --text-link: #fab387;
   --text-link-hover: #f5c99a;
   --text-brand: #fab387;
@@ -56,21 +65,21 @@
   --text-warning: #eed49f;
   --text-danger: #ed8796;
   --text-info: #8aadf4;
-  --channel-text: #cad3f5;
+  --channel-text: #fab387;
   --event-brand-text: #fab387;
 
   --header-primary: #fab387;
-  --header-secondary: #a5adcb;
+  --header-secondary: #c98a5e;
   --header-primary-alias: #fab387;
 
   /* ── interactive
      v1 set --interactive-hover/active to #fab387, which paints the whole row
      bright peach on hover. These are *backgrounds*, not text: the copper lives
      on --text-* and the focus ring instead.                              ──── */
-  --interactive-normal: #cad3f5;
+  --interactive-normal: #fab387;
   --interactive-hover: #181825;
   --interactive-active: #1e1e2e;
-  --interactive-muted: #5b6078;
+  --interactive-muted: #8a5a3a;
 
   /* ── brand / buttons ─────────────────────────────────────────────────── */
   --brand-experiment: #fab387;
@@ -91,10 +100,9 @@
   --button-positive-background-hover: #b5e0a7;
   --button-positive-foreground: #11111b;
   --input-background: #181825;
-  /* #6e738d, not #5b6078: 3.76:1 in the input, 4.02:1 on the base. #5b6078
-     dropped to 3.03 and a placeholder is already the lowest-priority text in
-     the app. Keeps the muted read without dropping further. */
-  --input-placeholder-text: #6e738d;
+  /* #b0764d — dimmer copper, 4.53:1 in the input. Keeps the muted read without
+     dropping below AA for normal-size text. */
+  --input-placeholder-text: #b0764d;
   --input-border: #fab38740;
   --input-border-hover: #fab38770;
   --input-border-focus: #fab387;
@@ -111,7 +119,7 @@
   --status-online: #a6da95;
   --status-idle: #eed49f;
   --status-dnd: #ed8796;
-  --status-offline: #5b6078;
+  --status-offline: #8a5a3a;
   --info-positive-foreground: #a6da95;
   --info-warning-foreground: #eed49f;
   --info-danger-foreground: #ed8796;
@@ -132,10 +140,10 @@
   --spoiler-hidden-background: #181825;
 
   /* ── scrollbars ──────────────────────────────────────────────────────── */
-  --scrollbar-thin-thumb: #6e738d;
+  --scrollbar-thin-thumb: #8a5a3a;
   --scrollbar-thin-track: transparent;
   --scrollbar-thin-thumb-hover: #fab387;
-  --scrollbar-auto-thumb: #6e738d;
+  --scrollbar-auto-thumb: #8a5a3a;
   --scrollbar-auto-track: transparent;
   --scrollbar-auto-thumb-hover: #fab387;
 
@@ -201,7 +209,40 @@
     0 0 24px #fab3870f;
 }
 
-/* ── Copper accent details ─────────────────────────────────────────────── */
+/* ── Copper text ────────────────────────────────────────────────────────────
+   Discord gives these elements their own colours outside the --text-* tokens,
+   so they are set explicitly. Dimmer tints keep the hierarchy readable.        */
+
+/* message + channel names */
+[class^="username-"],
+[class^="username-"] span,
+[class^="chatHeaderTitle-"],
+[class^="sidebarTitle-"] {
+  color: #fab387;
+}
+
+/* timestamps, "Today at …" dividers, and other de-emphasised metadata */
+[class^="timestamp-"],
+time[class^="timestamp-"],
+[class^="dividerContent-"],
+[class^="dividerText-"],
+[class^="subtext-"],
+[class*="cooldownTimestamp-"] {
+  color: #b0764d;
+}
+
+/* channel list entries, guild names, member-list rows */
+[class^="channel-"] [class^="label-"],
+[class^="link-"][class*="channel"],
+[class^="memberListItem-"] [class*="name-"] {
+  color: #fab387;
+}
+
+/* unreads, @-mentions, inline code */
+[class^="content-"] strong,
+[class*="mention-"] {
+  color: #fab387;
+}
 
 /* links and inline code */
 a[class^="link-"],
@@ -230,7 +271,7 @@ pre[class^="codeBlock-"] {
 
 /* scrollbars: visible but not shouty */
 ::-webkit-scrollbar-thumb {
-  background: #6e738d;
+  background: #8a5a3a;
 }
 
 ::-webkit-scrollbar-thumb:hover {

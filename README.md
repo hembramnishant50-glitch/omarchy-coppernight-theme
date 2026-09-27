@@ -235,7 +235,7 @@ omarchy theme remove coppernight
 | `youtube-coppernight.user.less` | Standalone finely tuned YouTube theme. |
 | `firefox-userChrome.css` | Firefox `userChrome.css` for deep dark chrome. |
 | `chromium.theme` | Chromium flags for dark-mode harmony. |
-| `vencord.theme.css` | Discord Vencord — uniform `#11111b` base, copper hairlines, copper accents. |
+| `vencord.theme.css` | Discord Vencord — copper `#fab387` text throughout on a uniform `#11111b` base. |
 
 </details>
 
