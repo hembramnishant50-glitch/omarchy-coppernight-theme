@@ -11,16 +11,19 @@
                 |_|     |_|                                    |___/
 ```
 
-# 🌌 Copper Night
+# 🌌 銅夜 — Copper Night
 
-### *An Elegant, Deep Indigo & Glowing Copper Theme for Omarchy Quattro*
+### *An Elegant, Deep Indigo & Glowing Copper Theme for Omarchy 4*
 
-> *"Where the deep indigo of Tokyo meets the warm, radiant glow of an ember sunset."*
+*どうや — "Dōya"*
+
+> *"Where the deep indigo of a Tokyo night meets the warm, radiant glow of a distant ember —*
+> *侘寂 (wabi-sabi) in every pixel, 静けさ (silence) in every shadow."*
 
 <br/>
 
 [![Version](https://img.shields.io/badge/Version-3.0.0-fab387?style=for-the-badge&logo=git&logoColor=11111b)](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme)
-[![Omarchy Quattro](https://img.shields.io/badge/Omarchy-Quattro-8aadf4?style=for-the-badge&logo=archlinux&logoColor=11111b)](https://omarchy.org/)
+[![Omarchy](https://img.shields.io/badge/Omarchy-4-8aadf4?style=for-the-badge&logo=archlinux&logoColor=11111b)](https://omarchy.org/)
 [![Hyprland](https://img.shields.io/badge/Hyprland-Ready-a6da95?style=for-the-badge&logo=hyprland&logoColor=11111b)](https://hyprland.org)
 [![License](https://img.shields.io/badge/License-MIT-f5bde6?style=for-the-badge&logo=opensourceinitiative&logoColor=11111b)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/hembramnishant50-glitch/omarchy-coppernight-theme?style=for-the-badge&color=c6a0f6&logo=github&logoColor=11111b)](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme/stargazers)
@@ -31,9 +34,23 @@
 
 <br/>
 
-[⚡ Installation](#-installation) • [📁 File Reference](#-file-reference) • [🚀 Fastfetch](#-fastfetch) • [🧹 Uninstall](#-uninstall) • [🎨 Color Palette](#-color-palette) • [🤝 Contributing](#-contributing)
+⛩️ [美学 Philosophy](#-美学--the-design-philosophy) • ⚡ [Installation](#-installation) • 📁 [File Reference](#-file-reference) • 🚀 [Fastfetch](#-fastfetch) • 🧹 [Uninstall](#-uninstall) • 🎨 [Color Palette](#-色-color-palette) • 🤝 [Contributing](#-contributing)
 
 </div>
+
+---
+
+## 🏮 美学 — The Design Philosophy
+
+Copper Night borrows its mood from three ideas that run through Japanese aesthetics:
+
+| Concept | Meaning | How it shows up in the theme |
+|:---:|:---|:---|
+| **侘寂** *wabi-sabi* | Beauty in quiet, imperfect, weathered things | Muted indigo base instead of pure black — nothing is ever harshly flat |
+| **間** *ma* | The purposeful space *between* elements | Generous `16px` rounding, soft blur, and breathing room in every panel |
+| **灯** *tomoshibi* | A single lantern glowing in the dark | One accent — copper `#fab387` — is allowed to be warm; everything else stays cool and restrained |
+
+The result reads like a quiet side-street in Shinjuku at 2am: neon signage reflected in wet asphalt, everything else asleep.
 
 ---
 
@@ -50,7 +67,7 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 
 > Run it in a real terminal — the icon/cursor step needs your sudo password.
 
-> **Heads up:** re-running the installer wipes and replaces the theme folder.
+> **注意 (chūi) — heads up:** re-running the installer wipes and replaces the theme folder.
 > `omarchy-theme-install` deletes `~/.config/omarchy/themes/coppernight` *before* it clones, so
 > if the clone fails you are left with nothing. Keep any local edits backed up elsewhere.
 
@@ -185,7 +202,7 @@ Then:
 fastfetch
 ```
 
-> **No screenshot here yet.** Run `./install-fastfetch.sh` and paste your terminal
+> **まだ (mada) — not yet here.** Run `./install-fastfetch.sh` and paste your terminal
 > output into a PR — a real render is more useful than a mock-up.
 
 <details>
@@ -249,48 +266,51 @@ Or just delete the directory:
 rm -rf ~/.config/omarchy/themes/coppernight
 ```
 
-## 🎨 Color Palette
+---
+
+## 🎨 色 Color Palette
 
 <div align="center">
 
-### Core
+### 基調 — Core Tones
 
-| Swatch | Token | Hex | Role |
-|:---:|:---|:---:|:---|
-| ![#11111b](https://img.shields.io/badge/-%2311111b-11111b?style=flat-square) | **background** | `#11111b` | Deep indigo canvas — main app background. |
-| ![#0b0b12](https://img.shields.io/badge/-%230b0b12-0b0b12?style=flat-square) | **dark_background** | `#0b0b12` | Deeper wells, terminal backgrounds. |
-| ![#060609](https://img.shields.io/badge/-%23060609-060609?style=flat-square) | **darker_background** | `#060609` | Deepest wells, OLED black. |
-| ![#1e1e2e](https://img.shields.io/badge/-%231e1e2e-1e1e2e?style=flat-square) | **lighter_background** | `#1e1e2e` | Raised surfaces. |
-| ![#313244](https://img.shields.io/badge/-%23313244-313244?style=flat-square) | **selection** | `#313244` | Selection, cards, inactive borders. |
-| ![#cad3f5](https://img.shields.io/badge/-%23cad3f5-cad3f5?style=flat-square) | **foreground** | `#cad3f5` | Primary text and icons. |
-| ![#b8c0e0](https://img.shields.io/badge/-%23b8c0e0-b8c0e0?style=flat-square) | **light_foreground** | `#b8c0e0` | Bright secondary text. |
-| ![#6e738d](https://img.shields.io/badge/-%236e738d-6e738d?style=flat-square) | **dark_foreground** | `#6e738d` | Dimmed text. |
-| ![#5b6078](https://img.shields.io/badge/-%235b6078-5b6078?style=flat-square) | **muted** | `#5b6078` | Comments, line numbers, disabled states. |
+| Swatch | Token | Hex | 和名 *(mood)* | Role |
+|:---:|:---|:---:|:---|:---|
+| ![#11111b](https://img.shields.io/badge/-%2311111b-11111b?style=flat-square) | **background** | `#11111b` | 藍夜 *ai-yoru* — "indigo night" | Deep indigo canvas — main app background. |
+| ![#0b0b12](https://img.shields.io/badge/-%230b0b12-0b0b12?style=flat-square) | **dark_background** | `#0b0b12` | 漆黒 *shikkoku* — "lacquer black" | Deeper wells, terminal backgrounds. |
+| ![#060609](https://img.shields.io/badge/-%23060609-060609?style=flat-square) | **darker_background** | `#060609` | 玄 *gen* — "profound black" | Deepest wells, OLED black. |
+| ![#1e1e2e](https://img.shields.io/badge/-%231e1e2e-1e1e2e?style=flat-square) | **lighter_background** | `#1e1e2e` | 宵闇 *yoiyami* — "dusk haze" | Raised surfaces. |
+| ![#313244](https://img.shields.io/badge/-%23313244-313244?style=flat-square) | **selection** | `#313244` | 鈍色 *nibiiro* — "muted grey" | Selection, cards, inactive borders. |
+| ![#cad3f5](https://img.shields.io/badge/-%23cad3f5-cad3f5?style=flat-square) | **foreground** | `#cad3f5` | 月白 *tsukishiro* — "moon white" | Primary text and icons. |
+| ![#b8c0e0](https://img.shields.io/badge/-%23b8c0e0-b8c0e0?style=flat-square) | **light_foreground** | `#b8c0e0` | 白藤 *shirafuji* — "pale wisteria" | Bright secondary text. |
+| ![#6e738d](https://img.shields.io/badge/-%236e738d-6e738d?style=flat-square) | **dark_foreground** | `#6e738d` | 鼠色 *nezumiiro* — "mouse grey" | Dimmed text. |
+| ![#5b6078](https://img.shields.io/badge/-%235b6078-5b6078?style=flat-square) | **muted** | `#5b6078` | 消炭色 *keshizumiiro* — "spent-charcoal" | Comments, line numbers, disabled states. |
 
-### Accents
+### 彩り — Accents
 
-| Swatch | Token | Hex | Role |
-|:---:|:---|:---:|:---|
-| ![#fab387](https://img.shields.io/badge/-%23fab387-fab387?style=flat-square) | **accent / orange** | `#fab387` | **Copper** — active borders, focus, highlights, topbar. |
-| ![#a6da95](https://img.shields.io/badge/-%23a6da95-a6da95?style=flat-square) | **green** | `#a6da95` | Lite Green — success, strings, active indicators. |
-| ![#eed49f](https://img.shields.io/badge/-%23eed49f-eed49f?style=flat-square) | **yellow** | `#eed49f` | Yellow — warnings, warm accents. |
-| ![#8bd5ca](https://img.shields.io/badge/-%238bd5ca-8bd5ca?style=flat-square) | **cyan** | `#8bd5ca` | Teal — operators, links, cool accents. |
-| ![#8aadf4](https://img.shields.io/badge/-%238aadf4-8aadf4?style=flat-square) | **blue** | `#8aadf4` | Lite Blue — functions, keywords, info states. |
-| ![#c6a0f6](https://img.shields.io/badge/-%23c6a0f6-c6a0f6?style=flat-square) | **magenta** | `#c6a0f6` | Mauve — secondary accent, inactive borders. |
-| ![#f5bde6](https://img.shields.io/badge/-%23f5bde6-f5bde6?style=flat-square) | **pink** | `#f5bde6` | Lite Pink — tags, badges, special highlights. |
-| ![#ed8796](https://img.shields.io/badge/-%23ed8796-ed8796?style=flat-square) | **red / cursor** | `#ed8796` | Red — errors, critical notices, terminal cursor. |
-| ![#7b5b55](https://img.shields.io/badge/-%237b5b55-7b5b55?style=flat-square) | **brown** | `#7b5b55` | Warm muted brown. |
+| Swatch | Token | Hex | 和名 *(mood)* | Role |
+|:---:|:---|:---:|:---|:---|
+| ![#fab387](https://img.shields.io/badge/-%23fab387-fab387?style=flat-square) | **accent / orange** | `#fab387` | 銅色 *akagane-iro* — "copper" | **The lantern.** Active borders, focus, highlights, topbar. |
+| ![#a6da95](https://img.shields.io/badge/-%23a6da95-a6da95?style=flat-square) | **green** | `#a6da95` | 若緑 *wakamidori* — "young green" | Success, strings, active indicators. |
+| ![#eed49f](https://img.shields.io/badge/-%23eed49f-eed49f?style=flat-square) | **yellow** | `#eed49f` | 生成り *kinari* — "raw silk" | Warnings, warm accents. |
+| ![#8bd5ca](https://img.shields.io/badge/-%238bd5ca-8bd5ca?style=flat-square) | **cyan** | `#8bd5ca` | 青緑 *aomidori* — "teal" | Operators, links, cool accents. |
+| ![#8aadf4](https://img.shields.io/badge/-%238aadf4-8aadf4?style=flat-square) | **blue** | `#8aadf4` | 縹色 *hanadairo* — "pale indigo-blue" | Functions, keywords, info states. |
+| ![#c6a0f6](https://img.shields.io/badge/-%23c6a0f6-c6a0f6?style=flat-square) | **magenta** | `#c6a0f6` | 藤紫 *fujimurasaki* — "wisteria purple" | Secondary accent, inactive borders. |
+| ![#f5bde6](https://img.shields.io/badge/-%23f5bde6-f5bde6?style=flat-square) | **pink** | `#f5bde6` | 桜色 *sakura-iro* — "cherry blossom" | Tags, badges, special highlights. |
+| ![#ed8796](https://img.shields.io/badge/-%23ed8796-ed8796?style=flat-square) | **red / cursor** | `#ed8796` | 紅 *kurenai* — "crimson" | Errors, critical notices, terminal cursor. |
+| ![#7b5b55](https://img.shields.io/badge/-%237b5b55-7b5b55?style=flat-square) | **brown** | `#7b5b55` | 焦茶 *kogecha* — "scorched tea" | Warm muted brown. |
 
 </div>
 
 > `colors.toml` is the single source of truth. Change `accent` there and the whole theme follows.
+
 ---
 
 ## 🤝 Contributing
 
 > Love Omarchy? Love Copper Night? Your contributions make it shine brighter ✨
 
-We warmly welcome **bug reports**, **new website userstyles**, **wallpapers**, and **UI polish** — every thoughtful idea counts.
+We warmly welcome **bug reports**, **new website userstyles**, **wallpapers**, and **UI polish** — every thoughtful idea counts. 一期一会 *(ichi-go ichi-e)* — every contribution, however small, is treasured.
 
 ### How to Contribute
 
@@ -312,10 +332,15 @@ Found a bug? Open an [Issue](https://github.com/hembramnishant50-glitch/omarchy-
 
 <div align="center">
 
+⛩️ 🌸 ⛩️
+
 ### 💖 Crafted with Passion by [Nishant](https://github.com/hembramnishant50-glitch) — with Love for [Omarchy](https://omarchy.org/) 🥰
 
-*“Night falls on Tokyo, lit by an eternal copper spark — made for the Omarchy family, by the Omarchy family.”*  
-*Thank you to the Omarchy community for the inspiration, the tools, and the endless rice love 🌸*
+*"夜は東京に落ち、永遠の銅の輝きに照らされる —*
+*Night falls on Tokyo, lit by an eternal copper spark —*
+*made for the Omarchy family, by the Omarchy family."*
+
+Thank you to the Omarchy community for the inspiration, the tools, and the endless rice love 🌸
 
 <br/>
 
