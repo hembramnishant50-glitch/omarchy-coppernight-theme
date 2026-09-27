@@ -1,9 +1,9 @@
 <div align="center">
 
 <pre>
-                ╭─────────────────────────────────╮
-                │   C O P P E R   ·   N I G H T   │
-               ╰─────────────────────────────────╯
+╭─────────────────────────────╮
+│ C O P P E R   ·   N I G H T │
+╰─────────────────────────────╯
 </pre>
 
 # 🌌 銅夜 — Copper Night
@@ -47,6 +47,8 @@ Copper Night is built from three decisions, each one about restraint:
 
 Indigo for the ninety-nine percent of the night that is empty; copper for the one percent that isn't. The whole theme is arranged so the only warm pixel on your screen is the one you were looking for.
 
+<div align="right"><a href="#-copper--night">↑ back to top</a></div>
+
 ---
 
 ## ⚡ Installation
@@ -65,6 +67,8 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 > **注意 (chūi) — heads up:** re-running the installer wipes and replaces the theme folder.
 > `omarchy-theme-install` deletes `~/.config/omarchy/themes/coppernight` *before* it clones, so
 > if the clone fails you are left with nothing. Keep any local edits backed up elsewhere.
+
+<div align="right"><a href="#-copper--night">↑ back to top</a></div>
 
 ---
 
@@ -173,6 +177,8 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 
 </details>
 
+<div align="right"><a href="#-copper--night">↑ back to top</a></div>
+
 ---
 
 ## 🚀 Fastfetch
@@ -223,6 +229,8 @@ To undo it:
 ~/.config/omarchy/themes/coppernight/remove-fastfetch.sh --uninstall
 ```
 
+<div align="right"><a href="#-copper--night">↑ back to top</a></div>
+
 ---
 
 ## 🧹 Uninstall
@@ -260,6 +268,8 @@ Or just delete the directory:
 ```bash
 rm -rf ~/.config/omarchy/themes/coppernight
 ```
+
+<div align="right"><a href="#-copper--night">↑ back to top</a></div>
 
 ---
 
@@ -299,6 +309,8 @@ rm -rf ~/.config/omarchy/themes/coppernight
 
 > `colors.toml` is the single source of truth. Change `accent` there and the whole theme follows.
 
+<div align="right"><a href="#-copper--night">↑ back to top</a></div>
+
 ---
 
 ## 🤝 Contributing
@@ -322,6 +334,8 @@ We warmly welcome **bug reports**, **new website userstyles**, **wallpapers**, a
 3. Add a row to [📁 File Reference](#-file-reference).
 
 Found a bug? Open an [Issue](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme/issues) — we reply quickly and kindly 💬
+
+<div align="right"><a href="#-copper--night">↑ back to top</a></div>
 
 ---
 
