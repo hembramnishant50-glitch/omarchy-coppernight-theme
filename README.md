@@ -31,7 +31,7 @@
 
 <br/>
 
-[⚡ Installation](#-installation) • [📁 File Reference](#-file-reference) • [🚀 Fastfetch](#-fastfetch) • [🧹 Uninstall](#-uninstall) • [🎨 Color Palette](#-color-palette) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
+[⚡ Installation](#-installation) • [📁 File Reference](#-file-reference) • [🚀 Fastfetch](#-fastfetch) • [🧹 Uninstall](#-uninstall) • [🎨 Color Palette](#-color-palette) • [🤝 Contributing](#-contributing)
 
 </div>
 
@@ -307,12 +307,6 @@ We warmly welcome **bug reports**, **new website userstyles**, **wallpapers**, a
 3. Add a row to [📁 File Reference](#-file-reference).
 
 Found a bug? Open an [Issue](https://github.com/hembramnishant50-glitch/omarchy-coppernight-theme/issues) — we reply quickly and kindly 💬
-
----
-
-## 📄 License
-
-Released under the [MIT License](LICENSE).
 
 ---
 
