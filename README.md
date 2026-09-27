@@ -25,7 +25,7 @@
 
 <br/>
 
-<img width="100%" alt="Copper Night Preview" src="https://github.com/user-attachments/assets/1123edd2-2feb-484f-ad2f-b2e7cad416d0" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.5);" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/7d16cbe4-59f3-4bd2-a3ed-2a64ee3e1d53" />
 
 <br/>
 
@@ -61,6 +61,18 @@ omarchy-theme-install https://github.com/hembramnishant50-glitch/omarchy-coppern
 > **注意 (chūi) — heads up:** re-running the installer wipes and replaces the theme folder.
 > `omarchy-theme-install` deletes `~/.config/omarchy/themes/coppernight` *before* it clones, so
 > if the clone fails you are left with nothing. Keep any local edits backed up elsewhere.
+
+<div align="right"><a href="#-copper--night">↑ back to top</a></div>
+
+---
+
+## 🖼️ Theme Preview
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/9c7c8452-a2b3-4fb6-944f-1efcc34a5dcb" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/1538d4fe-6e38-4d59-8473-d6742ba6ec1e" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05a63947-d5c7-4944-b331-03fbea8d86bf" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/b5196384-52a2-4d4e-af74-a52cd21dc29b" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/6caa27f7-935f-49ca-a2f1-9cbf3472d53b" />
 
 <div align="right"><a href="#-copper--night">↑ back to top</a></div>
 
