@@ -13,7 +13,7 @@
   "display": {
     "separator": " ❯ ",
     "color": {
-      "keys": "#9399b2"
+      "keys": "#fab387"
     }
   },
   "modules": [
@@ -29,32 +29,32 @@
     {
       "type": "command",
       "key": "OS ",
-      "keyColor": "#b4befe",
+      "keyColor": "#fab387",
       "text": "version=$(omarchy-version 2>/dev/null); echo \"Omarchy ${version:-unknown}\"",
       "color": "#cad3f5"
     },
     {
       "type": "kernel",
       "key": "KRN",
-      "keyColor": "#b4befe",
+      "keyColor": "#fab387",
       "color": "#cad3f5"
     },
     {
       "type": "uptime",
       "key": "UPT",
-      "keyColor": "#b4befe",
+      "keyColor": "#fab387",
       "color": "#cad3f5"
     },
     {
       "type": "packages",
       "key": "PKG",
-      "keyColor": "#b4befe",
+      "keyColor": "#fab387",
       "color": "#cad3f5"
     },
     {
       "type": "command",
       "key": "UPD",
-      "keyColor": "#b4befe",
+      "keyColor": "#fab387",
       "text": "t=$(stat -c %Y /var/lib/pacman/sync/core.db 2>/dev/null); if [ -n \"$t\" ]; then age=$(( ($(date +%s) - $t) / 86400 )); if [ $age -eq 0 ]; then echo 'Today'; elif [ $age -eq 1 ]; then echo '1 day ago'; else echo \"${age} days ago\"; fi; else echo 'N/A'; fi",
       "color": "#cad3f5"
     },
@@ -66,33 +66,33 @@
     {
       "type": "cpu",
       "key": "CPU",
-      "keyColor": "#74c7ec",
+      "keyColor": "#8aadf4",
       "showPeCoreCount": true,
       "color": "#cad3f5"
     },
     {
       "type": "gpu",
       "key": "GPU",
-      "keyColor": "#74c7ec",
+      "keyColor": "#8aadf4",
       "detectionMethod": "pci",
       "color": "#cad3f5"
     },
     {
       "type": "memory",
       "key": "RAM",
-      "keyColor": "#74c7ec",
+      "keyColor": "#8aadf4",
       "color": "#cad3f5"
     },
     {
       "type": "swap",
       "key": "SWP",
-      "keyColor": "#74c7ec",
+      "keyColor": "#8aadf4",
       "color": "#cad3f5"
     },
     {
       "type": "disk",
       "key": "DSK",
-      "keyColor": "#74c7ec",
+      "keyColor": "#8aadf4",
       "color": "#cad3f5"
     },
     {
@@ -103,25 +103,25 @@
     {
       "type": "wm",
       "key": "WM ",
-      "keyColor": "#f2cdcd",
+      "keyColor": "#c6a0f6",
       "color": "#cad3f5"
     },
     {
       "type": "terminal",
       "key": "TRM",
-      "keyColor": "#f2cdcd",
+      "keyColor": "#c6a0f6",
       "color": "#cad3f5"
     },
     {
       "type": "shell",
       "key": "SHL",
-      "keyColor": "#f2cdcd",
+      "keyColor": "#c6a0f6",
       "color": "#cad3f5"
     },
     {
       "type": "command",
       "key": "THM",
-      "keyColor": "#f2cdcd",
+      "keyColor": "#c6a0f6",
       "text": "theme=$(omarchy-theme-current 2>/dev/null || echo 'unknown'); echo -e \"$theme \\e[38;2;245;224;220m●\\e[38;2;242;205;205m●\\e[38;2;245;189;230m●\\e[38;2;198;160;246m●\\e[38;2;138;173;244m●\\e[38;2;166;218;149m●\\e[38;2;238;212;159m●\\e[38;2;250;179;135m●\"",
       "color": "#cad3f5"
     },

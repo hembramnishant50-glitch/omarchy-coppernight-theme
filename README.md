@@ -31,7 +31,7 @@
 
 <br/>
 
-[⚡ Installation](#-installation) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [🛠️ Scripts](#-scripts) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
+[⚡ Installation](#-installation) • [🎨 Color Palette](#-color-palette) • [📁 File Reference](#-file-reference) • [🛠️ Scripts](#-scripts) • [🚀 Fastfetch](#-fastfetch) • [🧹 Uninstall](#-uninstall) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
 
 </div>
 
@@ -216,7 +216,8 @@ omarchy theme remove coppernight
 | `cava_theme` | CAVA audio visualizer. |
 | `lazygit-coppernight.yml` | lazygit TUI theme. |
 | `delta-coppernight.gitconfig` | delta git diff viewer. |
-| `fastfetch.jsonc` + `fastfetch/` | Fastfetch system info with themed layout. |
+| `fastfetch.jsonc` | Fastfetch layout, reading the logo from this folder. |
+| `fastfetch/` | The same layout for copying to `~/.config/fastfetch/` — logo path rewritten. |
 | `claude.json` | Claude Code theme. |
 | `coppernight-opencode.json` | opencode theme. |
 | `pi.json` | pi coding-agent theme. |
@@ -244,12 +245,15 @@ omarchy theme remove coppernight
 | File | Description |
 |---|---|
 | `icons.theme` | Icon theme linkage (Papirus-Dark). |
-| `1.png` | Fastfetch logo image (also staged in `fastfetch/`). |
+| `1.png` | Fastfetch logo — Catppuccin-style mark in the Copper accent. |
+| `fastfetch/` | `config.jsonc` + `1.png`, staged for `~/.config/fastfetch/`. |
 | `backgrounds/` | Five handpicked wallpapers. |
 | `apply-filemanager.sh` | Applies file manager background + Yazi flavor. |
 | `remove-gtk.sh` | Removes the GTK override — back to default. |
 | `apply-icons.sh` | Installs Papirus-Dark with orange folders + peach cursor. |
 | `remove-icons.sh` | Removes Papirus, papirus-folders-catppuccin-git and the cursor package — back to default. |
+| `install-fastfetch.sh` | Copies `fastfetch/` to `~/.config/fastfetch/`, backing up what was there. |
+| `remove-fastfetch.sh` | Restores the backups — or `--uninstall` also drops the package. |
 
 </details>
 
@@ -265,17 +269,70 @@ omarchy theme remove coppernight
 | `./remove-gtk.sh` | Revert GTK/file manager to default | ➖ |
 | `./apply-icons.sh` | Install + apply Papirus-Dark, orange folders, peach cursor | ✅ |
 | `./remove-icons.sh` | Revert icons/cursor, optionally uninstall | ✅ |
+| `./install-fastfetch.sh` | Apply the Copper Night fastfetch config | ✅ |
+| `./remove-fastfetch.sh` | Revert fastfetch config, optionally uninstall | ✅ |
 
 </div>
 
-> Run from `~/.config/omarchy/themes/coppernight`. All four are idempotent and print an
+> Run from `~/.config/omarchy/themes/coppernight`. All six are idempotent and print an
 > ok/failed summary. `sudo` is only needed when a package is actually missing or being
-> removed — re-running on a set-up machine asks for nothing. `remove-icons.sh` prompts
-> before uninstalling anything.
+> removed — re-running on a set-up machine asks for nothing. Uninstalling is opt-in:
+> `remove-icons.sh` asks `[y/N]`, and `remove-fastfetch.sh` needs the explicit
+> `--uninstall` flag.
 >
 > `apply-icons.sh` re-checks `places/folder.svg` at every icon size after running
 > `papirus-folders`, because that tool exits `0` even when it relinks nothing — and
 > Nautilus then silently falls back to blue folders.
+
+---
+
+## 🚀 Fastfetch
+
+The theme ships a `fastfetch` layout in the Copper palette — Copper keys, blue hardware
+and lavender WM/TUI groups, the theme-aware `THM` module, and a themed logo.
+
+**fastfetch only reads a config that lives in its own config dir**, so the files are
+copied there rather than symlinked — then the theme folder can move and `fastfetch`
+keeps working.
+
+```bash
+# install + apply coppernight fastfetch to ~/.config/fastfetch/
+~/.config/omarchy/themes/coppernight/install-fastfetch.sh
+# or, by hand:
+sudo pacman -S --needed --noconfirm fastfetch && mkdir -p ~/.config/fastfetch && cp ~/.config/omarchy/themes/coppernight/fastfetch/* ~/.config/fastfetch/
+```
+
+Then:
+
+```bash
+fastfetch
+```
+
+> **No screenshot here yet.** Run `./install-fastfetch.sh` and paste your terminal
+> output into a PR — a real render is more useful than a mock-up.
+
+<details>
+<summary><b>How it behaves</b></summary>
+
+- Any existing `~/.config/fastfetch/config.jsonc` or `1.png` is copied to
+  `*.pre-coppernight` **once** — a second run won't overwrite the backup with the
+  already-replaced file.
+- `1.png` is only copied when the config actually points at a local logo source.
+- `./remove-fastfetch.sh` restores those backups, or deletes the files if there are none
+  (fastfetch then falls back to its built-in default). The directory is only removed if
+  it ends up empty, so a hand-written `fastfetch.jsonc` of your own survives.
+
+</details>
+
+To undo it:
+
+```bash
+# config only — restore backups
+~/.config/omarchy/themes/coppernight/remove-fastfetch.sh
+
+# config + pacman -R
+~/.config/omarchy/themes/coppernight/remove-fastfetch.sh --uninstall
+```
 
 ---
 
@@ -286,8 +343,9 @@ omarchy theme remove coppernight
 ```bash
 cd ~/.config/omarchy/themes/coppernight
 
-./remove-gtk.sh     # file manager back to default
-./remove-icons.sh   # icons + cursor back to default (asks before uninstalling packages)
+./remove-gtk.sh        # file manager back to default
+./remove-icons.sh      # icons + cursor back to default (asks before uninstalling packages)
+./remove-fastfetch.sh  # fastfetch config back to default
 ```
 
 ### 2. By hand
